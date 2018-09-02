@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #div1{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            left: 100px;
+            border-radius: 50%;
+            background-color: palevioletred;
+            border: 1px dashed greenyellow;
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+
+</body>
+</html>
+<script src="js/utils.js"></script>
+<script>
+    /*
+    * 固定步长的运动
+    * 有个定时器一定相同的长度
+    * */
+    var oDiv=document.getElementById('div1');
+//    var l=0;
+//    var timer=window.setInterval(function () {
+//        if(l>=400){
+//            clearInterval(timer);
+//            return;
+//        }
+//        l+=10;
+//        oDiv.style.left=l+'px';
+//    },20);
+
+    function move(ele,attr,tar) {
+        var l=utils.css(ele,attr);
+        var timer=window.setInterval(function () {
+            if(l>=tar){
+                clearInterval(timer);
+                return;
+            }
+            l+=10;
+            ele.style[attr]=l+'px';
+        },200);
+    }
+    move(oDiv,'left',400);
+    move(oDiv,'top',400);
+
+
+
+</script>

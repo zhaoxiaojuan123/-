@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<ul class="cl1">
+    <li class="li1"></li>
+    <li class="li1"></li>
+    <li class="li1"></li>
+</ul>
+<ul class="cl2">
+    <li class="li2"></li>
+    <li class="li2"></li>
+    <li class="li2"></li>
+</ul>
+
+</body>
+</html>
+<script>
+    var oUl=document.getElementsByClassName('cl1')[0];
+    var oUl2=document.getElementsByClassName('cl2')[0];
+    var lis1=oUl.querySelector('li');
+    var lis2=oUl2.querySelectorAll('li');
+    console.log(lis1,lis2)
+    /*
+    * querySelector 和 querySelectorAll 区别
+    * querySelector只能选择第一个匹配的节点；
+    * querySelectorAll可以选择多个节点,以","分隔开,返回的是个数组；
+    * */
+
+</script>

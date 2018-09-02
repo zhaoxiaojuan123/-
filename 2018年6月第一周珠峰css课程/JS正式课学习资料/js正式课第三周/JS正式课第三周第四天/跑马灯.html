@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+     <style>
+       *{
+           padding: 0;
+           margin: 0;
+       }
+         #div1{
+             margin: auto;
+             width: 800px;
+             height: 200px;
+             overflow: hidden;
+             border: 1px dashed #cccccc;
+         }
+         .ul_box li{
+             float: left;
+             list-style: none;
+             width: 200px;
+             height: 200px;
+         }
+         .ul_box li img{
+             width: 100%;
+             height: 100%;
+         }
+
+     </style>
+    <script src="utils.js"></script>
+</head>
+<body>
+
+<div id="div1">
+    <ul class="ul_box">
+        <li><img src="images/1.jpg" alt=""></li>
+        <li><img src="images/2.jpg" alt=""></li>
+        <li><img src="images/3.jpg" alt=""></li>
+        <li><img src="images/4.jpg" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>
+<script src="utils.js"></script>
+<script>
+    var oDiv=document.getElementById('div1');// 这个盒子有scroll
+    var oUls=document.getElementsByClassName('ul_box')[0];
+    var lis=oUls.getElementsByTagName('li');
+    oUls.innerHTML+=oUls.innerHTML;
+    oUls.style.width=utils.getCss(oUls,'width')*2+'px';
+    var timer=window.setInterval(function () {
+        var m= oDiv.scrollLeft++;
+        if(m==oDiv.scrollLeft){
+            oDiv.scrollLeft=0;
+        }
+    },20)
+
+</script>

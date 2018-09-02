@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+ <div id="div1">验证码</div>
+ <div id="div2">验证码</div>
+
+</body>
+</html>
+<script>
+
+     /* Math.sqrt(9); //9开方
+      Math.pow(3,2);// 3的2次方
+      Math.floor(2.1);//2 向下取整
+      Math.floor(-2.1);//-3
+      Math.ceil(2.1);// 3 向上取整
+      Math.ceil(-2.1);// -2 向上取整
+      Math.round(4.5);//5  四舍五入
+      Math.abs(-2.1);// 2.1 去绝对值
+      Math.max(1,2,7,5);// 7 取一组数中的最大值
+      Math.min(1,2,7,5);//1  取一组数中的最小值
+      Math.random();//取[0-1) 之间的随机数 包含0，不包含1
+
+    // 求0-50 之间的随机数 [0-50)
+      Math.random()*50;
+
+      // 求0-50 之间的随机整数 [0-50)
+      Math.floor(Math.random()*50);
+      // 求0-50 之间的随机整数 [0-50]
+      Math.round(Math.random()*50);
+      Math.ceil(Math.random()*50);
+    //求 5-50 之间的随机整数 [5-50]
+      Math.round(Math.random()*45+5);
+    // 求[n-m] 之间的随机整数
+      Math.round(Math.random()*(m-n)+n);*/
+
+    // 获取一个验证码 四位数 英文或者数字 组成的字符串
+    // 思路 需要一个类似于字典的东西，我们要从这个字典里获取咱们要的字符
+    // 有字典之后 我们需要有一个与之对应的查询关键词
+     var str='qwertyuiopasdfghjklzxcvbnm0123456789QWERTYUIOPASDFGHJKLZXCVBNM';
+        // 怎么能拿到里边某个字符 str[]
+      var str='qwertyuiopasdfghjklzxcvbnm0123456789QWERTYUIOPASDFGHJKLZXCVBNM';
+/*
+    function getRandom(str) {
+        var str2='',ary=[];
+        for (var i = 0; i < 4; i++) {
+           var n= Math.round(Math.random()*61);
+            if(str2.indexOf(str[n])==-1){
+                str2 +=str[n];
+            }else {
+                i--;
+            }
+        }
+        return str2;
+    }
+
+ function getRandom1(str) {
+ var str2='',ary=[];
+ for (var i = 0; i < 4; i++) {
+ var n= Math.round(Math.random()*61);
+      if(ary.indexOf(n)==-1){
+        ary.push(n);// 若是数组里没有这一项 这说明该项是不重复的，我们可以直接用这个 随机数对应的字符 拼接 字符串，然后把这一项放到数组里边
+       str2 +=str[n];
+       }else {
+            i--;
+        }
+ }
+ return str2;
+ }
+
+     console.log(getRandom(str));
+    var oDiv=document.getElementById('div1');
+    var oDiv1=document.getElementById('div2');
+    oDiv.onclick=function () {
+        this.innerHTML=getRandom(str);
+    }
+     oDiv1.onclick=function () {
+         this.innerHTML=getRandom(str);
+     }
+             */
+
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    // 需求：给出任意类型的数，求出能被 3 和 5 整除的数的和
+    function summ() {
+        var total=0;
+        for( var i=0;i<arguments.length;i++){
+            if(!isNaN(arguments[i])&&(typeof arguments[i])=='number' )
+                if(arguments[i]%3==0&&arguments[i]%5==0){
+                    total+=arguments[i];
+                }
+        }
+        return total;
+    }
+    summ(NaN,'NaN',2,'33',3,6,15);
+    console.log( summ(NaN,'NaN',2,'33',3,6,15))
+
+</script>

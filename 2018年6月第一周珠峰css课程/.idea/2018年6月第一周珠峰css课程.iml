@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$USER_HOME$/Desktop/2018-7-22" />
+    <content url="file://$USER_HOME$/Desktop/pcSlide" />
+    <content url="file://$USER_HOME$/Desktop/排序" />
+    <content url="file://$USER_HOME$/Desktop/瀑布流" />
+    <content url="file://$USER_HOME$/Desktop/照片墙" />
+    <content url="file://$USER_HOME$/Desktop/轮播图" />
+    <content url="file://$USER_HOME$/Desktop/轮播图新" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/temp" />
+      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+    </content>
+    <content url="file://D:/拉勾网实战" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

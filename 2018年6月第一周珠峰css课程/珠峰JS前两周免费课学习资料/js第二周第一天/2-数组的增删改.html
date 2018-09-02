@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+  /*  // 数组的增加 1、push;2、unshift
+    var ary=[];
+    //ary[3]='aa';//数组前三项为 empty空
+
+    // 1、push()  在数组的末尾增加多项
+    // push(xx,xxx) 参数可以有很多个，参数的数据类型不限；返回值是改变后数组的长度；
+    console.log(ary);
+    var a= ary.push(1,'aa');
+    console.log(a);// 返回值是长度 2
+    ary[ary.length]='bbb';
+    console.log(ary);
+*/
+
+    //length;
+    //数组的索引 是 从 0  开始的；数组的最后一项的索引是 ary.length-1;
+    // ary[ary.length-1];//f
+    // ary[ary.length] = '123';
+    // ary[ary.length+1] = '123';
+    // ary[20] = '33'  empty
+    // console.log(ary);
+
+    /*
+     * ary = [1,2,3]
+     * length 3
+     * 最后一项的索引 2
+     * ary[ary.length]
+     * ary[3]
+     *
+     * ary[ary.length] = 9;
+     * ary[3] = 9;
+     *
+     * */
+
+
+    /*function myPush(ary,n) {
+        console.log(ary[ary.length]);
+        ary[ary.length] = n;
+        return ary.length;
+    }*/
+    // myPush(ary,'pppppp');
+    // console.log(ary);
+
+
+    //2、 unshift: 在数组的前面添加，返回值也是改变后的数组长度， 参数 可以是多个
+ /*   var ary2=[1,2,3,4];
+    ary2.unshift(55,66);
+    console.log(ary2);*/
+
+    // 3、pop 删除数组的最后一项；它的参数无，返回值是删除的那一项；
+     var ary3=[11,22,33];
+    /* var res3=ary3.pop();// 33
+    console.log(res3,ary3);//33   [11, 22] */
+
+   ary3.length=1;// 只留下1项
+  console.log(ary3);// 结果是11
+
+  /*  ary3.length=ary3.length-1;// 剩2项
+   //用length 删除最后一项
+    ary3.length -=1;
+    ary3.length --;*/
+
+    // 4 shift 删除数组中的第一项； 参数 无； 返回值是删除的那一项的内容 ；
+     /*var ary4=[111,222,333];
+     res4=ary4.shift();
+    console.log(res4, ary4);//结果：111  [222,333]
+*/
+
+  // 5、splice（n,m,x,y,z,...）   从索引为n的地方开始，删除m个元素，用x,y,z...替换之前的元素，返回值是 删除的m项的组成的新数组；原有数组改变
+
+  var ary5=[12,13,14];
+    /* var res5=ary5.splice(1,1,55,66,77);
+    console.log(res,ary5);// [13]  [12,55,66,77,14]*/
+
+    /*var arry5_1=ary5.splice(1,0,55,22);
+    console.log(arry5_1,ary5); // 空数组[]   [12, 55, 22, 13, 14] 在索引为n的前面插入
+    var arry5_2=ary5.splice();// 返回空
+    var arry5_3=ary5.splice(0);// 返回之前的数组，原来数组为空*/
+
+    // splice 实现push
+    /* function myPush2(ary,n) {
+         // ary 要操作的数组
+         // n 需要添加的项
+           ary.splice(ary.length,0,n);
+         // 操作数组--》 在ary 的最后一项的后一项 删除0个；用n代替删除的 0个；也就是在最后一项的后边添加n;
+         return ary.length;
+         // 返回改变后的 数组长度
+     }
+   var res5_4=myPush2(ary5,99);
+     console.log(res5_4,ary5);*/
+
+   //  splice 实现 pop (删除最后一项)
+
+    function myPop(ary) {
+      /*  ary.splice(ary.length-1,1);
+        return ary.length;*/
+        var temp=null;
+        temp=ary.splice(ary.length-1,1);
+        return temp[0];
+
+    }
+    var res5_5=myPop(ary5);
+    console.log(res5_5,ary5);
+
+
+
+
+</script>

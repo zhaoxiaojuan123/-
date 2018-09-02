@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+
+<script>
+
+    /*
+    * 我们要用函数的原因
+    * 1、 节省代码
+    * 2、高内聚(把东西缩到一块，这一块就是为了实现某个功能，跟其他代码没有任何联系)低耦合（跟其他代码没关联）
+    * */
+    // 函数的语法
+    /* 1、function 函数名(){
+            函数体
+    }
+    *
+    * 2、 var 函数名 = function [函数名-可写可不写](){
+    *     函数体
+    * }
+    *
+    * 第一种声明的方式，我们在声明的代码之前调用这个函数
+    * 第二种声明方式， 我们只能在声明的代码之后调用
+    *
+    *函数声明之后，可以无限次调用
+    * return  //返回的意思
+    *
+    * */
+    clearRoom() //函数的调用和执行   函数名（）
+
+    function clearRoom() {
+        console.log('擦桌子');
+    }
+    clearRoom();
+
+
+   // clearPer();// 会报错
+    var clearPer=function () {
+       console.log('出门');
+    };
+    clearPer(); // var 类型的函数只能在声明函数之后调用
+//    ---------------------------------------
+
+    var clearPer=function () {
+        console.log('出门');
+        return 'www'; // return 什么 那函数执行完 返给外界的就是啥
+    };
+    var  a=clearPer();// 把函数执行的结果赋值给 a
+    console.log(a) ;
+
+
+
+
+
+</script>

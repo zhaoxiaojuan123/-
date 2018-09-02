@@ -1,0 +1,1188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9197f448-4064-4f59-bf48-476f8b4fe530" name="Default" comment="" />
+    <ignored path="2018年6月第一周珠峰css课程.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="2018年6月第一周珠峰css课程" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="76" column="27" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="27" />
+              <folding>
+                <element signature="n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#header#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#ul#0;n#div#0;n#header#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#a#0;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#a#0;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#a#1;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#1;n#a#1;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#a#2;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#a#2;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#a#2;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#5108#5254#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/less/index.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="183" column="10" selection-start-line="183" selection-start-column="10" selection-end-line="183" selection-end-column="10" />
+              <folding>
+                <element signature="e#138#951#0" expanded="false" />
+                <element signature="e#250#617#0" expanded="false" />
+                <element signature="e#960#2772#0" expanded="false" />
+                <element signature="e#1089#1743#0" expanded="false" />
+                <element signature="e#1613#1680#0" expanded="false" />
+                <element signature="e#1701#1737#0" expanded="false" />
+                <element signature="e#1771#2050#0" expanded="false" />
+                <element signature="e#2078#2421#0" expanded="false" />
+                <element signature="e#2449#2766#0" expanded="false" />
+                <element signature="e#2830#3525#0" expanded="false" />
+                <element signature="e#2894#3321#0" expanded="false" />
+                <element signature="e#3334#3521#0" expanded="false" />
+                <element signature="e#3536#4778#0" expanded="false" />
+                <element signature="e#3872#4079#0" expanded="false" />
+                <element signature="e#4251#4774#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/js/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#48#0" expanded="false" />
+                <element signature="n#!!block;n#bannerFn#0" expanded="false" />
+                <element signature="e#681#692#0" expanded="false" />
+                <element signature="n#!!block;n#giveHtml#0" expanded="false" />
+                <element signature="e#1431#1642#0" expanded="false" />
+                <marker date="1535876447229" expanded="true" signature="1125:1293" ph="..." />
+                <marker date="1535876447229" expanded="true" signature="1159:1288" ph="..." />
+                <marker date="1535876447229" expanded="false" signature="2378:2720" ph="..." />
+                <marker date="1535876447229" expanded="true" signature="2413:2434" ph="..." />
+                <marker date="1535876447229" expanded="true" signature="2413:2707" ph="..." />
+                <marker date="1535876447229" expanded="true" signature="2492:2688" ph="..." />
+                <marker date="1535876447229" expanded="true" signature="2526:2665" ph="..." />
+                <marker date="1535876447229" expanded="false" signature="2799:3242" ph="..." />
+                <marker date="1535876447229" expanded="true" signature="2833:2899" ph="..." />
+                <marker date="1535876447229" expanded="true" signature="2934:3229" ph="..." />
+                <marker date="1535876447229" expanded="true" signature="3013:3209" ph="..." />
+                <marker date="1535876447229" expanded="true" signature="3047:3186" ph="..." />
+                <marker date="1535876447229" expanded="false" signature="3338:3887" ph="..." />
+                <marker date="1535876447229" expanded="true" signature="3407:3660" ph="..." />
+                <marker date="1535876447229" expanded="true" signature="3429:3485" ph="..." />
+                <marker date="1535876447229" expanded="true" signature="3507:3563" ph="..." />
+                <marker date="1535876447229" expanded="true" signature="3585:3641" ph="..." />
+                <marker date="1535876447229" expanded="true" signature="3698:3874" ph="..." />
+                <marker date="1535876447229" expanded="true" signature="3728:3855" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/data/list.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-613">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="package_json" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="Less File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/less/2.less.js" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/1.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/less/1.less" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/2-less.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/less/2.less" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/3-less.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/css/3.css" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/less/3.less" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/4-less.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/4-less.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/css/4.css" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/less/4.less" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/测试贪吃蛇.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/7-transition.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/8-transform.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第五天/照片墙测试/indextest.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第五天/老师上课课件/照片墙/js/event.js" />
+        <option value="$USER_HOME$/Desktop/照片墙/images/js/drag.js" />
+        <option value="$USER_HOME$/Desktop/照片墙/images/js/event.js" />
+        <option value="$USER_HOME$/Desktop/照片墙/js/event.js" />
+        <option value="$USER_HOME$/Desktop/照片墙/js/drag.js" />
+        <option value="$USER_HOME$/Desktop/照片墙/index.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第二天/2D变换案例.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第二天/4-H5移动端开发.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第二天/6-响应式开发.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第二天/5-rem.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/border-radius.html" />
+        <option value="D:/拉勾网实战/拉勾网实战/css/index.css" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/1-媒体查询.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/2-交互简历.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/交互简历/less/index.less" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/测试flex.html" />
+        <option value="D:/拉勾网实战/拉勾网实战/index.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第四天/测试放大镜.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第一天/6-放大镜.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第二天/3D案例.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第四天/css3选择器.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第四天/1-复习less.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第四天/cookie.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/交互简历/index.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/交互简历/js/index.js" />
+        <option value="D:/拉勾网实战/拉勾网实战/js/zxj-js.js" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/5-less总结.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第二天/3-h5标签.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第二天/3-事件委托.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/6-css选择器.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/data/banner.json" />
+        <option value="D:/拉勾网实战/拉勾网实战/index.less" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/index.html" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/less/index.less" />
+        <option value="$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/js/index.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="拉勾网实战" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="拉勾网实战" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课学习资料" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课学习资料" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课第六周" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课学习资料" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课第六周" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课第六周第三天" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课学习资料" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课第六周" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课第六周第三天" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sina" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课学习资料" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课第六周" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课第六周第三天" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sina" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="less" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课学习资料" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课第六周" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课第六周第三天" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sina" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2018年6月第一周珠峰css课程" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课学习资料" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课第六周" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS正式课第六周第三天" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sina" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="D:/拉勾网实战" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="list.type.of.created.stylesheet" value="Less" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/2018年6月第一周珠峰css课程/JS正式课学习资料/JS正式课第二周第三天/huawei/huawei.html" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\2018年6月第一周珠峰css课程\JS正式课学习资料\JS正式课第六周\JS正式课第六周第三天\sina" />
+      <recent name="D:\2018年6月第一周珠峰css课程\JS正式课学习资料\JS正式课第六周\JS正式课第六周第四天\less" />
+      <recent name="D:\2018年6月第一周珠峰css课程\JS正式课学习资料\JS正式课第六周\JS正式课第六周第三天\交互简历\js" />
+      <recent name="D:\2018年6月第一周珠峰css课程\JS正式课学习资料\JS正式课第六周\JS正式课第六周第三天\js" />
+      <recent name="D:\2018年6月第一周珠峰css课程\JS正式课学习资料\JS正式课第六周\JS正式课第六周第三天" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\2018年6月第一周珠峰css课程\JS正式课学习资料\JS正式课第六周\JS正式课第六周第三天\sina\less" />
+      <recent name="D:\2018年6月第一周珠峰css课程\JS正式课学习资料\JS正式课第六周\JS正式课第六周第三天\sina\js" />
+      <recent name="D:\2018年6月第一周珠峰css课程\JS正式课学习资料\JS正式课第六周\JS正式课第六周第三天\sina\css" />
+      <recent name="D:\2018年6月第一周珠峰css课程\JS正式课学习资料\JS正式课第六周\JS正式课第六周第三天\sina" />
+      <recent name="D:\拉勾网实战\拉勾网实战\images" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.8-盒子模型.html">
+    <configuration default="false" name="8-盒子模型.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/2018年6月第一周珠峰css课程/JS正式课学习资料/js正式课第三周/js正式课第三周第二天/8-盒子模型.html">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.8-盒子模型.html" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.8-盒子模型.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9197f448-4064-4f59-bf48-476f8b4fe530" name="Default" comment="" />
+      <created>1532257357841</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1532257357841</updated>
+      <workItem from="1532257359183" duration="6270000" />
+      <workItem from="1532397620791" duration="597000" />
+      <workItem from="1532480161905" duration="13888000" />
+      <workItem from="1532498570045" duration="14626000" />
+      <workItem from="1532569357606" duration="32263000" />
+      <workItem from="1532653258662" duration="32239000" />
+      <workItem from="1532739991100" duration="33840000" />
+      <workItem from="1532826395510" duration="31536000" />
+      <workItem from="1532937057775" duration="2405000" />
+      <workItem from="1532998659885" duration="31954000" />
+      <workItem from="1533086260622" duration="36076000" />
+      <workItem from="1533172303717" duration="39400000" />
+      <workItem from="1533278390124" duration="5921000" />
+      <workItem from="1533344145212" duration="35981000" />
+      <workItem from="1533430587231" duration="40087000" />
+      <workItem from="1533548930654" duration="2590000" />
+      <workItem from="1533602756896" duration="42122000" />
+      <workItem from="1533690818424" duration="38078000" />
+      <workItem from="1533775937692" duration="40195000" />
+      <workItem from="1533949412645" duration="39461000" />
+      <workItem from="1534036152593" duration="33873000" />
+      <workItem from="1534149908387" duration="14324000" />
+      <workItem from="1534207464226" duration="39299000" />
+      <workItem from="1534294776848" duration="11799000" />
+      <workItem from="1534306676846" duration="25592000" />
+      <workItem from="1534381793129" duration="30046000" />
+      <workItem from="1534490743726" duration="10472000" />
+      <workItem from="1534554341222" duration="38773000" />
+      <workItem from="1534639961178" duration="39129000" />
+      <workItem from="1534813018121" duration="39819000" />
+      <workItem from="1534899363799" duration="38414000" />
+      <workItem from="1534985514750" duration="39667000" />
+      <workItem from="1535095884819" duration="1239000" />
+      <workItem from="1535158110892" duration="37319000" />
+      <workItem from="1535244715448" duration="37525000" />
+      <workItem from="1535357374940" duration="6929000" />
+      <workItem from="1535417513031" duration="38484000" />
+      <workItem from="1535503057952" duration="38192000" />
+      <workItem from="1535589808856" duration="42996000" />
+      <workItem from="1535697546647" duration="14628000" />
+      <workItem from="1535764713535" duration="36608000" />
+      <workItem from="1535850065902" duration="21035000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1155691000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20204978" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20204978" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/JS正式课学习资料/js正式课第三周/JS正式课第三周第四天/utils.js</url>
+          <line>26</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="12" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第四天/老师上课课件/11-JQ放大镜.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1863">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第四天/测试放大镜.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138">
+          <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第四天/9-放大镜.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第一天/6-放大镜.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第四天/8-鼠标跟随.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-678">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第五天/老师上课课件/6发布订阅的拖拽.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-483">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第五天/老师上课课件/3发布订阅.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第五天/老师上课课件/4元素+发布订阅.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-231">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第五天/老师上课课件/5深度发布订阅.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-207">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第五天/老师上课课件/js/event.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第五天/老师上课课件/7原生拖拽.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第四天/4-DOM2级绑定事件.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第五天/老师上课课件/1拖拽.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="94" column="9" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第五天/老师上课课件/2面向对象拖拽.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/拉勾网实战/拉勾网实战/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="781">
+          <caret line="74" column="19" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第二天/3D案例.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="62" column="43" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第四天/less/less.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第四天/cookie.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第四天/css3选择器.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第四天/1-复习less.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/交互简历/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="200" column="49" selection-start-line="200" selection-start-column="49" selection-end-line="200" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/交互简历/less/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="130" column="22" selection-start-line="130" selection-start-column="22" selection-end-line="130" selection-end-column="22" />
+          <folding>
+            <element signature="e#270#993#0" expanded="false" />
+            <element signature="e#364#547#0" expanded="false" />
+            <element signature="e#559#991#0" expanded="false" />
+            <element signature="e#1010#2369#0" expanded="false" />
+            <element signature="e#1134#1431#0" expanded="false" />
+            <element signature="e#1330#1362#0" expanded="false" />
+            <element signature="e#1369#1427#0" expanded="false" />
+            <element signature="e#1445#1902#0" expanded="false" />
+            <element signature="e#1685#1897#0" expanded="false" />
+            <element signature="e#2219#2363#0" expanded="false" />
+            <element signature="e#2436#4043#0" expanded="false" />
+            <element signature="e#2511#3443#0" expanded="false" />
+            <element signature="e#2627#3435#0" expanded="false" />
+            <element signature="e#2941#3106#0" expanded="false" />
+            <element signature="e#3124#3427#0" expanded="false" />
+            <element signature="e#3454#4039#0" expanded="false" />
+            <element signature="e#3465#4033#0" expanded="false" />
+            <element signature="e#3626#3683#0" expanded="false" />
+            <element signature="e#3701#4025#0" expanded="false" />
+            <element signature="e#4713#4850#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/交互简历/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="135" column="62" selection-start-line="135" selection-start-column="62" selection-end-line="135" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/js/flexible.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/js/zepto.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/js/zepto.min (1).js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/less/font.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/css/font.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/拉勾网实战/拉勾网实战/js/zxj-js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="97" column="26" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第三天/3-发布订阅2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-276">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第三天/5-拖拽+发布订阅.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第二天/3-h5标签.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第二天/3-事件委托.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第五周/JS正式课第五周第二天/4-树形菜单.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="122" column="50" selection-start-line="122" selection-start-column="50" selection-end-line="122" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/3-less.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-139">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/2-less.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-185">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/js/less.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/css/1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/less/1.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/4-less.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/6-css选择器.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="851">
+          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/5-less总结.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/7-transition.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/data/banner.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第一天/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/拉勾网实战/拉勾网实战/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="142" column="18" selection-start-line="142" selection-start-column="18" selection-end-line="142" selection-end-column="18" />
+          <folding>
+            <element signature="e#1064#2431#0" expanded="false" />
+            <element signature="e#1213#1469#0" expanded="false" />
+            <element signature="e#2457#2480#0" expanded="false" />
+            <element signature="e#2905#11772#0" expanded="false" />
+            <element signature="e#4449#5103#0" expanded="false" />
+            <element signature="e#4531#4691#0" expanded="false" />
+            <element signature="e#4705#5093#0" expanded="false" />
+            <element signature="e#5453#5732#0" expanded="false" />
+            <element signature="e#5746#6112#0" expanded="false" />
+            <element signature="e#6149#6455#0" expanded="false" />
+            <element signature="e#6232#6390#0" expanded="false" />
+            <element signature="e#6576#7350#0" expanded="false" />
+            <element signature="e#6695#6983#0" expanded="false" />
+            <element signature="e#7381#7679#0" expanded="false" />
+            <element signature="e#7702#8118#0" expanded="false" />
+            <element signature="e#7819#8106#0" expanded="false" />
+            <element signature="e#8147#8384#0" expanded="false" />
+            <element signature="e#8429#9272#0" expanded="false" />
+            <element signature="e#8570#9187#0" expanded="false" />
+            <element signature="e#9293#11766#0" expanded="false" />
+            <element signature="e#9522#11625#0" expanded="false" />
+            <element signature="e#9800#9939#0" expanded="false" />
+            <element signature="e#10462#11352#0" expanded="false" />
+            <element signature="e#10638#10947#0" expanded="false" />
+            <element signature="e#10959#11342#0" expanded="false" />
+            <element signature="e#11379#11617#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/拉勾网实战/拉勾网实战/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+          <folding>
+            <element signature="n#dd#0;n#dl#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#a#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#span#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#a#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/less/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="183" column="10" selection-start-line="183" selection-start-column="10" selection-end-line="183" selection-end-column="10" />
+          <folding>
+            <element signature="e#138#951#0" expanded="false" />
+            <element signature="e#250#617#0" expanded="false" />
+            <element signature="e#960#2772#0" expanded="false" />
+            <element signature="e#1089#1743#0" expanded="false" />
+            <element signature="e#1613#1680#0" expanded="false" />
+            <element signature="e#1701#1737#0" expanded="false" />
+            <element signature="e#1771#2050#0" expanded="false" />
+            <element signature="e#2078#2421#0" expanded="false" />
+            <element signature="e#2449#2766#0" expanded="false" />
+            <element signature="e#2830#3525#0" expanded="false" />
+            <element signature="e#2894#3321#0" expanded="false" />
+            <element signature="e#3334#3521#0" expanded="false" />
+            <element signature="e#3536#4778#0" expanded="false" />
+            <element signature="e#3872#4079#0" expanded="false" />
+            <element signature="e#4251#4774#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/data/list.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-613">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="76" column="27" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="27" />
+          <folding>
+            <element signature="n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#header#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#ul#0;n#div#0;n#header#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#a#0;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#a#0;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#a#1;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#a#1;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#a#2;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#a#2;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#a#2;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#5108#5254#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS正式课学习资料/JS正式课第六周/JS正式课第六周第三天/sina/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+            <element signature="n#!!block;n#bannerFn#0" expanded="false" />
+            <element signature="e#681#692#0" expanded="false" />
+            <element signature="n#!!block;n#giveHtml#0" expanded="false" />
+            <element signature="e#1431#1642#0" expanded="false" />
+            <marker date="1535876447229" expanded="true" signature="1125:1293" ph="..." />
+            <marker date="1535876447229" expanded="true" signature="1159:1288" ph="..." />
+            <marker date="1535876447229" expanded="false" signature="2378:2720" ph="..." />
+            <marker date="1535876447229" expanded="true" signature="2413:2434" ph="..." />
+            <marker date="1535876447229" expanded="true" signature="2413:2707" ph="..." />
+            <marker date="1535876447229" expanded="true" signature="2492:2688" ph="..." />
+            <marker date="1535876447229" expanded="true" signature="2526:2665" ph="..." />
+            <marker date="1535876447229" expanded="false" signature="2799:3242" ph="..." />
+            <marker date="1535876447229" expanded="true" signature="2833:2899" ph="..." />
+            <marker date="1535876447229" expanded="true" signature="2934:3229" ph="..." />
+            <marker date="1535876447229" expanded="true" signature="3013:3209" ph="..." />
+            <marker date="1535876447229" expanded="true" signature="3047:3186" ph="..." />
+            <marker date="1535876447229" expanded="false" signature="3338:3887" ph="..." />
+            <marker date="1535876447229" expanded="true" signature="3407:3660" ph="..." />
+            <marker date="1535876447229" expanded="true" signature="3429:3485" ph="..." />
+            <marker date="1535876447229" expanded="true" signature="3507:3563" ph="..." />
+            <marker date="1535876447229" expanded="true" signature="3585:3641" ph="..." />
+            <marker date="1535876447229" expanded="true" signature="3698:3874" ph="..." />
+            <marker date="1535876447229" expanded="true" signature="3728:3855" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

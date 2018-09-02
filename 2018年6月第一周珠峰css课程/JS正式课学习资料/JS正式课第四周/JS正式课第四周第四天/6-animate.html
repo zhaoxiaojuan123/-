@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #div1,#div2{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            left: 100px;
+            border-radius: 50%;
+            background-color: coral;
+            border: 1px dashed greenyellow;
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+
+</body>
+</html>
+<script src="js/utils.js"></script>
+<script>
+    var oDiv=document.getElementById('div1');
+    var oDiv2=document.getElementById('div2');
+    (function () {
+        var moveTypeObj={
+            linear:linear,
+            easeIn: easeIn
+        };
+        function move(ele,obj,duration,moveType) {
+            moveType=moveType||linear;
+            var beginL={};
+            var changL={};
+            for(var k in obj){
+                if(obj.hasOwnProperty(k)){
+                    beginL[k]=utils.css(ele,k);
+                    changL[k]=obj[k]-beginL[k];
+                }
+            }
+            var time=0;
+            clearInterval(ele.timer);
+            // 给元素加一个自定义属性timer
+            ele.timer=window.setInterval(function () {
+                time+=20;
+                if(time>=duration){
+                    clearInterval(ele.timer);
+                    time=duration;
+                }
+                for(var k in obj){
+                    if(obj.hasOwnProperty(k)){
+                        var curPos=moveTypeObj[moveType]( beginL[k],changL[k],time,duration);
+                        utils.setCss(ele,k,curPos);
+                    }
+                }
+            },20)
+        }
+        function linear(beginL,changL,time,duration) {
+            return changL/duration*time+beginL;
+        }
+         function easeIn(b,c,t,d,) {
+            return -c * (Math.sqrt(1 - (t /= d) * t) - 1) + b;
+        }
+        window.myAnimate=move;
+    })();
+    myAnimate(oDiv,{left:300,top:300,opacity:0.5},2000,'linear');
+    myAnimate(oDiv2,{left:600,top:100,},2000,'easeIn')
+
+
+</script>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+var ary=[1,1,2,1,5,4];
+
+// ary.length-1:最后一项的后面没有内容了，我们不需要再比较
+/*for (var i = 0; i < ary.length-1; i++) {
+        var cur=ary[i];// 当前遍历的这一项（索引i）
+    //把拿出的这一项和后面的每一项进行比较
+    // i+1 ; 把当前项和它后面项比较，当前项索引是i ，后一项索引是i+1
+    for (var j = i+1; j < ary.length; j++) {
+      //  ary[j]: 作比较的那一项
+        if(cur==ary[j]){
+             // 本次作比较的这一项和当前项相同，我们需要在原有的数组中把作比较得到这一项删除掉（作比较这一项的索引是j）
+            ary.splice(j,1);// 删除相同项
+        }
+
+    }
+}
+
+console.log(ary)// 结果：[1, 2, 2, 3, 5, 4]   没有完全去重，因为删除后后面的项会补全前面那一位，会略过后面那一项，这叫数组塌陷问题*/
+// 数组塌陷问题： 我们使用splice 删除数组中的某一项，删除这一项后面的每一项都要向前进一位（在原有索引上减一），此时如果我们j++,循环操作的值累加了，我么通过最新j获取的元素不是紧挨删除这一项的元素，而是跳过一项获取的元素
+
+/*for (var i = 0; i < ary.length-1; i++) {
+    var cur=ary[i];
+    for (var j = i+1; j < ary.length; j++) {
+        if(cur==ary[j]){
+            ary.splice(j,1);// 删除相同项
+
+          /!*  j--;// =》方法1：先让j-- ,相当于没加没减，此时还是原有索引，再获取的时候就是删除这一项后面紧挨着这一项*!/
+        }
+
+    }
+}*/
+// 方法二：else 中j++
+
+/*for (var i = 0; i < ary.length-1; i++) {
+    var cur=ary[i];
+    for (var j = i+1; j < ary.length;) {
+       /!* if(cur==ary[j]){
+            ary.splice(j,1);// 删除相同项,这时不j++
+        }else {
+            j++; //没删除的时候我在j++
+        }*!/
+        cur==ary[j]?ary.splice(j,1):j++;
+    }
+}
+
+console.log(ary);//结果：[1, 2, 3, 5, 4]*/
+
+//方法：利用indexOf
+/*for (var i = 0; i < ary.length; i++) {
+    var cur=ary[i];// 当前项
+    var curNextAry=ary.slice(i+1);//把当前项后面的那些值以一个新数组返回，我们需要比较的就是后面的这些项对应的新数组
+    if(curNextAry.indexOf(cur)>-1){
+        // 后面项组成的数组中包含当前项（当前这一项是重复的，我们把当前这一项删除掉即可）
+        ary.splice(i,1);
+        i--;
+    }
+
+}
+console.log(ary);*/
+
+</script>

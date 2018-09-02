@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        #div1{
+            width: 200px;
+            height: 50px;
+            border: 20px solid rgba(0,0,0,0.5);
+            padding: 20px;
+            background: url("images/pic1.png") no-repeat;
+            background-origin: border-box;
+            background-clip: content-box;
+          /*  background: linear-gradient(45deg,red,green,blue);*/
+           box-shadow: 10px 0 5px 0px #ccc; /*盒子阴影*/
+        }
+    </style>
+</head>
+<body>
+ <div id="div1"></div>
+
+</body>
+</html>
+<script>
+    var oDiv=document.getElementById('div1');
+    oDiv.innerHTML='这是测试';
+
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<div id="div1">获取DOM元素的方法</div>
+<div class="div2">珠峰培训</div>
+<div class="div2">zhufeng</div>
+<div class="div3">zhuzhuzuhzhzu</div>
+<p id="div2" class="box">珠峰</p>
+
+</body>
+</html>
+<script>
+    /*console.log(document.getElementById("div1"));
+    console.log(div1);
+    console.log(document.getElementsByClassName('div2')[0])*/;//通过索引获取对应的元素 咱们用中括号[]来获取
+    document.getElementsByClassName('div2')[0].onclick =function () {
+        alert('培训');
+    }
+    console.log(document.getElementsByTagName('div'));
+    console.log(document.getElementsByTagName('p')[0].id);/*获取*/
+    console.log(document.getElementsByTagName('p')[0].classNames);
+    console.log(document.getElementsByTagName('p')[0].className ='zhufeng');/*给一个类名改名字*/
+    document.getElementById('div1').zhufeng='珠峰培训';// zhufeng 是我们自定义属性
+    console.dir(document.getElementById('div1'));
+    /*###获取DOM的方法
+     get:获取 拿到
+     Element：元素
+     By：通过
+     Id： id名
+     1、 通过ID获取元素时，只能拿到第一个ID名，假如没有这个ID名字时，我们拿到的是null.
+     2、 通过类名(或标签名)获取的是一组元素，要想拿到该组里面的某一项时，我们要用索引获取 (没有这个类名我们是一个空集合)
+       通过索引获取对应的元素 咱们用中括号[]来获取 中括号里边是对应的索引
+     3、通过标签名
+    > document.getElementById('元素的id')
+    > document.getElementsByClassName('元素的类（class）名')
+    > document.getElementsByTagName('元素的标签名（div、span、a...）')
+
+   ###点（.） 在JS中表示从属关系
+   class id style...它都是元素固有属性
+   zhufeng:咱们自己给元素增加的属性，这种叫自定义属性
+    * */
+
+</script>

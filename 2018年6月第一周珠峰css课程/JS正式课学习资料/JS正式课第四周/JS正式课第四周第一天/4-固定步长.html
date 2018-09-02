@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+   <style>
+       *{
+           margin: 0;
+           padding: 0;
+       }
+       #div1{
+           width: 100px;
+           height: 100px;
+           background: #ee2ad6;
+           position: relative;
+           left: 0;
+       }
+   </style>
+</head>
+<body>
+  <div id="div1">固定步长</div>
+
+</body>
+</html>
+<script src="js/utils.js"></script>
+<script>
+    /*
+    * 固定步长的运动
+    * 每次移动相同的距离
+    * */
+    var oDiv=document.getElementById('div1');
+    // 每次移动一个像素
+    var tarL=document.documentElement.clientWidth-oDiv.offsetWidth;// 目标距离= 一屏的宽度-盒子的宽度
+    var l=0;// 开始的运动长度是0
+    var timer=window.setInterval(function () {
+      l+=10;
+        if(l>tarL){
+            clearInterval(timer);
+            l=tarL;
+        }
+      utils.css(oDiv,'left',l);
+    },20)
+
+
+</script>

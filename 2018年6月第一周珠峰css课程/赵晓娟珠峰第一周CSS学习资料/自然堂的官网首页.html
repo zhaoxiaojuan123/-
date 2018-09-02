@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* 通配符选择器：代表页面上所有的标签 一般用来去掉浏览器默认值自带的间距 margin:8px(谷歌自带)外间距*/
+        *{
+            margin: 0;   /*外边距*/
+            padding: 0; /*内边距*/
+        }
+        div{
+            width: 33.33%;
+            height: 33.33%;
+            float: left;   /*左浮动 让元素在一行显示*/
+            background-color: black;
+        }
+        img{
+        /*宽高根据div父元素来定*/
+            /*注释的快捷键是ctrl+shift+/ */
+            display: block;/*去掉img默认自带的下边距*/
+            width: 100%;
+            height: 100%;
+        }
+        body,html{
+            /*整个页面是个单屏的效果不会出现滚动条*/
+            width: 100%;
+            height: 100%;
+        }
+        video{
+            /*宽高根据div父元素来定*/
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div><img src="images/动图1.gif" alt=""></div>
+<div><img src="images/动图2.gif" alt=""></div>
+<div><img src="images/动图3.gif" alt=""></div>
+<div><img src="images/动图4.gif" alt=""></div>
+<div><video src="video/index_b.mp4" controls></video></div>
+<div><img src="images/动图6.gif" alt=""></div>
+<div><img src="images/动图7.gif" alt=""></div>
+<div><img src="images/动图8.gif" alt=""></div>
+<div><img src="images/动图8.gif" alt=""></div>
+</body>
+</html>

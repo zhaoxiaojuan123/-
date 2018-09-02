@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    /*
+    * 类                       实例
+    * 人类                     张三 李四
+    * Array （数组类）         []  [1,2] 每一个数组都是它的一个实例
+    * Object（对象类）         {}  {name:'小红'} 每一个普通对象都是它的一个实例
+    * Function （函数类）      每一个函数都是它的一个实例
+    * String（字符串类）       每一个普通字符串都是它的一个实例
+    * ...
+    * 内置类
+    * */
+    /*
+    * 构造函数模式： 就是一个普通函数，只是通过 new 去执行
+    * */
+    function Person(name,age) {
+        var sex='男';
+        this.name=name;
+        this.age=age;
+    }
+   var per=Person('小红',11);// undefined
+    // 普通函数执行过程
+    //1、开辟一个私有作用域
+    //2、形参赋值，变量提升
+    //3、代码从上至下执行
+    //4、若有return 则直接返回 return的内容，若无return 则默认返回undefined
+    var per2=new Person('小明',11);// {name:小明,age:11}
+    var per3=new Person('小明',11);
+    console.log(per2==per3)// false
+    // Person 是per2的所属类； per2是Person 类的实例
+    // 通过new 执行的函数，我们把这个函数称为一个自定义类，把new 执行返回的结果称为自定义类的一个实例
+    // 通过new 执行一个函数时的过程
+    // 1、开辟一个私有作用域
+    // 2、形参赋值，变量提升
+    // 3、开辟一个堆内存；然后把函数中的this 指向开辟的这个堆内存；
+    // 4、代码从上至下执行
+    // 5、若没有return 则默认把刚才创建的堆内存地址返回；
+    //    若有 但是是个值类型，则依然返回创建的堆内存地址；
+    //    若手动return一个引用数据类型，则会把默认的return改成手写的这个 引用数据类型的地址；
+   var ary=new Array(1,2,3,4);
+    // Array 是ary 的所属类； ary 是Array 类的一个实例；Array也是一个构造函数
+
+</script>

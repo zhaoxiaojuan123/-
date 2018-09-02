@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        .div3{
+            width: 400px;
+            height: 400px;
+        }
+        .div3 img{
+            width: 100%;
+            height: 100%;
+            transition: all 1s;
+        }
+        .div3:hover img{
+           /* transform: skew(45deg,45deg);*/ /*倾斜*/
+            /*transform: scale(0.5);*//*图片缩放*/
+           /* transform: translate(100px, 200px);*/
+            animation: move 4s ease ;
+        }
+        @keyframes move {
+            0%{transform: translate(0,0)}
+            50%{transform: translate(300px,300px)}
+            100%{transform: translate(0,0)}
+        }
+    </style>
+</head>
+<body>
+<div class="div3">
+    <img src="http://pic-bucket.nosdn.127.net/photo/0001/2018-08-27/DQ6H24UT00AP0001NOS.jpg" alt="">
+</div>
+
+
+</body>
+</html>

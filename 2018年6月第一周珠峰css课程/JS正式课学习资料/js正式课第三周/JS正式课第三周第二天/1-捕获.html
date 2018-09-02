@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    var reg1=/\d+/g;
+    // reg1.lastIndex-->记录上次查找结果的索引，也就是下一次开始查找的索引
+
+    // 通过一个方法一次性把所有都拿到
+    RegExp.prototype.execAll=function (str) {
+        var temp;
+        if(!this.global){ // 判断是否缺少全局修饰符，若缺少的话直接返回匹配的第一个字符或字符串；然后加上自己的错误信息
+            temp=this.exec(str)||{};
+            temp.errorMsg="缺少全局修饰符g";
+           /* var reg3=eval(this+'g');
+            console.dir(reg3)*/
+            return temp
+        }
+        var ary=[]; // 存储每次捕获到的字符或字符串
+        temp=this.exec(str);// 使用exec 捕获第一次字符或字符串
+        while (temp){ // 持续捕获后续的字符或字符串
+            ary.push(temp);
+            temp=this.exec(str);
+        }
+        return ary;
+    };
+    var reg2=/\d+/;
+    var str='12zhufeg12';
+    console.log(reg2.execAll(str));
+    var reg3=/\d+/g;
+    console.log(reg3.execAll(str))
+
+</script>

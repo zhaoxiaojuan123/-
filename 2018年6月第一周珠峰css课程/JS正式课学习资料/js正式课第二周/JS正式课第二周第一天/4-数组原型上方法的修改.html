@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+
+    /*
+    * JS中所有的数据类型，他们的原型链终点站就是Object.prototype;
+    * 也就是说Object.prototype 上的方法；所有数据类型都能使用
+    * */
+  /*  var myPush=function (ary,n) {
+        ary[ary.length]=n;
+    };
+    var ary=[1,2,3];
+    myPush(ary,10);//ary=[1,2,3,10]*/
+
+
+    var myPush=function (n) {
+        // 怎么拿到这个数组-->通过this 可以获取到 要操纵的数组
+        this[this.length]=n;
+        return this.length;
+    };
+    Array.prototype.myPush=myPush;
+     var ary=[1,2,3];
+    console.log(ary.myPush(10),ary);
+//-------------------------------------------------------
+    var myPush2=function (n) {
+        // 怎么拿到这个数组-->通过this 可以获取到 要操纵的数组
+        for (var i = 0; i < arguments.length; i++) {
+            this[this.length]=arguments[i];
+        }
+        return this.length;
+    };
+    Array.prototype.myPush2=myPush2;
+    var ary2=[1,2,3];
+    console.log(ary2.myPush2(10,20),ary2);//6  [1, 2, 3, 10, 20]
+//-----------------------------------------------------------------------------
+   /* var push=function (n) {
+        // 怎么拿到这个数组-->通过this 可以获取到 要操纵的数组
+        for (var i = 0; i < arguments.length; i++) {
+            this[this.length]=arguments[i];
+        }
+        return this.length; //返回改变后原数组的长度
+    };
+    Array.prototype.push=push;//上面写好的push 函数，已经将原型上的push覆盖了
+    var ary2=[1,2,3];
+    console.log(ary2.push(10,20,11),ary2);//6  [1, 2, 3, 10, 20, 11]
+*/
+    /*
+    * instanceof  查看数据类型
+    * */
+    var ary=[];
+    var obj={};
+    console.log(obj instanceof Array);// false
+    console.log(ary instanceof Array);// true
+    console.log(ary instanceof Object);// true
+    console.log(/dd/ instanceof Object);// true
+    // 查看这个变量的类型 在不在   对应的原型链上
+    /*
+    * hasOwnProperty ： 查看某属性 是否是私有的
+    * */
+    function Person() {
+        this.name='';
+        this.age='';
+
+    }
+    Person.prototype.getName=function(){
+        console.log(this.name);
+    };
+     var per1=new Person();
+    console.log(per1.hasOwnProperty('name'));
+    console.log(per1.hasOwnProperty('getName'));
+
+    /*
+    * in 属性 是否属于 某个对象
+    * 不区分 私有属性 或者 共有属性
+    * 可以调用到的 方法 或者 属性 用 in 判断都是true
+    * */
+    console.log('getName' in per1);// true
+    console.log('toString' in per1);// true
+    /*
+    * 写一个  判断某个方法或者属性 是否是共有属性或者方法
+    * */
+
+   // per1.hasPublicProperty('getName');// true
+   // per1.hasOwnProperty('getName');// false
+   // per1.hasOwnProperty('name');// true
+    /*
+    * 基类--> Object类
+    * */
+
+    var hasPublicProperty=function (str) {
+        if(str in this && !this.hasOwnProperty(str)){
+            return true;
+        }
+        return false
+    };
+    Object.prototype.hasPublicProperty=hasPublicProperty;
+    console.log(hasPublicProperty('name'));// false
+    console.log(hasPublicProperty('getName'));// true
+
+    //-----------------------------------------------------
+
+
+    function Fn() {
+        this.x = 100;
+        this.y = 200;
+        this.getX = function () {
+            console.log(this.x);
+        }
+    }
+    // 把Fn 的prototype  指向 手动修改成下边的对象
+    Fn.prototype = {
+        y: 400,
+        getX: function () {
+            console.log(this.x);
+        },
+        getY: function () {
+            console.log(this.y);
+        },
+        sum: function () {
+            console.log(this.x + this.y);
+        }
+    };
+    var f1 = new Fn;
+    var f2 = new Fn;
+    console.log(f1.getX === f2.getX);// false
+    console.log(f1.getY === f2.getY);//  --> true 都是指向 fn.prototype.getY
+    console.log(f1.__proto__.getY === Fn.prototype.getY);//  true
+    console.log(f1.__proto__.getX === f2.getX);// false
+    console.log(f1.getX === Fn.prototype.getX);// false
+    console.log(f1.constructor);// 结果：Object--》原因： f1.constructot 自己身上没有 --》网所属原型上去找 Fn-->自己手动修改过的新原型地址，这个新地址上没有constructor 属性--> 则继续向就往上一级的所属类的原型上（Object.prototype）查找,这时Object.prototype 上有这个属性 指向Object类
+
+    console.log(Fn.prototype.__proto__.constructor);// Object
+    f1.getX();// 100
+    f1.__proto__.getX();// undefined  原型上没有x属性
+    f2.getY(); //200
+    Fn.prototype.getY();// 400
+    f1.sum();//300
+    Fn.prototype.sum();// NaN --> undefined+400=NaN
+
+
+
+</script>

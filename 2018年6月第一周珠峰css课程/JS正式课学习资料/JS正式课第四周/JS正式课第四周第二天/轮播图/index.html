@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #div1{
+            width: 600px;
+            height: 260px;
+            margin: 50px auto 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .img_box{
+            height: 260px;
+            overflow: hidden;
+        }
+        .img_box li{
+            float: left;
+            width: 600px;
+            height: 260px;
+            position: relative;
+            background: #7dcfa0 url("http://www.sucaijishi.com/uploadfile/2014/0524/20140524124241131.gif") no-repeat center ;
+        }
+        .img_box li img{
+            width: 100%;
+            height: 100%;
+        }
+        .img_box li p{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            color: #fff;
+        }
+       .btn_box .left_btn,.btn_box .right_btn{
+           width: 50px;
+           height: 100px;
+           line-height: 100px  ;
+           text-align: center;
+           background: rgba(0,0,0,0.5);
+           color: #fff;
+           position: absolute;
+           top:80px;
+
+       }
+        .btn_box .left_btn{
+            display: none;
+            left: 0;
+        }
+        .btn_box .right_btn{
+            display: none;
+            right: 0;
+        }
+       .tip_box{
+           position: relative;
+           text-align: center;
+           top: -75px;
+       }
+        .tip_box li{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            border-radius: 50%;
+            background: #EFF3EF;
+            font-size: 20px;
+        }
+        .tip_box li.current{
+            color:red;
+            font-size: 24px;
+        }
+    </style>
+
+</head>
+<body>
+  <div id="div1">
+      <ul class="img_box">
+          <li>
+              <img src="" alt="">
+              <p>这是个解释</p>
+          </li>
+          <li></li>
+          <li></li>
+      </ul>
+      <div class="btn_box">
+       <div class="left_btn"><</div>
+       <div class="right_btn">> </div>
+      </div>
+      <ul class="tip_box">
+          <li class="tip">1</li>
+      </ul>
+  </div>
+
+</body>
+</html>
+<script src="../js/utils.js"></script>
+<script src="../js/animate.js"></script>
+<script src="js/index4.js"></script>
+<script>
+    var banner=new Banner('div1','json/data.json');
+
+</script>

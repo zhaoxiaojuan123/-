@@ -1,0 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+#div1 ul {
+  list-style: none;
+}
+#div1 ul li {
+  color: #ee2ad6;
+}

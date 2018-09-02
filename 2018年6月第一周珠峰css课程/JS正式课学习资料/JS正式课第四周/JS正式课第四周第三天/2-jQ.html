@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    window.$=12;
+</script>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+    console.log($);// jQuery
+    $.noConflict();// 不传deep值 就是把东西换回去
+    console.log($);// 12
+</script>
+<script>
+    (function (global,factory) {
+
+    })(typeof window!=='undefined'?window:this,function (window,noGlobal) {
+        var version='3.3.1',
+             jQuery=function (selector,context) {
+                 return new jQuery.fn.init(selector,context);
+                 // 返回了一个init的一个实例 ，这个实例能找到JQ的原型对象
+             };
+       // 把jQuery当对象；加了一个fn 属性；把它的原型指向换成后边的对象
+        jQuery.fn=jQuery.prototype={
+            constructor:jQuery,
+            toArray: function() {
+                return slice.call( this );
+            },
+        };
+        jQuery.extend=jQuery.fn.extend=function () {
+
+        };
+        /*
+        * extend JQ的扩展功能
+        *  jQuery.extend 扩展的内容是直接放到  jQuery上（把jQuery当对象）
+        *  jQuery.fn.extend 扩展到jQuery 的原型对象上
+        * */
+        var init=jQuery.fn.init=function (selector,context,root) {
+
+        };
+
+        var
+                _jQuery = window.jQuery,
+                _$ = window.$;
+       // 让渡 $ 和jQuery 这两个变量
+        jQuery.noConflict = function( deep ) {
+            if ( window.$ === jQuery ) {
+                window.$ = _$;
+            }
+
+            if ( deep && window.jQuery === jQuery ) {
+                window.jQuery = _jQuery;
+            }
+
+            return jQuery;
+        };
+        if ( !noGlobal ) {
+            window.jQuery = window.$ = jQuery;
+        }
+        return jQuery;
+    })
+
+
+</script>

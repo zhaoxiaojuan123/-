@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: #f54343;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">点击</div>
+
+</body>
+</html>
+<script>
+    var oDiv=document.getElementById('div1');
+
+    oDiv.onclick=function () {
+        console.log('click');
+    }
+    oDiv.onmousedown=function () {
+        console.log('mousedown');
+    }
+  // 先触发onmousedown 后触发onclick 事件
+
+
+</script>

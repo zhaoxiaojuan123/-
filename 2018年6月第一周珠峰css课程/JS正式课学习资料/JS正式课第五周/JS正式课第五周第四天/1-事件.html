@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        #inp{
+            outline: none; /*去除默认框的颜色*/
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="inp">
+
+</body>
+</html>
+<script>
+    var oInp=document.getElementById('inp');
+
+    /*
+    * 鼠标事件
+    *  onclick       单击
+    *  ondblclick    双击
+    *  onmouseenter  划入
+    *  onmouseover   划入 （存在冒泡）
+    *  onmouseleave  离开
+    *  onmouseout    离开（存在冒泡）
+    *  onmousemove   鼠标移动
+    *  onmousedown   鼠标按下
+    *  onmouseup     鼠标抬起
+    *  onmousewheel  滚轮滚动
+    *
+    *  键盘事件
+    *  onkeydown  键盘按下
+    *  onkeyup    键盘抬起
+    *  onkeypress 键盘按下（不监听系统键）
+    *
+    *  input框
+    *  onfocus  获取焦点  密码提示框 显示
+    *  onblur   失去焦点  隐藏
+    *  oninput  监听了input 框 value值 的变化  IE6-8不兼容 IE中用onpropertychange
+    *  onchange  value值发生变化 并且是在失去焦点之后再去触发
+    *
+    *  系统事件
+    *  window.onload 页面加载完成
+    *  window.onresize 页面可视窗口大小发生改变
+    *  window.onscroll 页面滚动
+    *
+    *  移动端事件
+    *  touchstart
+    *  touchmove
+    *  touchend
+    *
+    */
+    oInp.oninput=function () { // 实时监听
+        console.log(this.value,'input');
+    };
+    oInp.onchange=function () { // 失去焦点就会显示结果
+        console.log(this.value,'change');
+    }
+
+</script>

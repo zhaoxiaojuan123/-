@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+   <div id="div1">
+       <p class="box">1</p>
+       <p class="box1 ">2</p>
+       <!--zhufeng-->
+       <p class="box2">3</p>
+       <p class="box box1">4</p>
+       <p class="box box1 box2">5</p>
+   </div>
+
+</body>
+</html>
+<script>
+    /*
+    * children :元素子节点
+    * childNodes: 所有的子节点
+    * */
+    var oDiv=document.getElementById('div1');
+    function children(ele) {
+        //先去拿到所有的子节点，然后再从这些子节点中筛选出元素子节点
+       // var childs=ele.childNodes;
+        // 优化 直接循环children
+        var childs=ele.children;
+        var ary=[];
+        for (var i = 0; i < childs.length; i++) {
+            if(childs[i].nodeType==1){  // 在IE浏览器下会把注释节点也当做他的元素子节点，这一步是为了排除注释节点
+                ary.push(childs[i]);
+            }
+        }
+        return ary;
+    }
+    console.log(children(oDiv));
+
+    /*
+    * 写一个根据类名获取元素的函数
+    * */
+
+    function getByClass(str,context) {
+       // context.getElementsByClassName(str);
+        // 先去拿到context下所有的元素节点
+        //再从这些节点中筛选出有这个类名的
+        context=context || document;
+        var ary=[];//存放符合条件的元素
+       // var eles=children(context); 只能获得儿子一辈
+       var eles=context.getElementsByTagName('*');// 把context 下所有的标签获取到
+      // 筛选 根据元素的类名中是否含有str
+        var str=str.replace(/^ +| +$/g,'');
+        for (var i = 0; i < eles.length; i++) {
+          // 用正则判断eles[i].className 是否含有str 这个类名
+            //  var reg=new RegExp("^ *"+str+" *$");// 只可以匹配到单个类名的所有情况
+           var reg=new RegExp("(^| +)"+str+"( +|$)");
+
+            // 以str 开头的满足
+            // 以str 结尾的满足
+            //str 前边是空格 满足
+            // str 后边是空格 满足
+           if(reg.test(eles[i].className)){
+               ary.push(eles[i]);
+           }
+        }
+        return ary;
+    }
+    console.log(getByClass(' box1 ', oDiv));
+
+
+</script>

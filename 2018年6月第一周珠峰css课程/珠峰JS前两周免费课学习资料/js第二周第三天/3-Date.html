@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+ <div id="div1">时间</div>
+
+</body>
+</html>
+<script>
+
+    /*var now=new Date();// 拿到的是本机时间： Thu Jul 19 2018 12:22:42 GMT+0800 (中国标准时间)
+    console.log(now)
+
+    var year=now.getFullYear();// 获取年 2018
+    var month=now.getMonth();//获取月，跟正常的月 差1；6代表7月
+    var date=now.getDate();//获取几号
+    var day=now.getDay();//获取星期几 星期四 ； 0代表周日，1代表周一
+    var hour=now.getHours();//获取 小时 12 (24小时制)
+    var min=now.getMinutes();//获取 分钟 22
+    var second=now.getSeconds();//获取秒 42
+    var mini=now.getMilliseconds();// 获取毫秒 666
+    var t=now.getTime();// 获取当前时间距离 1970-0-0  0:0:0： 的毫秒数*/
+
+    var oDiv=document.getElementById('div1');
+    function getTime() {
+    var now=new Date();
+    var year=now.getFullYear(); //年
+    var month=now.getMonth()+1;//月
+    var date=now.getDate();//号
+    var hour=now.getHours()<10?'0'+now.getHours():now.getHours();
+    var minute=now.getMinutes()<10?'0'+now.getMinutes():now.getMinutes();
+    var second=now.getSeconds();
+    var week=now.getDay();
+    var weekobj={
+        1:'一',
+        2:'二',
+        3:'三',
+        4:'四',
+        5:'五',
+        6:'六',
+        0:'天'
+
+    };
+    var str = `今天是${year}年${month}月${date}日 星期${weekobj[week]} ${hour}：${minute}：${second}`;
+    oDiv.innerHTML=str;
+        clearTimeout(timer3);
+        timer3=setTimeout(getTime,1000)
+    }
+   oDiv.onclick=function () {
+         getTime();
+    }
+    ///var time=setInterval(getTime,1000);//时间设置要让1000整除
+
+    var timer3=setTimeout(getTime,1000)
+
+</script>

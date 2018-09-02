@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    var data=null;
+    var xhr=new XMLHttpRequest();
+    xhr.open('get','json/data.json'); // 第三个参数不写 默认就是true 也就是异步执行 异步的情况下只能通过回调函数调用到数据
+    xhr.onreadystatechange=function () {
+        if(xhr.readyState==4&&/^[23]\d{2}$/.test(xhr.status)){
+            data=xhr.responseText;
+            //请求成功之后才会执行
+            cb(data); // 异步的情况下只能通过回调函数调用到数据
+        }
+    };
+    xhr.send();
+    function cd(data2) {
+        console.log(data2);
+    }
+   // console.log(data); (1)
+//    window.onload=function () {
+//        // 页面所有内容加载完成 不包含ajax
+//        console.log(data);
+//    }
+     document.ready=function () {
+         //DOM 树 加载完成
+     };
+
+    var timer1=window.setTimeout(function () {
+        console.log(1);
+    },1000);
+    var timer2=window.setTimeout(function () {
+
+        var timer3=window.setTimeout(function () {
+            console.log(3);
+        },100);
+        console.log(2);
+    },500)
+
+</script>

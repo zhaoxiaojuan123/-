@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    /*
+    * split 把字符串按照指定字符分割成 数组
+    * */
+    var reg=/[,+-]/g;// 最好加上g
+    var str="珠峰,珠峰2-zhufeng+zhu";
+    console.log(str.split(reg));// ["珠峰", "珠峰2", "zhufeng", "zhu"]
+
+    var reg1=/\d+/g;
+    var str1="xaacjanka12csca123cacs";
+    console.log(str1.split(reg1)); //  ["xaacjanka", "csca", "cacs"]  使用split 以数字分割，返回结果是字符串
+    console.log(str1.match(reg1));// ["12", "123"] 使用match 获取到所有符合正则的的内容    也就是咱们要的数字
+
+
+
+
+
+
+</script>

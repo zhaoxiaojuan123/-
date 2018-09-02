@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        p:only-child{
+            background: #ee2ad6;
+        }
+    </style>
+</head>
+<body>
+ <div>
+     <p>这是一个段落</p>
+ </div>
+ <div>
+     <span>ssssss</span>
+     <div><p>这是一个p标签</p></div>
+ </div>
+</body>
+</html>
+<script>
+
+    /*
+     * 1、支持嵌套的方法
+     * 2、支持变量（值，属性名） width:@w; .box_@{n}  @img:'../../images/' ;  url('@{img}1.png');
+     * 3、混合    .pub{width:100px} .div1{.pub}
+     * 4、函数   .w(@a:200px,@b:200px){width:@a.height:@b}   #div1{.w(300px)}
+     * 5、循环   类似于JS的递归
+     *     .w(@n) when(@n<5){
+     *         .box_@{n}{
+     *         width:@n * 100px
+     *         }
+     *         .w(@n + 1) ;
+     *     }
+     *    .w(1) ;
+     */
+
+
+
+
+</script>

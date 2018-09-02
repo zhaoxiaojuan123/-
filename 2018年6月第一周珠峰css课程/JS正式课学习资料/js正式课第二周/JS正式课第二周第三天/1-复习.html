@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    console.log(Object.prototype.toString.call('qqq'));//[object String]
+    console.log(({}).toString.call('qqq'));//[object String]
+
+
+    var ary=[1,5,6,55,33,66];
+    //1、先排序 然后拿头和尾
+    ary.sort(function (a,b) {
+        return a-b;
+    })
+  var max=ary[ary.length-1],min=ary[0];
+    //2、假设法
+    //先假设第一个是最大的；
+    //然后循环数组，挨个比较
+
+    function biJiao(ary) {
+        var max=ary[0];
+        for (var i = 0; i < ary.length; i++) {
+            if(ary[i+1]>max){
+                max=ary[i+1]
+            }
+        }
+        return max;
+    }
+    console.log(biJiao(ary));
+
+    var ary=[1,5,6,55,33,66];
+    var str=ary.toString();
+    Math.max(1,5,6,55,33,66);
+    var max=eval('Math.max('+str+')');
+
+    //----------------------
+    var max=Math.max.apply(Math,ary);
+    console.log(max);
+
+    var max=Math.max(...ary);
+    console.log(max);
+    /*
+    *   ... 扩展运算符
+    * */
+
+    function f(...a) {
+        console.log(a,arguments);
+        console.log(eval(a.join('+')));// 6
+    }
+    f(1,2,3);
+
+    //-------------------------
+    function f(b,c,...a) {
+        console.log(a, b, c);// [3,4,5]  1    2
+    }
+
+    f(1,2,3,4,5)
+    //------------------------------
+    /*
+    * 箭头函数
+    * */
+    ary.sort(function (a,b) {
+        return a - b;
+    })
+    ary.sort((a,b)=>{
+        return a - b;
+    })
+   var fn1=function (a,b) {
+       console.log(12);
+   }
+    var fn2=(a,b)=>{
+        console.log(12);
+    }
+
+    /*
+    * 区别：
+    * 箭头函数没有this；往上级作用域查找this
+    * 箭头函数不能当做构造函数用
+    * */
+
+    function f4() {
+        console.log(this);
+        var f3=()=>{
+            console.log(this);
+        }
+        var obj={f:f3}
+    }
+
+    var obj2={f:f4};
+
+   //----------------------------------
+
+
+    var myBind=function (...arg) {
+        console.log(arg);
+        var _this=arg[0];
+        console.log(_this);
+        arg.shift();
+        return (...arg2)=>{
+            this.apply(_this,arg.concat(arg2));
+        }
+    };
+    var obj={w:1};
+    myBind(obj,1,2,3);
+
+    Function.prototype.myBind=myBind;
+
+
+
+
+
+
+
+
+</script>

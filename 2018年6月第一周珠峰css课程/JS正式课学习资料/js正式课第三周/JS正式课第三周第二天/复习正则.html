@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    /*
+    * 华为商城排序
+    * 思路：操纵数据
+    * 1、先获取数据
+    * 2、把数据变成可看的DOM元素放到页面上
+    * 3、点击实现排序（每次点击都把拿到的数据按照需求排序；把排好的序的数据 再执行第二步）
+    *
+    * 操纵DOM
+    * 1、先获取数据
+    * 2、把数据变成可看的DOM元素放到页面上
+    * 3、点击实现排序（获取所有的li 标签，按照需求把li 放到一个数组中排序；把排好序的数组，循环添加到页面上（appendChild））
+    *
+    * */
+    //DOM映射
+    var oDiv=document.getElementsByTagName('div');
+    document.body.innerHTML="<div></div><div></div>";
+    console.log(oDiv);// 会随着改动
+
+
+
+    //    var reg=/^[18|19]$/; // 代表单个 1 单个8 或单个 9
+//    console.log(reg.test('18'));//false
+//    console.log(reg.test('19'));//false
+//    console.log(reg.test('118'));//false
+//    console.log(reg.test('119'));//false
+//    console.log(reg.test('189'));//false
+//    console.log(reg.test('1'));//true
+//    console.log(reg.test('9'));//true
+//    console.log(reg.test('8'));//true
+//    console.log(reg.test('11'));//false
+    //--------------------------------------
+//    var reg1=/^[1819]$/;// 也是指单个 1 单个8单个9
+//    console.log(reg1.test('1'));//true
+//    console.log(reg1.test('18'));//false
+//    console.log(reg1.test('8'));//true
+//    console.log(reg1.test('9'));//true
+//    console.log(reg1.test('19'));//false
+//    console.log(reg1.test('118'));//false
+//    console.log(reg1.test('119'));//false
+//    console.log(reg1.test('11'));//false
+    //----------------------------------------------
+
+    var reg2=/^[18|19]|(\d)$/;// 以1 或8 或9 为开头 中间随便  以数字结尾
+    console.log(reg2.test('1'));//true
+    console.log(reg2.test('1sweeeerr2'));//true
+    console.log(reg2.test('113'));//true
+    console.log(reg2.test('83'));//true
+    console.log(reg2.test('189'));//true
+    console.log(reg2.test('95'));//true
+    console.log(reg2.test('9'));//true
+    console.log(reg2.test('6'));//true
+
+
+
+
+
+
+
+</script>

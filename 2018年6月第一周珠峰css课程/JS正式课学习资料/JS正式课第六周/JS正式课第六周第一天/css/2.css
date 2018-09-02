@@ -1,0 +1,8 @@
+#div1 ul {
+  background: url("../images/pic1.png") no-repeat;
+}
+#div1 ul li {
+  width: 40px;
+  height: 30px;
+  font-size: 20px;
+}

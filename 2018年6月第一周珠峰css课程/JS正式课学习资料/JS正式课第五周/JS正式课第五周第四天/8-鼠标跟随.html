@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        .litBox{
+            width: 200px;
+            height: 200px;
+        }
+        .litBox img{
+            width: 100%;
+            height: 100%;
+        }
+        .bigBox{
+            width: 400px;
+            height: 400px;
+            display: none;
+            position: absolute;
+        }
+        .bigBox img{
+            width: 100%;
+            height: 100%;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="litBox">
+    <img src="images/pic1.png" alt="">
+</div>
+<div class="bigBox">
+    <img src="images/pic1.png" alt="">
+</div>
+
+</body>
+</html>
+<script>
+var litBox=document.getElementsByClassName('litBox')[0],
+     bigBox=document.getElementsByClassName('bigBox')[0] ,
+      bigImg=bigBox.getElementsByTagName('img')[0];
+  litBox.onmouseenter=function (e) {
+    bigBox.style.display='block';
+  };
+  litBox.onmousemove=function (e) {
+    e=e||window.event;
+      bigBox.style.left=e.pageX+20+'px';
+      bigBox.style.top=e.pageY+20+'px';
+  };
+ litBox.onmouseleave=function (e) {
+    bigBox.style.display='none';
+ }
+
+
+</script>

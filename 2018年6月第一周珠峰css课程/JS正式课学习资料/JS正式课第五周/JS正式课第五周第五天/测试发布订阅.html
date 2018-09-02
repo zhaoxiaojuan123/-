@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+   <style>
+       #div1{
+           width: 100px;
+           height: 100px;
+           background: #7dcfa0;
+       }
+   </style>
+</head>
+<body>
+ <div id="div1"></div>
+
+</body>
+</html>
+<script>
+    var oDiv=document.getElementById('div1');
+    on(oDiv,'click',f1);
+    on(oDiv,'click',f2);
+    function f1() {
+        console.log(12);
+    }
+    function f2() {
+        console.log(14);
+    }
+    fire(oDiv,'onclick');
+
+    function on(ele,options,f) {
+
+        if(/^my/.test(options)){
+            ele[options]=ele[options]||[];
+            var n=ele[options].indexOf(f);
+            if(n==-1){
+                ele[options].push(f)
+            }
+        }else {
+            options=options.replace(/^on/,'');
+            ele.addEventListener(options,f,false)
+        }
+    }
+    function fire(ele,options) {
+        ele[options]=ele[options]||[];
+        ele[options].forEach((item)=>{
+            item&&item.call(ele);
+        })
+    }
+    function off(ele,options,f) {
+        ele[options]=ele[options]||[];
+        if(/^my/.test(options)){
+            var n=ele[options].indexOf(f);
+            if(n!==-1){
+                ele[options].splice(n,1)
+            }
+        }else {
+            options=options.replace(/^on/,'');
+            ele.removeEventListener(options,f,false)
+        }
+
+    }
+
+
+</script>

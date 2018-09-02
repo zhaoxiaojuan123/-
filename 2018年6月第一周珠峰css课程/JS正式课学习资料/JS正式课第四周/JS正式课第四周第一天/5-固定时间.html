@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+   <style>
+       *{
+           padding: 0;
+           margin: 0;
+       }
+       #div1{
+           width: 100px;
+           height: 100px;
+           background: #ee2ad6;
+           position: relative;
+           left: 0;
+       }
+   </style>
+</head>
+<body>
+   <div id="div1">固定时间</div>
+
+</body>
+</html>
+<script src="js/utils.js"></script>
+<script>
+    /*
+    * 固定时间的运动
+    * */
+    var oDiv=document.getElementById('div1');
+    var duration=2000;// 一共需要的时间
+    var time=0;// 一开始的时间为0
+    /*
+    * 需要知道每20毫秒需要移动的距离
+    * */
+
+    var tarL=document.documentElement.clientWidth-oDiv.offsetWidth;// 移动需要移动的距离
+    var speed=tarL/duration;
+    var timer=window.setInterval(function () {
+        time+=20;// 每20毫秒加加
+        utils.css(oDiv,'left',time*speed);// 每次设置盒子的left值，实现盒子的运动
+        if(time>duration){// 让运动的时间不超过规定的时间，相当于设置一个边界值
+            clearInterval(timer);
+            utils.css(oDiv,'left',tarL);
+        }
+
+    },20)
+
+
+</script>

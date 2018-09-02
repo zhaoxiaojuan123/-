@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+       #div1{
+           width: 400px;
+           height: 50px;
+           background-color: #ccc;
+           margin:auto;
+           margin-top: 20px;
+           text-align: center;
+           line-height: 50px;
+       }
+        #div2{
+            width: 400px;
+            height: 300px;
+            background-color: #999;
+            margin:auto;
+            text-align: center;
+            line-height: 300px;
+            overflow: hidden;
+        }
+       #div1 ul li{
+           width: 33.33%;
+           float: left;
+
+       }
+        #div1 ul li.active{
+            background-color: #00a77b;
+            display: block;
+        }
+        #div2 ul li{
+            display: none;
+        }
+        #div2 ul li.active{
+            color: white;
+            display: block;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="div1">
+    <ul>
+        <li class="active">html</li>
+        <li>css</li>
+        <li>js</li>
+    </ul>
+</div>
+<div id="div2">
+    <ul>
+        <li class="active">这是一个html</li>
+        <li>这是一个css</li>
+        <li>这是一个js</li>
+    </ul>
+</div>
+
+</body>
+</html>
+<script>
+    // 需求 ：n的阶乘
+  /*  function cheng(n) {
+        if(n<=1){
+            return 1;
+        }
+        return n*cheng(n-1);
+    }
+    console.log(cheng(4));*/
+    var oDiv=document.getElementById('div1');
+    var lis1=oDiv.getElementsByTagName('li');
+    var oDiv2=document.getElementById('div2');
+    var lis2=oDiv2.getElementsByTagName('li');
+
+    function clearClass() {
+    for (var i = 0; i < lis1.length; i++) {
+        lis1[i].className='';
+        lis2[i].className='';
+    }
+}
+
+    for (var i = 0; i < lis1.length; i++) {
+         lis1[i].index=i;
+        lis1[i].onclick=function () {
+            clearClass();
+            lis1[ this.index].className='active';
+            lis2[this.index].className='active';
+        }
+    }
+
+
+
+
+
+</script>

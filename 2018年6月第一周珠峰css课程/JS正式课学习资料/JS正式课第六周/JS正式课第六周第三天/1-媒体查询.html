@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style rel="stylesheet" type="text/less">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .lt{
+            float: left;
+        }
+        .rt{
+            float: right;
+        }
+        header{
+            height: 83px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.5);
+            .logo{
+                .lt;
+                width: 325px;
+                height: 100%;
+                background: url("images/images/logo1.png") no-repeat left;
+            }
+            nav{
+                .rt;
+                a{
+                    display: inline-block;
+                    height: 100%;
+                    color: #fff;
+                    text-decoration: none;
+                    margin: 0 20px;
+                    line-height: 83px;
+                }
+            }
+        }
+        section.banner{
+            width: 100%;
+            height: 625px;
+           /* img{
+                width: 100%;
+                height: 100%;
+            }*/
+            background: url("images/images/banner1.jpg") no-repeat center;
+            background-size: cover;
+        }
+        /*把显示屏 简要分成 三类 大于1000px 是一类 ； 730-1000是第二类； 600px 以下是第三类*/
+        @media all and(max-width:1000px){ /*width 小于等于1000px*/
+            header{
+                nav{
+                    a{
+                        margin: 0 5px;
+                    }
+                }
+            }
+        }
+        @media all and (max-width: 730px){ /* <=730px*/
+            header{
+                .logo{
+                    width: 135px;
+                }
+            }
+        section.banner{
+            height: 450px;
+        }
+        }
+        
+    </style>
+    <script src="js/less.js"></script>
+</head>
+<body>
+  <header>
+      <div class="logo"></div>
+      <nav>
+          <a href="##">产品1</a>
+          <a href="##">产品2</a>
+          <a href="##">产品3</a>
+          <a href="##">产品4</a>
+          <a href="##">产品5</a>
+          <a href="##">产品6</a>
+          <a href="##">产品7</a>
+      </nav>
+  </header>
+<section class="banner">
+   <!-- <img src="images/images/banner1.jpg" alt="">-->
+</section>
+
+</body>
+</html>
+<script>
+    /*
+     *  媒体查询
+     */
+
+
+</script>

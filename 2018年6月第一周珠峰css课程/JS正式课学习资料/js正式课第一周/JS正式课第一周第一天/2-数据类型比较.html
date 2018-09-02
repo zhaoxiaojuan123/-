@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<div id="div1">不同数据类型间的比较</div>
+
+</body>
+</html>
+<script>
+
+    //对象上的toString 和数组上的 toString 不一样
+    //[]==0  true
+    // 1、引用数据类型 和 引用数据类型之间的比较 （比较的是地址）
+    //    永远比较的是地址
+
+    var a=[1,2,3];
+    var b=[1,2,3];
+    var c=b;
+    a==b;// false 不是一个地址
+    b==c;// true  两个是一个地址
+    a.join()==b.toString();// true  '1,2,3'=='1,2,3'
+
+    //2、引用数据类型 和 字符串 比较
+    // 先把引用数据类型  用toString() 转化成字符串 再去比较
+    a.join()==b;//  '1,2,3' ==  '1,2,3' 这是先把引用数据类型 b 用toString() 转化一下
+
+    //3、 null == undefined  -->true 特殊记
+//({12:1})=="[object Object]" //  true
+    // 4、其他情况  都是先转化成字符串  然后再转成数字 进行比较
+    '12'== 12   //true
+    '12q'==NaN; // false
+
+
+</script>

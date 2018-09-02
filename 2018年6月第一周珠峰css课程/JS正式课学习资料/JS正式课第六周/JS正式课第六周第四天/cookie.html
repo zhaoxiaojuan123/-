@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<input type="text" id="inp">
+<input type="number" autofocus>
+<input type="password"> <!--这个不是h5新出的 以前就有的-->
+
+</body>
+</html>
+<script>
+    /*
+     *  section  article  aside header main footer nav
+     *  input
+     */
+    inp.onfocus=function () {
+        //获取焦点
+    };
+    inp.onblur=function () {
+       // 失去焦点
+    };
+    inp.onchange=function () {
+        // 失去焦点，并且内容发生变化
+    };
+    // 兼容性写法
+    if(inp.oninput!==undefined){
+        inp.oninput=function () {
+     //  实时监听input 框的value值的变化
+        }
+    }else {
+        inp.onpropertychange=function () { /*这是在IE低版本用的*/
+
+        }
+    }
+
+    window.localStorage ;// 不会占用带宽 5-10兆 ，不会发送到后台，容量大
+    window.localStorage.aaa=12;// 添加属性 关闭页面再重新打开还会存在，同一个域名；前端存储数据；不会发送给后台
+    window.localStorage.removeItem('aaa'); // 清除
+    window.sessionStorage;
+    window.sessionStorage.aaa=123; // 会在关闭页面清空，再重新打开就没有了，前端存储数据
+
+    document.cookie;  //最多5kb,想获取cookie中的东西，可以用正则来截取；有大小限制，发给后台，占用带宽；
+    // 设置cookie  document.cookie = 'aaa=12' 这是在cookie中添加了一个字符串，不是替换了cookie
+    // 删除cookie ；把cookie 的过期时间设置成今天之前的就可以了；
+
+</script>

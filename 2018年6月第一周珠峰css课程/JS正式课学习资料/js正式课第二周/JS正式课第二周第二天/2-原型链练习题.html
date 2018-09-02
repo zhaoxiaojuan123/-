@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    function Foo() {
+        getName = function () {  //全局
+            console.log(1);
+        };
+        return this;
+    }
+    Foo.getName = function () {// 增减属性getName
+        console.log(2);
+    };
+    Foo.prototype.getName = function () {
+        console.log(3);
+    };
+    var getName = function () {
+        console.log(4);
+    };
+    function getName() {
+        console.log(5);
+    }
+    Foo.getName();// console.log(2);
+    getName();// console.log(4);
+    Foo().getName();// console.log(1);-->1
+    getName();console.log(1);
+    console.log(new Foo.getName());//2-->Foo.getName {}
+    console.log(new Foo().getName());//undefined
+    console.log(new new Foo().getName());//Foo.getName {}
+
+
+
+
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="main"></div>
+分两步:
+1.@keyframes  动画的名称{
+    0%{}   开始帧 0% = from
+    50%{}  中间帧
+    100%{}  结束帧 100% = to
+}
+2.通过animation的八大属性去调用上面规定的动画名称以及其他的属性
+简写: animation: 1 2 3 4 5 6 7 8;
+
+1)animation-name 动画的名称
+2)animation-duration 动画持续的时间 - 时间越长 越慢 反之越块
+3)animation-timing-function 动画的运动曲线
+ease  匀速
+ease-in  由慢到快的过程
+ease-out 由快到慢的过程
+ease-in-out  由慢到快 再到慢的过程
+steps()
+4)animation-delay 动画的延迟时间
+5)animation-interation-count  动画运动的次数 默认1次 infinite无限次
+6)animation-direction 动画的运动方向
+normal：正常方向
+reverse：反方向运行
+alternate：动画先正常运行再反方向运行，并持续交替运行
+alternate-reverse：动画先反运行再正方向运行，并持续交替运行
+7）animation-play-state 动画的运动的状态
+运动  playing
+暂停  paused
+8）animation-fill-mode 动画运动结束之后保留的状态
+保留在开始状态: backwards
+保留在结束状态: forwards
+保留在开始/结束 状态both
+
+
+
+
+</body>
+</html>

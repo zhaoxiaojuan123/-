@@ -1,0 +1,46 @@
+
+.box1{
+    width: 94px;
+    height: 258px;
+    background: url("images/人体.jpg") no-repeat;
+animation: box1 1s steps(5) infinite,box1-1 10s ease infinite;
+}
+.box2{
+    width: 241px;
+    height: 187px;
+    background: url("images/2.jpg") no-repeat;
+    animation: box2 1s steps(6) infinite ;
+}
+
+@keyframes box1 {
+    0%{background-position: 0 0}
+    100%{background-position: -470px 0}
+
+}
+@keyframes box1-1 {
+    0%{ transform: translate(0)}
+    100%{transform: translate(500px)}
+
+}
+@keyframes box2 {
+    0%{background-position: 0 0}
+    100%{background-position: -1446px 0}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

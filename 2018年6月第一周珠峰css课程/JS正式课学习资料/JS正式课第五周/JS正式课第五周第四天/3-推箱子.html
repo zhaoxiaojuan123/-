@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+  <style>
+      *{
+          padding: 0;
+          margin: 0;
+      }
+      #div1{
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          background: #7dcfa0;
+      }
+  </style>
+</head>
+<body>
+
+<div id="div1"></div>
+</body>
+</html>
+<script src="js/utils.js"></script>
+<script>
+    var oDiv=document.getElementById('div1');
+    document.onkeydown=function (e) {
+       n=e.keyCode;
+        switch (n){
+            case 37 :
+                oDiv.style.left=utils.css(oDiv,'left')-10+'px';
+                break;
+            case 38 :
+                oDiv.style.top=utils.css(oDiv,'top')-10+'px';
+                break;
+            case 39 :
+                oDiv.style.left=utils.css(oDiv,'left')+10+'px';
+                break;
+            case 40 :
+                oDiv.style.top=utils.css(oDiv,'top')+10+'px';
+                break;
+        }
+
+    }
+
+
+
+</script>

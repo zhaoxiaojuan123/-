@@ -1,0 +1,41 @@
+/*
+混合
+*/
+@w:200px;
+@h:300px;
+
+.public{
+  width: @w + 200;
+  height:@h ;
+  background: #ee2ad6;
+  list-style: none;
+  .oul1{
+    color: #fff;
+    font-size: 20px;
+    list-style: none;
+  }
+}
+#pub{
+  width: 100px;
+  height: 100px;
+}
+#div1:extend(.public){
+background: #00ae66;
+}
+// extend 只是获取到 这个类名或id下的自己的样式 儿子的不会拿
+// extend 编译后的先后顺序 跟extend 的样式表定义的先后顺序 一致
+
+ .oul2:extend(.public){
+
+ }
+.oul2:extend(#pub){
+
+}
+// 相当于 将public 中的样式放到#div1里
+//#div1{
+//  width: @w;
+//  height:@h ;
+//  background: #ee2ad6;
+//  background: green;
+//}
+

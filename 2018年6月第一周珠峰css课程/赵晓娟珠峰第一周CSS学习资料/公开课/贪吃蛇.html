@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+canvas{
+
+}
+    </style>
+</head>
+<body>
+
+<canvas width="800px" height="400px" id="canvas">您的浏览版本过低，请升级</canvas>
+
+</body>
+</html>
+<script>
+    var canvas = document.getElementById('canvas');
+    var  ctx = canvas.getContext('2d');/*创造一个操纵画布的环境*/
+    //创造方框
+    function React(x,y,w,h,color) {
+        /*x表示方框在画布上的x轴的位置
+         y表示方框在画布上的y轴的位置
+         w表示方框宽度
+         h表示方框高度
+         color 表示方框的颜色
+        */
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+        this.color = color;
+    }
+    //创造出来之后，怎么在画布上展现
+    Rect.prototype.draw = function () {
+        ctx.beginPath();/*重新开始一个路径*/
+        ctx.rect(this.x,this.y,this.w,this.h);/*画一个方框*/
+        ctx.fillStyle =this.color;/*给方框填一个颜色*/
+        ctx.fill();/*填充到画布上*/
+        ctx.stroke();/*给每个方框加一个边框*/
+    }
+//    以上是画框的部分；因为不管是蛇还是食物，都是用方框表示
+    //new react(0,0,50,20,'#ccc').draw();
+    function Snake() {
+        var anakeAry = [];/*用来存储蛇的组成方框*/
+        for(let i = 0;i<3;i++){
+            let rect = new Rect(i*20,0,20,20,'#ccc');/*创造方框*/
+            snakeAry.unshift(rect)//把创造的方框放到定义好的用来储存身体的数组里
+        }
+        snakeAry[0].color='red';//把数组的第一项的颜色改成红色
+        this.head=snakeAry[0];//把刚才改过的第一项当做蛇头存放到head属性里
+        this.snakeAry=snakeAry;
+        this.direction=39;//向右
+    }
+    Snake.prototype.draw=function () {
+        this.snakeAry.forEach((item=>{
+           item.draw();
+        })
+        var  snake = new snake();
+
+    }
+
+</script>

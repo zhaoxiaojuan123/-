@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    //简洁流程
+    /*
+    * git clone 远程仓库地址
+    * 默认的桥梁名 origin
+    * 默认的分支名 master
+    *
+    * */
+  /*
+  * 交作业
+  * 1、你们先fork 组长的 gitHub 对应的库 --> fork 就是复制的一个过程
+  * 2、把自己对应的库clone 到自己的电脑上
+  * 3、写作业
+  * 4、交作业（提交到自己fork的库）
+  * 5、交到组长那块（new pull request -->create pull request -->写备注信息）
+  * 6、等组长同意就行
+  *
+  * */
+  /*
+  * 变量提升
+  * 定义 ：在代码执行之前，浏览器会把 带var 和function 的先提前声明
+  * 带var 的值声明不定义； 带function 声明+定义；
+  *
+  * */
+// 函数执行的过程
+    /*
+    * 1、开辟一个栈内存（私有作用域）
+    * 2、形参赋值，变量提升
+    * 3、代码从上到下依次执行
+    * */
+     // 函数运行 查找一个变量时 ，先查看是否是自己的私有变量（形参，var，function）；
+    // 若是没有查找到，则去上一级作用域查找；这里的上一级作用域是指函数在哪里定义的， 在哪定义，上级作用域就是谁；
+    // 这种查找会一直查找到window ，若window下面也没有变量，（若是赋值，则是在window下添加一个属性，若是使用，则直接报错）
+
+     // 我们把上边这种从私有作用域向上级作用域查找的机制 成为 作用域链
+
+    /*
+    * 变量提升的特殊情况
+    * 1、等号= 右边的不会进行变量提升
+    * var a=function(){}
+    * 2、条件语句中的变量提升
+    * 对于var 是没有影响的；也就是不管条件是否成立都会进行变量提升
+    * 3、对于function 比较特殊，在标准浏览器下，只声明不定义；在IE低版本即声明又定义
+    * */
+    a();
+    var a=10;
+    var a=20;
+    console.log(a);
+    a();
+    function a() {
+        console.log(a);
+    }
+a();
+    /*
+    * 变量提升过程  --> var a;a=xxxfff000
+    * a() ---> a执行 里边输出a；也就是咱们的xxxfff000
+    * a =10;---> 这时的变量a 从地址变成了数字10
+    * a=10--->这时的变量a 从数字10 变成了20
+    * console.log(a) ---> 输出数字20；
+    * a();---> a执行 相当于20（）； 20是个数字不是个函数not a function
+    *
+    * */
+    a();
+    var a=10;
+    var a=20;
+    console.log(a);
+    function a() {
+        console.log(a);
+    }
+  var a=  function a() {
+        console.log(a);
+    }
+
+    a();
+
+
+
+
+
+</script>

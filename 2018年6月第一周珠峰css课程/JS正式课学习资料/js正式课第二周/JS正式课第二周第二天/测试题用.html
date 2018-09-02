@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+ /*   var obj={
+        name:'zf',
+    };
+
+    function f2(n,m) {
+        console.log(this);
+        console.log(n+m);
+        return  12
+    }
+    f2.call(obj,1,2,3);// 第一个 参数 改变f2的this的指向，后边传参数
+    var a=f2.call(obj,1,2,3);
+    console.log(a); // 返回的是return
+*/
+
+
+ /*function f1(n,m) {
+     console.log(this);
+     console.log(arguments);
+ };
+ var obj = {name:'zfpx'};
+ f1.apply(obj,[1,2]);
+*/
+
+ function f2() {
+    console.log(this);
+     console.log(2)
+ };
+ function f3() {
+     console.log(3)
+ };
+   f2.call(f3);
+
+
+</script>

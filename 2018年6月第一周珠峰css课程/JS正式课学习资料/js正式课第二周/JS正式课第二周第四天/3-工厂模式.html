@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    /*
+    * 工厂模式：批量生产 单例模式
+    * */
+    var obj={
+        name:'小红',
+         age:16,
+    };
+    var obj2={
+        name:'小明',
+        age:12,
+    };
+    var obj3={
+        name:'小李',
+        age:14,
+    };
+    /*
+    * 粘贴复制 可以实现咱们的功能；但是会造成 代码冗余；
+    * 对于这种批量生产的 我们就用工厂模式
+    * 有助于实现代码的  高内聚 低耦合
+    * 降低代码的冗余度
+    * */
+    function factory(name,age) {
+        var obj={
+            name:name,
+            age:age,
+        };
+        return obj;
+    }
+    var obj=factory('小红',11);
+    var obj2=factory('小明',13);
+
+
+
+
+
+</script>

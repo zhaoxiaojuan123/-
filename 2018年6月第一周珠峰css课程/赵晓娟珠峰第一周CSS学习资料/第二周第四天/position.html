@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+【position】
+1.position:fixed 固定定位
+  - 一个网页固定不动的模块；（漂浮的状态不影响正常的文档流）
+  - 会脱离正常的文档流，不占位；
+  - 参照物：当前的浏览器窗口；
+  - 可以设置方位（top/bottom/left/right）
+    left和right 同时出现，听left的；
+    top和bottom 同时出现，听top的；
+  -不设置宽高的情况下是内容的宽高
+2.position:absolute 绝对定位
+   - 会脱离正常的文档流，不占位（叠加 重叠）；
+   - 参照物：上一级具有定位特征的（固定、绝对、相对定位）父元素(一般设置相对定位，就不会改变文档原来的排版)
+            如果上一次没有加定位元素，会继续一层一层往上查找，直到找到最外层的html元素为止，参照物就为整个浏览器窗口。
+   -不设置宽高的情况下是内容的宽高
+3.position:relative 相对定位
+   - 不会脱离文档流，原来的位置会保留
+   - 参照物：参照自己原来的本神的位置；
+   1） 一般用来作为参照物；
+   2） 配合top、bottom、left、right方位 去使用；
+4.z-index 检索或设置对象的层叠顺序
+
+
+
+
+
+
+
+
+</body>
+</html>

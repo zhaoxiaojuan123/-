@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+
+    //=> JS中的异常信息捕获 try catch finaly
+    //1、捕获到执行的报错（异常）信息
+    //2、防止浏览器抛出异常错误导致下面都不再执行的问题
+    try{
+        //=> 需要执行的JS代码
+    }catch (e){
+
+    //=> 如果try 中的代码执行放生了异常，就会执行catch中的代码
+        //1) 必须要有一个形参变量（我们一般命名为e[error]）
+        //2) e中存储了当前代码执行的异常信息
+
+    }finally {
+     //=>不管try中代码是否出现异常，最后都会执行finally中的操作
+        //1)真实项目中很少使用finally
+        //2)try catch 必须成对使用
+    }
+try{
+    console.log(a);
+}catch (e){
+    //console.log(e.message);//=> a is not defined
+    console.log('您的人品欠费，请先充值');// 把错误信息发送给服务器进行统计
+}
+    var b=13;
+    console.log(b);
+
+    //=> 我们需要捕获到异常信息（try catch），但是 上面代码如果报错，我们希望下面的代码不执行（此时我们需要手动抛出异常信息，来阻止下面代码的执行）
+    // throw new Error('需要抛出的异常信息');//=>JS中手动抛出异常信息的方法new Error()  是创建Error 这个内置类的一个实例
+
+
+
+  /*
+  * Error:错误
+  * SyntaxError:语法错误
+  * ReferenceError： 引用错误（一般都是未定义或者不存在）
+  * TypeError:类型错误
+  * RangeError：范围错误
+  *
+  * */
+
+
+</script>

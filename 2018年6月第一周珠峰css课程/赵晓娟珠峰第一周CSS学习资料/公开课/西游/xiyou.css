@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body,html{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#wk,#bj{
+    width: 200px;
+    height: 180px;
+    background: url("images/west_01_3ca39fe.png") no-repeat;
+    background-size: cover;
+    animation: wk 1s steps(8) infinite;
+}
+
+@keyframes wk {
+    0%{background-position:  0 0;}
+    100%{background-position: -1600px 0;}
+
+}
+#bj{
+    background: url("images/west_02_47bad19.png") no-repeat;
+}
+.bg ul{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+}
+.bg ul li{
+    width: 1920px;
+    height: 100%;
+    background: url("images/pic.jpg");
+}
+
+
+
+
+
+
+
+
+
+
+
+

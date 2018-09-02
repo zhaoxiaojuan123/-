@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    var now=new Date();
+     now.getFullYear(); //获取年份
+     now.getMonth();//获取月份 月份+1 跟咱们正常月份差 1
+     now.getDate();//获取几号  22号
+     now.getDay();// 获取星期几 0代表周日 1代表周一
+     now.getHours();// 获取小时 24小时制
+     now.getMinutes();// 获取分钟
+     now.getSeconds();// 获取秒
+     now.getMilliseconds();// 获取毫秒
+     now.getTime();// 获取距离1970-01-01 00：00:00 这个时间和毫秒数
+
+    var str="2018/7/22 下午5:15:01";
+    var str2=str.replace('/','年').replace('/','月').replace(' ','号 ');
+    console.log(str2);//2018年7月22号 下午5:15:01
+    var str1='日一二三四五六';
+    var ary=['日','一','二','三','四','五','六'];
+    var obj={
+        0:'日',
+        1:'一',
+        2:'二',
+        3:'三',
+        4:'四',
+        5:'五',
+        6:'六'
+    };
+  var str22= `${ now.getFullYear()}年${ now.getMonth()}月${ now.getDate()}号星期${str1[now.getDay()]}`;
+
+   /*星期${ary[now.getDay()]}
+  星期${obj[now.getDay()]}`
+*/
+
+
+
+
+
+</script>

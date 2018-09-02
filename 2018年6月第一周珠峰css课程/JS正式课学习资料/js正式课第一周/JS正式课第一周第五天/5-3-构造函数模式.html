@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<div id="div1"></div>
+
+</body>
+</html>
+<script>
+
+    /*
+    *  类      实例
+    * 人类     张三
+    * 狮子类   辛巴
+    *
+    * */
+    /*
+    * JS 的类
+    * 类 ：Object  string number Boolean  function         Array     Date....
+    * 实例：{}       'ss'  12     true    function sum()    [12,13]
+    *
+    * */
+
+    //  Array   []
+    // 原型 prototype ：每个函数都有一个原型prototype ，指向他的原型对象
+    // 每个类的实例 都可以通过 __proto__ 找到他的所属类的原型对象
+
+    /*
+    * 构造函数模式：创建一个构造函数；通过new 去创建 这个构造函数（自定义类）的一个实例
+    * 这个实例的__proto__ 属性指向这个构造函数（自定义类）的原型对象
+    * 这个原型对象上有一个constructor属性 指向 构造函数本身
+    *
+    * 构造函数 的函数名 一般首字母要大写；
+    * 当这个函数通过new执行时； 那么他就是一个构造函数（自定义类）；也就是把它当作一个类去执行
+    *
+    * 构造函数 跟咱们的高级单例模式相似
+    *
+    * */
+
+    function Person(name,age) {
+        this.name=name;
+        this.age=age;
+        this.set=function () {
+            console.log(12);
+        }
+    }
+   var tom=new Person('tom',18);
+
+    console.log(tom);//  Person {name: "tom", age: 18, set: ƒ}
+    console.log(tom.name,tom.age);//tom 18
+    console.log(tom.__proto__);//  {constructor: ƒ}
+    console.log(tom.__proto__.constructor==Person);// true
+
+    //
+    /*
+    * new执行函数跟普通函数执行的区别
+    * new 执行 会在函数内部 自动创建一个对象（this）;函数执行完成之后；会把this 默认返回
+    * 如果手动修改 return 值； 若return 的是一个值类型，那么默认return的还是this；若return 后边啥也不写 还是返回的是this
+    * 若 return 的是一个引用数据类型，那么返回的就是 这个引用数据类型
+    *
+    * */
+    function Person3() {
+        var name2 = 'zfpx';
+        this.name = name2;
+        this.age = 9;
+        // this.getName = function () {
+        //     console.log(12)
+        // }
+        // return 9;
+        // return this;
+        // return {}
+    }
+    Person3.prototype.getName = function () {  // 在构造函数(Person3)的原型上添加一个属性名为 getName
+        console.log(this.name)
+    };
+    Person3.prototype.name = 'zhufeng';// 在构造函数(Person3)的原型上添加一个属性名为 name
+    var per = new Person3();
+
+    // var per3 = new Person3();
+    var n = Person3();
+    console.log(per); // {name,age}
+    per.getName();// 如果自己里面没有getName的属性，那么就去构造函数中找去，构造函数没有就去找上一级，找到头没有就是undefined
+
+    /*
+     * per 是Person3（自定义类） 的一个实例
+     * 是实例的话就能调用 所属类原型上的方法和属性
+     * */
+
+</script>

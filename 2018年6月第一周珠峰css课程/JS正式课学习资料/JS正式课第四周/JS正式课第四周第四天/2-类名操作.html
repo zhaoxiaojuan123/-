@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script src="js/utils.js"></script>
+<script>
+    /*
+    * 1--判断是否含有该类名
+    * 2--给一个元素添加类名
+    * 3--给一个元素删除类名
+    * */
+    // 单个类名
+    function hasClass(str ,ele) {
+        str=str.replace(/^ +| +$/g,'');
+        var reg=new RegExp('(^| +)'+str+"( +|$)");
+        if(reg.test(ele.className)){
+            return true
+        }
+        return false
+    }
+  //  多个类名
+
+    function hasClass2(str,ele) {
+        str=str.replace(/^ +| +$/g,'');
+        var classAry=str.split(/ +/g);
+        for (var i = 0; i < classAry.length; i++) {
+            var reg=new RegExp('(^| +)'+classAry[i]+"( +|$)");
+            if(!reg.test(ele.className)){
+                return false
+            }
+        }
+        return true;
+    }
+  // 给一个元素添加类名 多个类名添加
+
+    function addClass2(str,ele) {
+        str=str.replace(/^ +| +$/g,'');
+        var classAry=str.split(/ +/g);
+        if(hasClass2(str,ele))return;
+        for (var i = 0; i < classAry.length; i++) {
+            if(!hasClass2(classAry[i],ele)){
+                ele.className+=' '+classAry[i];
+            }
+        }
+    }
+
+    //---------------
+    // 移除类名
+    // 移除单个类名
+    function removeClass(str,ele) {
+        str=str.replace(/^ +| +$/g,'');
+        var reg=new RegExp('(^| +)'+str+"( +|$)",'g');
+        var str2=ele.className.replace(reg,' ');
+        ele.className=str2;
+    }
+    // 移除多个类名
+    function removeClass2(str,ele) {
+        str=str.replace(/^ +| +$/g,'');
+        var classAry=str.split(/ +/g);
+        for (var i = 0; i < classAry.length; i++) {
+            var reg=new RegExp('(^| +)'+classAry[i]+"( +|$)",'g');
+            ele.className=ele.className.replace(reg,' ');
+        }
+    }
+
+
+</script>

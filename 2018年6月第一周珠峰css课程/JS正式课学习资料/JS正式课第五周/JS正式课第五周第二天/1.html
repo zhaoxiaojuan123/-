@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .litBox,.bigBox{
+            width: 400px;
+            height: 400px;
+            border: 2px dashed darkorange;
+            position: relative;
+            float: left;
+            overflow: hidden;
+            cursor: move;
+        }
+        .litBox img{
+            width: 100%;
+            height: 100%;
+        }
+        .litBox .mask{
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            background: rgba(0,0,0,0.5);
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        .bigBox{
+            margin-left: 50px;
+            display: none;
+        }
+        .bigBox img{
+            width: 200%;
+            height: 200%;
+           position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">珠峰培训</div>
+<div class="litBox">
+    <img src="images/pic1.png" alt="">
+    <div class="mask"></div>
+</div>
+<div class="bigBox">
+    <img src="images/pic1.png" alt="">
+</div>
+</body>
+</html>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+    /*
+     * 思路 两个盒子  一个盒子放大图片 另一个盒子放小图片
+     *     小盒子上边有个小蒙层，小蒙层/小图片 = 放大图片的盒子/大图片 = percent
+     *     小蒙层在小盒子上移动的距离， 大图片在盒子里边移动的距离的  percent；
+     *     移动方向 两者移动方向相反
+     * */
+
+    var $litBox=$('.litBox'),
+         $mask=$litBox.children('.mask'),
+         $bigBox=$('.bigBox'),
+         $bigImg=$bigBox.children('img');
+    // 小盒子划过 要让大图盒子和小蒙层显示
+    $litBox.on('mouseenter',function () {
+        $bigBox.show();
+        $mask.show();
+        this.percent=this.clientWidth/$mask.width();  // =>2
+        this.maxL=this.clientWidth-$mask.width();
+        this.maxH=this.clientHeight-$mask.height();
+    });
+    $litBox.on('mousemove',function (e) {
+        // e.page 鼠标到body 左上角的距离
+        //e.client 鼠标到浏览器可视区域左上角的距离
+        // 要获取 鼠标 到小盒子左上角的距离=e.page-小盒子的offset
+       /* var $this=$(this);
+        var x=e.pageX-$this.offset().left-$mask.width()/2,
+            y=e.pageY-$this.offset().top-$mask.height()/2;
+           x= x>=this.maxL?this.maxL:(x<=0?0:x);
+           y=y>= this.maxH? this.maxH:(y<=0?0:y);
+        /!*边界判断*!/
+        $mask.css({left:x,top:y});
+        $bigImg.css({
+            left:-x*this.percent,
+            top:-y*this.percent
+        })*/
+       move.call(this,e);
+    });
+
+   $litBox.on('mouseleave',function () {
+       $bigBox.hide();
+       $mask.hide();
+   });
+  //---------------
+    function move(e) {
+        var $this = $(this);
+        var x = e.pageX - $this.offset().left - $mask.width() / 2,
+            y = e.pageY - $this.offset().top - $mask.height() / 2;
+        x = x >= this.maxL ? this.maxL : (x <= 0 ? 0 : x);
+        y = y >= this.maxH ? this.maxH : (y <= 0 ? 0 : y);
+        /*边界判断*/
+        $mask.css({left: x, top: y});
+        $bigImg.css({
+            left: -x * this.percent,
+            top: -y * this.percent
+        })
+    }
+
+
+
+
+
+</script>

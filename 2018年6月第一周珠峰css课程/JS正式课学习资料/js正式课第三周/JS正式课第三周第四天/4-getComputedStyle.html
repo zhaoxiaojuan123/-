@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+
+        #div1{
+            width: 200px;
+            height: 3000px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+ <div id="div1"></div>
+
+</body>
+</html>
+<script>
+    var oDiv=document.getElementById('div1');
+   // console.log(oDiv.style.width);
+
+    /*
+    * oDiv.style 只能获取行内设置的样式
+    * */
+    //window.getComputedStyle(ele,':after');   //ele; ':after' 是个伪类
+    // 获取的是一个大对象 ，里面包含了该元素当前所有的样式
+    // 第一个参数 要获取样式的元素
+    // 第二项参数 要查看的该元素的 某个伪类；可以不写也可以写null
+    // 通过这个函数获取到的对象是不能修改元素对应样式的
+   // var obj=getComputedStyle(oDiv);
+   // obj.width='300px';// 不能修改宽度，是个只读的属性
+
+    /*
+    * 这个方法在IE6-8 是不兼容的
+    * 那么在IE6-8下 我们用currentStyle这个属性
+    *
+    * */
+//    function getCss(ele,attr) {
+//        var res=null;
+//        if(window.getComputedStyle){
+//            res=window.getComputedStyle(ele)[attr];
+//        }else {
+//            res=ele.currentStyle[attr];
+//        }
+//        return res;
+//    }
+   // console.log(getCss(oDiv,'width'));// 200px
+
+
+    /*
+    * navigator.userAgent  获取浏览器信息//"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
+    *
+    * */
+//    function getCss(ele,attr) {
+//       var str=navigator.userAgent;
+//        var res=null;
+//        if(/MSIE *[6-8]/.test(str)){
+//            res=ele.currentStyle[attr];
+//        }
+//        else {
+//            res=window.getComputedStyle(ele)[attr];
+//        }
+//        return res;
+//    }
+//    console.log(getCss(oDiv,'width'));// 200px
+
+    /*
+    * 目前的返回结果都是字符串，需要把一些带单位的字符串转成数字
+    * */
+
+//    function getCss(ele,attr) {
+//        var str=navigator.userAgent;
+//        var res=null;
+//        if(/MSIE *[6-8]/.test(str)){
+//            res=ele.currentStyle[attr];
+//        }
+//        else {
+//            res=window.getComputedStyle(ele)[attr];
+//        }
+//        if(!isNaN(parseFloat(res))){
+//            res=parseFloat(res);
+//        }
+//        return res;
+//    }
+//    console.log(getCss(oDiv,'width'));// 200px
+//    // 用正则处理
+//      var reg=/^[+-]?(\d[1-9]\d+)(\.\d+)?(px|rem|em|pt)$/;
+//    function getCss(ele,attr) {
+//        var str=navigator.userAgent;
+//        var res=null;
+//        if(/MSIE *[6-8]/.test(str)){
+//            res=ele.currentStyle[attr];
+//        }
+//        else {
+//            res=window.getComputedStyle(ele)[attr];
+//        }
+//       return reg.test(res)?parseFloat(res):res;
+//    }console.log(getCss(oDiv,'width'));// 200px
+  //--------------------------------------------------- var reg=/^[+-]?(\d[1-9]\d+)(\.\d+)?(px|rem|em|pt)$/;
+//    function getCss(ele,attr) {
+//        var str=navigator.userAgent;
+//        var res=null;
+//        if(/MSIE *[6-8]/.test(str)){
+//            res=ele.currentStyle[attr];
+//        }
+//        else {
+//            res=window.getComputedStyle(ele)[attr];
+//        }
+//        return reg.test(res)?parseFloat(res):res;
+//    }
+    //---------------------------------------------------
+    // setCss
+//    function setCss(ele,attr,value) {
+//        // 常用的需要加单位的属性  width height top left padding right bottom fontsize margin
+//        var reg=/width| height |top| left| padding| right |bottom| fontsize |margin/i;
+//        if(reg.test(attr)){
+//            value=parseFloat(value)+'px';
+//        }
+//        ele.style[attr]=value;
+//    }
+//
+//    setCss(oDiv,'backgroundColor','#333');
+//
+  //----------------------------------------
+    // 批量设置
+    // hasOwnProperty 在IE里面不存在兼容问题
+//    function setGroup(ele,obj) {
+//        if(Object.prototype.toString.call(obj)=="[object object]"){
+//            for(var k in obj){
+//                if(obj.hasOwnProperty(k)){
+//                    setCss(ele,k,obj[k]);
+//                }
+//            }
+//        }
+//    }
+   //----------------------------------
+    // 综合 css
+//     function css(...arg) {
+//         if(arg.length==2){
+//             if(typeof arg[1]=='string'){
+//                 return getCss(arg[0],arg[1])
+//             }
+//             setGroup(arg[0],arg[1]);
+//         }else {
+//             setGroup(arg[0],arg[1],arg[2]);
+//         }
+//     }
+
+
+
+
+
+
+</script>

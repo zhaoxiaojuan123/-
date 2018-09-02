@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+/*
+* 先在本地建一个文件夹
+* 右键 使用 git bash here
+* git init 初始化 文件夹
+* 修改文件夹内的文件
+* git add .  -->把工作区的文件提交到缓存区
+* git commit -m 'xxx'   -->把缓存区的内容提交到历史区  xxx代表备注
+*
+* git config --global user.name  zhaoxiaojuan
+* git config --global user.email ....
+* 以上两步操作 只进行以次就行了
+* git config --list 查看用户信息是否初始化成功
+*
+* 现在 用户信息已经初始化完成 代码也已经提交到了历史区，怎么把历史区的代码提交到 gitHub 上
+* git remote add 桥梁名 远程仓库地址
+* git remote add zxj    http://github.com/zhaoxiaojuan123/...
+* git remote -v  查看已经存在的桥梁
+*
+* git pull 桥梁名 master(分支名) 一般在push之前 我们都要进行一次 pull的拉取代码的操作
+* git push 桥梁名  master(分支名)
+*
+* */
+
+/*
+* git clone 远程仓库地址  -->把仓库克隆一份到本地
+* 直接从远程克隆一份代码到本地；
+* 默认的桥梁是origin
+* 这时的push 和 pull 都可以把后边的桥梁名和分支名省略 git pull、 git push 即可
+* */
+
+// 常用的Linux 命令
+    /*
+    * ls :  查看当前文件夹下的有哪些子文件
+    * cd 文件路径 --> 直接进入对应的文件
+    * cd  ..或者cd ../   ----> 回到上一级文件夹
+    * mkdir 文件夹的名称  -->  创造一个文件夹
+    * touch  文件名  --> 创建一个文件
+    * vi 文件名  --> 进入文件，接着按 i 键；进入编辑状态，编写文件，编写完成后，按 esc键 退出编辑状态；再按（输入）英文的 :wq 保存刚才的编辑
+    * cat 文件名 --》 查看文件的内容
+    * */
+    /*
+    * 交作业
+    * fork 老师的git  地址 ： 相当于把老师的代码复制一份到自己的gitHub 上
+    * 把 fork 到自己gitHub上的库 克隆一份到自己的电脑上（注意 不要再已经存在的库里边克隆）
+    * 在自己电脑的对应的文件夹下 添加自己的作业
+    * 然后 再去git add.  ---> git commit -m 'xxx'  ---> git push
+    *
+    * 然后 再去github 上 点击 （new pull request）按钮； 再去创建一个 pull 请求；(create pull request)  填写标题 和   备注即可；老师同意之后，代码才会合并到老师的库中
+    *
+    * */
+
+</script>

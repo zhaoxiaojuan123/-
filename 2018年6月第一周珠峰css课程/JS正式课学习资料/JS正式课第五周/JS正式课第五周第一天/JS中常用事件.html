@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        #div1 {
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            background: rosybrown;
+            cursor: pointer;
+        }
+        #inp{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">事件</div>
+<input type="text" id="inp" placeholder="这是个注释">
+<textarea name="" id="" cols="30" rows="10"></textarea>
+</body>
+</html>
+<script>
+    var oDiv = document.getElementById('div1');
+    
+    
+    /*
+     * JS 中常用的事件
+     * 事件：系统天生自带的，跟绑定不绑定没关系
+     *
+     * 鼠标的常用事件
+     *    onclick
+     *    ondblclick  大约300毫秒连续点击两次
+     *    onmouseover 鼠标划过
+     *    onmouseout  鼠标划出
+     *    onmouseenter 鼠标进入
+     *    onmouseleave 鼠标离开
+     *    onmousemove  鼠标滑动
+     *    onmousedown 鼠标按下
+     *    onmouseup   鼠标松开
+     *    onmousewheel 鼠标滚轮
+     *
+     * 键盘的常用事件
+     *     onkeydown 键盘按下
+     *     onkeyup   键盘松开
+     *     onkeypress  键盘按下（有的键不能用）
+     *     
+     *  表单input框的常用事件
+     *     onfocus   获取焦点
+     *     onblur    失去焦点
+     *     onchange  监听内容变化 （内容改变并且失去焦点才能触发）
+     *     oninput   监听内容变化
+     * 系统事件
+     *     window.onload  //页面资源加载完毕（包含图片，不含ajax）
+     *     window.onscroll // 滚动条滚动
+     *     window.onresize//  可视窗口大小发生改变
+     *     $(document).ready -->JQ的事件 只加载DOM树 加载完毕
+     * 移动端事件 touch
+     *  touchstart 触碰开始
+     *  touchmove  按下滑动
+     *  touchend   触碰结束
+     *  onclick    有个大概300毫秒延迟
+     *
+     *
+     * */
+//    oDiv.ondblclick = function () {
+//        alert(1);
+//    };
+//    oDiv.onmouseover = function () {
+//        console.log(2);
+//    };
+//    oDiv.onmouseout = function () {
+//        console.log(3);
+//    };
+//    oDiv.onmousemove = function () {
+//        console.log(4);
+//    }
+
+//    oDiv.onclick=function () {
+//        console.log(1);
+//    };
+//    oDiv.onmousedown=function () {
+//        console.log(2);
+//    };
+//    oDiv.onmouseup=function () {
+//        console.log(3);
+//    };
+//   oDiv.onmousewheel=function () {
+//       console.log(4);
+//   };
+//   document.onkeydown=function () {
+//       console.log('keydown');
+//   }
+//  document.onkeyup=function () {
+//      console.log('keyup');
+//  }
+//  document.onkeypress=function () {
+//      console.log('press');
+//  }
+
+//    inp.onfocus=function () {
+//        console.log('focus');
+//        console.dir(this);
+//        this.value='设置值'
+//    };
+//    inp.onblur=function () {
+//        console.log('blur');
+//        console.log(this.value);
+//    };
+//    inp.onchange=function () {
+//        console.log('onchange');
+//        console.log(this.value);
+//    };
+//    inp.oninput=function () {
+//        console.log('oninput');
+//        console.log(this.value);
+//    }
+//    inp.onkeydown=function () {
+//        console.log(this.value);
+//    }
+   /* inp.onkeyup=function () {
+        console.log(this.value); //value字符串类型
+        this.value=this.value.replace(/\D+/g,'');//限制输入的类型
+    };*/
+    /*
+    * input 值的输入  是在keydown 之后 keyup之前做的
+    * */
+    oDiv.ontouchstart=function () {
+        console.log('start');
+    }
+    oDiv.ontouchmove=function () {
+        console.log('move');
+    }
+    oDiv.ontouchend=function () {
+        console.log('end');
+    }
+</script>

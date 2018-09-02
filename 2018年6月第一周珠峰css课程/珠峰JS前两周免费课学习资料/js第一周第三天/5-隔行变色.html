@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            width: 400px;
+            margin: auto;
+        }
+        li{
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+    </style>
+
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+
+</body>
+</html>
+<script>
+
+   /* function byTag(tag) {
+      var oLis = document.getElementsByTagName(tag);
+        return oLis
+    }
+    var lis =byTag('li');
+    console.log(lis)*/
+
+  /*  var  olis = document.getElementsByTagName('li');
+    for(var i=0;i<olis.length;i++){
+     //奇数行
+     if(i%2==0){
+     olis[i].style.background='red';
+     }else{
+     olis[i].style.background='green';
+     }
+     }*/
+
+
+ function byTag(tag) {
+ var oLis = document.getElementsByTagName(tag);
+ return oLis;
+ };
+ var lis = byTag('li');
+ console.log(lis);
+ // for(var i = 0; i < lis.length; i++){
+ //     if(i%2==0){
+ //         lis[i].style.backgroundColor = '#1CCC3A'
+ //     }else {
+ //         lis[i].style.backgroundColor = '#CC8F21';
+ //     }
+ // }
+
+ function changeBg(olis) {
+ for(var i = 0; i < olis.length; i++){
+      if(i%2==0){
+     olis[i].style.backgroundColor = '#1CCC3A'
+      }else {
+ olis[i].style.backgroundColor = '#CC8F21';
+ }
+ }
+ }
+changeBg(lis);
+
+ // lis[0].onmouseover = function () {
+ //     console.log('over')
+ // };
+ // lis[0].onmouseout = function () {
+ //     console.log('out')
+ // };
+ // lis[1].onmouseover = function () {
+ //     console.log('over')
+ // };
+ // lis[1].onmouseout = function () {
+ //     console.log('out')
+ // };
+ // lis[2].onmouseover = function () {
+ //     console.log('over')
+ // };
+ // lis[2].onmouseout = function () {
+ //     console.log('out')
+ // };
+ // lis[3].onmouseover = function () {
+ //     console.log('over')
+ // };
+ // lis[3].onmouseout = function () {
+ //     console.log('out')
+ // };
+ // lis[4].onmouseover = function () {
+ //     console.log('over')
+ // };
+ // lis[4].onmouseout = function () {
+ //     console.log('out')
+ // };
+ // lis[5].onmouseover = function () {
+ //     console.log('over')
+ // };
+ // lis[5].onmouseout = function () {
+ //     console.log('out')
+ // };
+
+ /*changeBg(lis);
+       var col = '';// 定义一个变量，这个变量用来存储之前的颜色
+
+      for(var i = 0; i < lis.length; i++){
+
+     console.log(lis[i].style.backgroundColor);
+
+    lis[i].onmouseover = function () {
+    col = this.style.backgroundColor;// col 存放之前的颜色,记录一下
+
+    this.style.backgroundColor = '#2EC2CC';
+    };
+   lis[i].onmouseout = function () {
+   this.style.backgroundColor = col;// 从新将col存的之前的颜色又给了属性值，变回原来的颜色
+
+   console.log('out');
+    // changeBg(lis);
+ };
+ }*/
+//--------------------------------
+
+function  change() {
+    for(var i = 0; i < lis.length; i++){
+        var n=i+1;
+        lis[i].onmouseover = function () {
+           this.mybgcolor = this.style.backgroundColor;// col 存放之前的颜色,记录一下
+            this.style.backgroundColor = '#2EC2CC';
+        };
+        lis[i].onmouseout = function () {
+            this.style.backgroundColor = this.mybgcolor;
+
+        };
+
+    }
+}
+change(lis);
+
+// 点击哪个li出现这是第n个li"
+   function dian(lis) {
+       for (var i = 0; i < lis.length; i++) {
+           lis[i].index=i+1;
+           lis[i].onclick = function () {
+               alert("这是第"+this.index+"个li");
+           }
+       }
+   }
+
+   dian(lis);
+
+//-----------------------
+
+    //this 思想
+ /*for(var i=0;i<lis.length; i++){
+
+     lis[i].myqqq=lis[i].style.backgroundColor;// lis[i].myqqq 是自定义的属性名
+
+      lis[i].onmouseover=function () {
+          this.style.backgroundColor='red';
+      };
+      lis[i].onmouseout=function () {
+          this.style.backgroundColor=this.myqqq;
+
+      }
+
+
+ }*/
+
+
+
+
+
+
+
+
+</script>

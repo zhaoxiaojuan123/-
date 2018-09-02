@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+</head>
+<body>
+
+<div id="div1">珠峰培训</div>
+</body>
+</html>
+<script>
+
+    //变量提升
+    // var i = 5;
+    // --i;// i - 1 ;然后再去做其他运算
+    // i--;//先做其他运算，再 i-1;
+
+    function fn() {
+        i=2;
+        return function (n) {
+            console.log(n*(i++))
+        }
+    }
+    var f=fn();// 全局 i=2
+    f(3);//6  n*i=3*2=6 i=3
+    fn()(3);//6  ,i=2 n*i=3*2=6 i=3
+    fn()(4);//8, i=2 n*i=4*2=8 i=3
+    f(2);//6,  2*3=6 i=4
+//----------------------------------------------
+
+    function fn() {
+        var i = 5;
+        return function (n) {
+            console.log(n*(--i))
+        }
+    }
+    var f = fn();//==xxxfff000-->function(){console.log(n*(--i))}
+    f(10);  // 10*(5-1)=40 i=4
+    fn()(10);//重新开辟作用域执行函数--> 10*(5-1)=40  i=4
+    fn()(20);////重新开辟作用域执行函数--> 20*(5-1)=80  i=4
+    f(20);// 此时还是执行f() 这个函数 但是i=4;-->20*(4-1)=60
+    //___________________________________________________________
+    //1、
+    var i = 2;
+    function fn() {
+        i += 2;
+        return function (n) {
+            console.log(n + (--i));
+        }
+    }
+    var f=fn();// f=xxxfff000-->function(){ console.log(n + (--i));} 此时 i=4 也是全局的i=4
+    f(2);//  2+(4-1)=5  i=3
+    f(3);// 3+(3-1)=5   i=2
+    fn()(2);// i=2+2=4, 2+(4-1)=5 i=3
+    fn()(3);//i=3+2=5 , 3+(5-1)=7  i=4
+    f(4);  // 4+(4-1)=7
+    //--------------------------------------------------
+    //2、
+    var n = 10;
+    function fn() {
+        var n = 20;
+        function f() {
+            n++;
+            console.log(n);
+        }
+        f();
+        return f;
+    }
+    var x = fn();// xxxfff000-->function(){  n++; console.log(n);} n=21
+    x();//n=22
+    x();// n=23
+    console.log(n);//10
+ //________________________________________________
+    //3、
+    let i = 1;//-->2-->7-->14-->
+    let fn = function (n) {
+        i *= 2;
+        return function (m) {
+            i += n + m;
+            console.log(i);
+        }
+    };
+    let f = fn(2);// i=2,n=2, xxxfff000-->function(){ i += n + m;console.log(i); }
+    f(3);//  i=i+n+m=2+2+3=7;i=7
+    fn(2)(3);// n=2,i=7*2=14, m=3-->i=i+n+m=14+2+3=19
+    f(4);//m=4,i=i+n+m=19+2+4=20  i=25
+    f(5);//m=4,i=i+n+m=25+2+5=32
+//---------------------------------------------------
+
+    //this
+    //1、
+  var num =1;
+    var obj = {
+        num : 10,
+        fn : (function () {
+            this.num *=3;
+            console.log(num);
+            return function () {
+                num +=2;
+                this.num ++;
+            }
+        })()
+    };
+    var f = obj.fn;
+    f();
+    obj.fn();
+    console.log(num, obj.num);//8   11
+//------------------------------------------------------
+    //2
+    var name = '珠峰';
+    var age = 9;
+    age = (function (name,age) {
+        name = '峰';
+        age = age || this.age;
+        this.age = arguments[0];
+        console.log(name,age);// '峰' 9
+        return this.age;
+    })(name,age);
+    console.log(name,age);//珠峰  '峰'
+  //----------------------------------------------
+    //3
+    var obj = {name:'珠峰',age:9};
+    (function (obj) {
+        obj.name = '中国';
+        obj = {};
+        obj.age = 5000;
+        console.log(obj.age);//5000
+    })(obj);
+    console.log(obj.name); //'中国'
+//--------------------------------------------------
+    //4
+    var num = 1;
+    var obj = {num:2};
+    obj.fn = (function (num) {
+        this.num = num*2;
+        num++;
+        return function (n) {
+            this.num += n;
+            num++;
+            console.log(num)
+        }
+    })(obj.num);
+    var fn = obj.fn;
+    fn(10);
+    obj.fn(20);
+    console.log(num, obj.num);//4,5,14,22
+    //---------------------------
+
+
+    function f() {
+        console.log(a);// 报错 a is not defined
+        const a=12
+    }
+f()
+</script>  

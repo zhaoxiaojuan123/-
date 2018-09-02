@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: #7dcfa0;
+            line-height: 100px;
+            text-align: center;
+            border-radius: 50%;
+            user-select: none;
+            cursor: move;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">拖拽</div>
+
+</body>
+</html>
+<script>
+    /*
+     * 按下鼠标时，记录鼠标的位置和盒子的位置
+     * 当鼠标移动时，记录鼠标x,y轴移动的距离，让盒子相应的移动这么多
+     */
+
+    var oDiv=document.getElementById('div1');
+    oDiv.onmousedown=function (e) {
+        dragStart.call(this,e);
+        // 初版是在外边直接给document绑定move
+        //这次 我们在 onmousedown 中绑定
+        document.onmousemove=dragMove.bind(this);
+        document.onmouseup=dragEnd.bind(this);
+    };
+    function dragStart(e) {
+        this.startX=this.offsetLeft;
+        this.startY=this.offsetTop;
+        this.mx=e.clientX;
+        this.my=e.clientY;
+        this.canM=true;
+    }
+    function dragMove(e) {
+        if(!this.canM)return;
+        var x=e.clientX-this.mx,
+            y=e.clientY-this.my;
+        this.style.left=this.startX+x+'px';
+        this.style.top=this.startY+y+'px';
+    }
+    function dragEnd(e) {
+        //this.canM=false;
+      document.onmousemove=null;
+        document.onmouseup=null;
+    }
+
+
+
+
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    // 1、setTimeOut(f,time)  只执行一次 f是个函数体 time是毫秒级时间
+    // clearTimeOut(timer)  清除timeout 定时器
+    var timer=window.setTimeout(function () {
+        console.log(122)
+    },2000) ;//2000毫秒 2s
+    //2s之后要做的事情
+     window.clearTimeout(timer);
+
+     //2、setInterval(f,time)  执行无限次；f是个函数体 time是个毫秒级的时间
+    // cleaeInterval(timer2)  清除 interval定时器
+
+    // 创建定时器的时候要注意给定时器一个名字，方便之后清除定时器
+
+    var timer2=window.setInterval(function () {
+        console.log(3333)
+    },1000);
+
+     window.clearInterval(timer2);
+
+
+
+
+</script>

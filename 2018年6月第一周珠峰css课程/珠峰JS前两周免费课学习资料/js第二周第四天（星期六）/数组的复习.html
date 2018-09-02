@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+  /*  var ary=[];
+    //本身就是对象的一种细分，属性名是从0开始依次递增的数字
+    // 我们把这些依次递增的数字属性名 叫做 索引
+    // 数组里的每一项 都可以是任意数据类型
+    var ary=[1,2,3,4,5];
+    console.dir(ary);
+    var obj={1:'aa',2:'qq',a:'dd'};
+    console.dir(obj);
+
+    //对象  中 获取对应属性名的属性值  打点 ['']
+    //对象中 若属性名是数字，那么我们只能用[]的方式
+    // 数字属性名 我们可以把引号省略
+   // 属性值可以是任意的数据类型
+
+   /!* obj[1] ;
+    obj['1'];
+    obj['a'];*!/
+
+  // ary[1];ary['1'] //拿的是一个东西
+
+    //length
+    var sum=function () {
+        console.log(222);
+        //return ; 这时的返回值 仍然是undefined
+        // 这个函数没有 return 所以他的默认返回值是 undefined
+    };
+    var arr=[1,true,'wer',null,undefined,{q:1},[12],function () {
+        console.log(111)
+    },sum,sum()];
+    //arr[8]()  or  sum()  让函数sum执行 （因为sum在数组外面有定义 所以可知直接写sum()）
+    //arr[7]()  代表咱们的那个匿名函数 加个小括号 让这个函数执行
+     //arr[9] 这个位置放的是 sum执行之后的返回结果
+
+    console.log(arr,arr[9]);// 结果是 返回值 arr[...]  undefined
+
+    // 当数组没有对应的项的时候，咱们去获取的时候，会返回一个undefined
+    console.log(arr[10]);// undefined
+    arr[11]=999;
+    console.log(arr);
+    arr.zhufeng='www';//给arr 自定义属性
+
+    for (var k in arr){
+    console.log(arr[k]);// 可以拿到自定义的属性zhufeng
+    }
+
+    for (var i = 0; i < arr.length; i++) {
+         console.log(arr[i]);// 拿不到自定义的属性zhufeng
+    }
+
+    console.log(arr); // 数组中有自定义属性 zhufeng 但是length 是不变的
+
+     // 对象是没有length这一说法 一般用for in 循环*/
+//------------------------------------------------------------------
+    //数组的增删改
+
+  /*  var ary=['qq',12,true,function () {
+        console.log(111);
+    }];*/
+    //ary[11]=  给数组添加一项
+    // 1、push() 在数组的末尾增加 数组项
+    // 参数 可以有也可以没有,也可以是多项,参数的数据类型 不限
+
+   /* ary.push(15,14,16);
+    ary[7]='ccc';
+    ary[ary.length]='ddd' ;// 给数组ary 末尾增加一项
+    console.log(ary);
+  */
+    // 2、 unshift(); 向数组的 头部添加数组项
+    // 参数 可以有也可以没有 也可以是多项 ，参数的数据类型 不限
+    // 和push 一样 返回值是 改变后的数组的长度
+    // 和push 一样 会改变原有数组
+    /*ary.unshift(null,undefined,12,function () {
+        console.log(222);
+    });
+  console.log(ary);*/
+
+    // 3、 shift(); 删除数组的第一项
+    // 参数 无
+    // 返回值是 删除的那一项
+    // 原有数组改变
+
+   /* var temp=ary.shift();
+   console.log(temp, ary);//返回值  qq  [12, true, ƒ]*/
+
+     //4、pop(); 删除数组的最后一项
+     // 参数 无
+     //返回值是 删除的那一项
+    // 原有数组改变
+   /* var temp1=ary.pop();
+     console.log(temp1, ary);// 返回值是 ƒ(){console.log(111);}    ["qq", 12, true]
+     temp1();//可以执行 结果 111*/
+   // ary.length -=1; //删除数组最后一项
+   // console.log(ary);
+   /* ary.length--;//删除数组最后一项
+    console.log(ary);//结果： ["qq", 12, true]*/
+
+   // 下面是自己写的函数
+    /*var ary2=[3,3,2];
+    function myPush() {
+        var arg=arguments;
+        var arr=arg[0];
+        for (var i = 1; i < arg.length; i++) {
+            arr[arr.length]=arg[i]; // 利用数组的lengtn 的值一直在增加的特点
+        }
+        return arr.length;
+    }
+    myPush(ary2,9,8,7);
+    console.log(ary2);// 结果是[3, 3, 2, 9, 8, 7]*/
+
+    // 5、splice(n,m,x,y,z...)  把数组从索引 n开始 删除m个元素，用后边x,y,z..来代替删除的m项
+    // 返回值：删除的m项组成的新数组返回
+    // 原来数组改变
+    // 当m=0 的时候，它是把x,y,z...放到了索引n的前边
+    // x,y,z.. 可以不写， 意思就是代表删除数组的元素
+  //  var ary3=[1,2,3,4];
+   /* var temp=ary3.splice(1,2,1,2,3);
+    console.log(temp,ary3);// 结果：[2, 3]  [1, 1, 2, 3, 4]*/
+  /* var temp1=ary3.splice(1,0,1,2,3);// 一个不删除，插入的数放在n的前面
+   console.log(temp1,ary3);//结果： []  [1, 1, 2, 3, 2, 3, 4]
+   var temp3=ary3.splice();// 代表没有对数组做任何的操作； 返回值是一个 空数组
+   var temp4=ary3.splice(0);// 代表整个数组的内容删除；返回值是一个有原数组的每一项组成的新数组；原数组变成 空数组
+    */
+  //测试 splice
+ /* var ary=[1,2,3,4,5];
+  var temp=ary.splice(2,1);
+  temp[1]=12;
+  console.log(temp,ary); //[3, 12]  [1, 2, 4, 5]*/
+//------------------------------------------------
+
+    //数组的排列和排序
+
+   // var ary=[1,2,3,6,5,6,4];
+    /*
+    * 1、 reverse()  数组的翻转
+    * 参数 无
+    * 返回值 是 翻转后的数组（跟原数组是一个数组）
+    * 改变原有数组
+    * */
+    /*var temp= ary.reverse();
+    console.log(temp,ary)//两个一样 4，6,5,6,3,2,1
+    temp[0]=8;
+   console.log(temp,ary);//两个操作时一个地址 都改变
+    */
+
+ //自己写的 第一种方法
+  /* function myReverse1(ary) {
+       var arr=[];
+       for (var i = 0; i < ary.length; i++) {
+              arr[i]=ary[ary.length-1-i];
+
+       }
+       return arr;
+   }
+  myReverse(ary);
+ console.log( myReverse1(ary));//[4, 6, 5, 6, 3, 2, 1]*/
+
+    // 第二种方法
+
+  /*function myReverse2(ary) {
+      for (var i = 0; i < ary.length/2; i++) {
+         var temp=ary[i];
+          ary[i]=ary[ary.length-1-i];
+          ary[ary.length-1-i]=temp;
+
+      }
+      return ary;
+  }
+/!* var temp1= myReverse2(ary);
+  console.log( temp1); *!/
+
+  console.log( myReverse2(ary));
+    */
+   /* 2、sort() 数组的排序
+     *返回值 是排好序后的数组 （跟原数组是同一个地址）
+     *改变原有数组
+     *参数 可传可不传
+     *传参数时是一个回调函数
+     *不传参数 可以排序10以内的数 升序
+     *
+    */
+     /*var temp=ary.sort();
+  console.log( temp,ary);//[1, 2, 3, 4, 5, 6, 6] 升序*/
+
+  /*  var temp1=ary.sort(function (a,b) {
+        return b-a;// 降序 把原数组从大到小排序
+    });
+  console.log( temp1,ary);//[6, 6, 5, 4, 3, 2, 1] 降序*/
+
+    /*var ary3=[{name:'小明',age:'18'},{name:'小明',age:'16'},{name:'小明',age:'19'},,{name:'小明',age:'14'}]
+ary3.sort(function (a,b) {
+     return a.age-b.age; // 按照 age 升序排序
+});
+    console.log(ary3);*/
+  /* 结果
+   0: {name: "小明", age: "14"}
+   1:{name: "小明", age: "16"}
+   2:{name: "小明", age: "18"}
+   3:{name: "小明", age: "19"}
+    */
+  //===========================================================
+    // 不改变原有数组方法
+    /*
+    * 1、toString(); 把数组 按照 逗号 拼接成一个字符串
+    * 没参数
+    * 返回值 就是用 逗号 拼接成的字符串
+    * */
+    /*var aryy=[2,3,4,1,5];
+
+    var str=aryy.toString();
+    console.log(str,typeof str,aryy); //“2,3,4,1,5” string   [2, 3, 4, 1, 5]*/
+    /*
+    * 2、join();把数组按照指定字符 拼接成 一个字符串
+    * 参数 可有可无;没有参数就是默认的逗号
+    * 返回值 就是 按照指定字符拼接成的字符串
+    * */
+  /* var aryy=[2,3,4,1,5];
+  var str2=aryy.join(',');//2,3,4,1,5
+  var str3=aryy.join();
+  console.log(str2===str3);// true 都是值类型的string 里面的值相等
+  var str4=aryy.join('+');
+  console.log(str4);// "2+3+4+1+5"*/
+// 结合 eval 和 join 求和
+    /*function sum(ary) {
+        var total=0;
+        for (var i = 0; i < ary.length; i++) {
+           total+=ary[i];
+        }
+        console.log(total);
+        return total;
+    }
+    console.log(sum(aryy))// 15*/
+
+    // 3、slice(n,m); 从索引 n (包括n) 开始 获取到索引m（不包括m）
+    // var tempAry=aryy.slice(2,3);
+    // var tempAry1=aryy.slice(-4,-1);// 从倒数第四项 找到倒数第一项（不包括）
+    // aryy.slice(aryy.length-4,aryy.length-1)相当于
+    // arry.slice()/ arry.slice(0) //是复制数组
+
+
+    /*
+    * 4、concat() 数组拼接
+    * 接受参数 参数类型不变
+    *原数组不变
+    * */
+   /* var tempAry5=aryy.concat(12);//
+  console.log(tempAry5,aryy);// [2, 3, 4, 1, 5, 12]   [2, 3, 4, 1, 5]
+    var tempAry6=aryy.concat(12,{w:12},[12]);
+  console.log(tempAry6);// [2, 3, 4, 1, 5, 12, {…}, 12]
+
+  */
+
+    // 5、indexOf  lastIndexOf 查看某个元素在数组里的索引
+     // indexOf(n,m) 从索引 m 开始查看 n在数组里边的索引
+    // 返回值是参数在数组里的索引;
+    // 若没有这个数的话就返回值 -1
+
+//============================================================
+    // 数组去重
+   /*
+   * 思路1：
+   *    去拿当前项 跟后边的每一项去比较； 如果后边有一项跟当前项相同，那就证明，后边这项是重复的，删除后边这一项即可。
+   * */
+   // var ary=[1,2,1,3,4,5,6,4,5];
+    /* function quChong(ary) {  // 会改变原有数组
+         for (var i = 0; i < ary.length; i++) {
+             for (var j = i+1; j < ary.length; j++) {
+                 if(ary[i]==ary[j]){
+                     ary.splice(j,1);
+                     j--; // 数组塌陷问题
+                 }
+             }
+         }
+         return ary
+     }
+console.log(quChong(ary))*/
+
+// 第二种方法 先造一个空对象，循环数组，把数组的每一项当做属性名添加到对象里，属性值也是数组里的值；
+  // 利用对象属性名不重复的特性，再以数组的方式输出
+   /* function quChong2(ary) {
+        var obj={},arr=[];
+
+        for (var i = 0; i < ary.length; i++) {
+            obj[ary[i]]=ary[i]
+        }
+        for(var k in obj){
+           arr.push(obj[k]);
+        }
+        return arr;
+    }
+    console.log(quChong2(ary));*/
+
+// 第三种方法  indecOf（x）==-1 看这个数在不在数组里，=-1则不在数组里 就push
+   /* function quChong3(ary) {  // 不会改变原有数组
+          var arr=[];
+        for (var i = 0; i < ary.length; i++) {
+           if(arr.indexOf(ary[i])==-1){
+               arr.push(ary[i]);
+           }
+    }
+        return arr;
+    }
+
+  console.log(quChong3(ary));
+*/
+
+   /*
+   * function removeRep3(ary) {
+    var obj = {};
+    for(var i = 0; i < ary.length; i++){
+    if(typeof obj[ary[i]] != 'undefined'){
+         ary[i] = ary[ary.length-1];
+         ary.length --;
+          i--;
+           continue;
+           }
+    obj[ary[i]] = ary[i];
+    }
+    return ary;
+    }
+    */
+
+
+ //==========================================
+    /*
+    * 数组排序
+    * ary.sort(function(a,b){return a-b})
+    * localeCompare
+    * */
+    /*
+    * 思路1：冒泡排序
+    * 两两比较 如果前边大于后边 那么我们就让他们交换位置，否则不动*/
+    var ary=[1,4,12,32,16,2,5];
+    function maoPao(ary) {
+        for (var i = 0; i < ary.length; i++) { // 比较的轮数
+            for (var j = 0; j < ary.length-1-i; j++) { // 实现两两比较
+                var temp=ary[j];
+                 if(ary[j]>ary[j+1]){ // 前一项大于后一项，交换位置
+                     ary[j]=ary[j+1];
+                     ary[j+1]=temp;
+                 }
+            }
+        }
+        return ary;
+    }
+
+console.log(maoPao(ary));
+
+    // 快速排序法
+    // 递归思想：自己调用自己
+
+
+function sum(n) {
+    if(n<=0){
+        return 0; //边界
+    }
+    return n+sum(n-1);
+}
+
+console.log(sum(10));//55
+
+// 0-10之间奇数的和
+
+    function sum1(n) { // 奇数之和
+        if(n<=0){
+            return 0; // 边界
+        }
+        if(n%2!=0){
+           return n+sum1(n-1);
+        }
+        return sum1(n-1);
+    }
+  console.log(sum1(10));//25
+
+  function sum2(n) { //能被3和15整除的
+      if(n<=0){
+          return 0; // 边界
+      }
+      if(n%3==0&&n%5==0){
+          return n+sum2(n-1);
+      }
+      return sum2(n-1);
+  }
+  console.log(sum2(20));//15
+
+    //快速排序： 先去找数组中间一项，把这一项拿出来；用拿出来之后的数组中的每一项跟拿出来的这一项比较；比这大的放到一个数组；小的放到另外一个数组；  接着对着两个数组做相同的工作
+    function quiklyPaiXu(ary) {
+        if(ary.length<=1){ // 先判断数组是不是空数组，还有只剩一个值
+            return ary;
+        }
+        var left=[],right=[];
+        var n=Math.floor(ary.length/2);//中间项的索引
+        var temp=ary.splice(n,1)[0];// 拿出中间值
+        for (var i = 0; i < ary.length; i++) {
+            if(ary[i]<temp){
+                left.push(ary[i]);
+            }else {
+                right.push(ary[i]);
+            }
+        }
+        return quiklyPaiXu(left).concat(temp,quiklyPaiXu(right))
+    }
+  var ary1=[1,4,12,32,16,2,5];
+  console.log(quiklyPaiXu(ary1));
+
+
+</script>

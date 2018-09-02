@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 100px;
+            overflow: hidden;
+            border: 10px solid #24ccc8;
+            margin: auto;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="div1">同学，祝贺你喜提彩蛋~
+    或许你们还在犹豫是否加入，我会坦诚的告诉你我们超酷；
+    在这里大家都用无人车代步，AI音箱不仅播放还可以交互；
+    人工智能是发展的核心技术，做自己让未来不只领先几步；
+    在这里做自己，欢迎来到百度！或许你们还在犹豫是否加入，我会坦诚的告诉你我们超酷；
+    在这里大家都用无人车代步，AI音箱不仅播放还可以交互；
+    人工智能是发展的核心技术，做自己让未来不只领先几步；
+    在这里做自己，欢迎来到百度！</div>
+</body>
+</html>
+<script>
+
+  // scrollTop
+
+    var oDiv=document.getElementById('div1');
+  // oDiv.scrollHeight  内容+上下padding --> 整个内容高度
+  // oDiv.clientHeight  盒子高度（不包括边框）和上下padding--> 盒子可视部分的高度
+  // 最大卷去的高度是 oDiv.scrollHeight-oDiv.clientHeight
+  /*
+  * 思路：就是让内容一直向上；当滚动到顶部的时候，让元素的scrollTop =0；
+  * 用定时器实现一点点的向上滚动
+  * */
+  var maxH=oDiv.scrollHeight-oDiv.clientHeight;
+  // scroll 系列 (height width) 直接取整
+  // client 系列和offset系列是四舍五入
+  // 方法一：
+    /*var timer=window.setInterval(()=>{
+        if(oDiv.scrollTop>=maxH){
+            // 若 已经走到头 就让它重新走
+            oDiv.scrollTop=0;
+        }else {
+            oDiv.scrollTop++;
+        }
+    },20);*/
+  // 方法二： 利用scrollTop有最大值；超过最大值时；
+  // scrollTop仍然是 最大值；
+
+  var timer=window.setInterval(()=>{
+       var h= ++oDiv.scrollTop;
+      // oDiv.scrollTop++; 这个是让元素内容向上滚动
+      // h 是oDiv.scrollTop的值；
+      // 然后让oDiv.scrollTop+1
+      if(h==oDiv.scrollTop){ // 这个地方是说 最大值 加一之后仍然等于最大值
+          // h是存的加1之前的scrollTop 加之前跟 加之后相等了；说明已经达到最大值了
+          oDiv.scrollTop=0;
+      }
+  },20);
+
+   // 利用递归和clearTimeout实现滚动
+  /*var fn=function () {
+      clearTimeout(timer2);
+      var h=oDiv.scrollTop++;
+      if(h==oDiv.scrollTop){
+          oDiv.scrollTop=0;
+      }
+      var timer2= window.setTimeout(()=>{
+          fn()
+      },20)
+  };
+   fn();*/
+
+</script>

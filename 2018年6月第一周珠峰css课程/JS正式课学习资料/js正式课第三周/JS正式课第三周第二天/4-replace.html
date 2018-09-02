@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    /*
+    * replace : 替换 支持全局正则，可以对整个字符串匹配和替换
+    * */
+    var reg=/\d+/g;
+    var str='zsxcd2018dcsxc2019';
+    var str1=str.replace(reg,','); // 实现把数字替换成, 逗号
+    console.log(str1);//zsxcd,dcsxc,
+
+    //---------------------
+    var reg=/\d+/g;
+    var str2=str.replace(reg,function () {
+        console.log(arguments);
+    });
+     console.log(str2);// zsxcdundefineddcsxcundefined
+    // 替换一次就输出一次 arguments
+    //Arguments(3) ["2018", 5, "zsxcd2018dcsxc2019", callee: ƒ, Symbol(Symbol.iterator): ƒ]
+    //Arguments(3) ["2019", 14, "zsxcd2018dcsxc2019", callee: ƒ, Symbol(Symbol.iterator): ƒ]
+//---------------------------------------------------------------------------------------
+    var reg1=/(\d+)/g; // 比上面多加了一个括号
+    var str2=str.replace(reg1,function () {
+        console.log(arguments);
+        // arguments
+        // 第一项  大正则匹配的内容
+        // 第二项  第一个分组匹配的内容
+        return '------'
+    }); // 这个函数体是在每一次要replace 时都先要执行一次
+    console.log(str2);//zsxcd------dcsxc------
+   //  ["2018", "2018", 5, "zsxcd2018dcsxc2019", callee: ƒ, Symbol(Symbol.iterator): ƒ]
+   //  ["2019", "2019", 14, "zsxcd2018dcsxc2019", callee: ƒ, Symbol(Symbol.iterator): ƒ]
+//-----------------------------------------------------------------------------------------------
+    /*把字符串中的 数字每一位全部加一*/
+
+    var reg3=/\d/g;
+    var str3='zhufeng2018zhufeng2019';
+    str3.replace(reg3,function () {
+        console.log(arguments);
+        var temp=arguments[0]; // 这是第一个数字但是是字符串
+        temp=temp*1+1; // 把字符串temp *1 转成数字number类型
+       // console.log(arguments)
+        return temp;
+    });
+    // 把reg3 匹配到str3 的内容 组合起来 当做实参传给后边的回调函数
+    // 用回调函数的返回结果替换 正则匹配到的内容
+
+    /*
+    * replace 的结合正则时的方法
+    * 1、str.replace(reg,'----')-->用'---'替换正则匹配到的内容
+    * 2、str.replace(reg,function(){}) -->先把reg匹配的内容组合起来；
+    * 当做实参传给后边的函数；再用函数的返回结果替换正则匹配到的内容
+    * */
+    //----------------------------------------
+    var str4='110123199902012130';
+    /*
+    * 需求：根据身份证号；展示出这个人的基本信息
+    * 这个人xx年xx月xx日出生的； 性别xx
+    * 用正则写 匹配到要的部分
+    * */
+
+    var reg4=/^\d{6}(\d{4})(\d{2})(\d{2})\d{2}(\d)[\d|X]]$/;
+    var ary=str.match(reg4);
+
+    var str2=`这个人是${ary[1]}年${ary[2]}月${ary[3]}日出生的；性别${ary[4]%2==0?'女':'男'}`;
+
+    var str3=str2.replace(reg,function () {
+        var ary=[...arguments];
+
+    })
+
+
+</script>

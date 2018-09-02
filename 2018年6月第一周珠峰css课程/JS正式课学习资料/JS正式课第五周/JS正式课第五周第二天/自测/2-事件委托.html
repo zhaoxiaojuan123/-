@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+  <style>
+      *{
+          padding: 0;
+          margin: 0;
+      }
+      #div1{
+          width: 700px;
+          height: 400px;
+          overflow: hidden;
+          margin: auto;
+      }
+      #div1 nav{
+          width: 200px;
+          height: 400px;
+          float: left;
+          overflow: hidden;
+      }
+      #div1 nav a{
+          width: 200px;
+          height: 50px;
+          border: 1px solid red;
+          display: block;
+          box-sizing: border-box;
+          text-align: center;
+          line-height: 50px;
+          text-decoration: none;
+      }
+      #div1 nav a.current{
+          background: #0AEEAA;
+          color: #fff;
+          font-size: 20px;
+      }
+      #div1 section{
+          width: 500px;
+          height: 400px;
+          background: #c8dcf2;
+          float: left;
+          text-align: center;
+          line-height: 400px;
+          font-size: 20px;
+      }
+  </style>
+</head>
+<body>
+ <div id="div1">
+     <nav>
+         <a href="javascript:;" class="current">导航1</a>
+         <a href="javascript:;">导航2</a>
+         <a href="javascript:;">导航3</a>
+         <a href="javascript:;">导航4</a>
+         <a href="javascript:;">导航5</a>
+         <a href="javascript:;">导航6</a>
+         <a href="javascript:;">导航7</a>
+         <a href="javascript:;">导航8</a>
+     </nav>
+     <section>
+         导航1内容
+     </section>
+ </div>
+
+</body>
+</html>
+<script>
+    var oDiv=document.getElementById('div1'),
+         nav= oDiv.getElementsByTagName('nav')[0],
+         section=oDiv.getElementsByTagName('section')[0],
+          oAs= document.getElementsByTagName('a');
+
+    oDiv.onclick=function (e) {
+        e=e||window.event;
+        var tar=e.target||e.srcElement;
+        if(tar.nodeName.toLowerCase()=='a'){
+            var str=tar.innerHTML+'内容';
+            section.innerHTML=str;
+            [...oAs].forEach((item)=>{
+                item.className=''
+            });
+            tar.className='current';
+        }
+    }
+
+
+</script>

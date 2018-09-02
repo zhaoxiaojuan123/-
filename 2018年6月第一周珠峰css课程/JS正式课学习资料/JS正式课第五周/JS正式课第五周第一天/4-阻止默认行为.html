@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<a href="https://www.baidu.com/" id="btn">百度首页</a>
+<!--<a href="javascript:void 0;" id="btn">百度首页</a>-->
+<input type="text" id="inp">
+</body>
+</html>
+<script>
+    /*
+    * 阻止默认行为
+    * */
+    var oA=document.getElementById('btn');
+    var inp=document.getElementById('inp');
+   /*
+    * 先执行 onclick事件；然后再执行自己的默认行为
+    * 跳转或者刷新 都属于a 标签的默认行为
+    * 阻止这种默认行为
+    * 1、在结构上阻止  javascript:;   javascript:void 0;   javascript:null; javascript: undefined;
+    * 2、JS阻止默认行为
+    *       执行的时候 return false
+    *   或者 e.preventDefault();
+    */
+
+    //-------------------------------------------------
+    oA.onclick=function (e) {
+        e=e||window.event;
+        alert(12);
+        return false
+    }
+    oA.onclick=function (e) {
+        e=e||window.event;
+        alert(12);
+        e.preventDefault(); // IE低版本没有这个属性
+        e.returnValue=false; //默认的值是true  IE低版本也有这个
+        e.preventDefault?  e.preventDefault(): e.returnValue=false; //可以用这个来兼容
+
+    };
+
+    inp.onkeydown=function (e) {
+        e=e||window.event;
+        console.log(this.value);
+        var n=e.keyCode;
+        if((n>=48&&n<=57)||(n>=96&&n<=105) ||n==8){
+
+        }else {
+            e.preventDefault?e.preventDefault():e.returnValue=false;
+        }
+    }
+
+
+</script>

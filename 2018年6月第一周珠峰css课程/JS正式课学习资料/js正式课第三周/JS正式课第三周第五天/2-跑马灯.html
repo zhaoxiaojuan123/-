@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>跑马灯</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #div1{
+            margin: auto;
+            width: 800px;
+            height: 200px;
+            overflow: hidden;
+            border: 1px dashed red;
+        }
+        #div1 ul li{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        #div1 ul li img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+</head>
+<body>
+  <div id="div1">
+      <ul class="ul_box">
+          <li><img src="images/1.jpg" alt=""></li>
+          <li><img src="images/2.jpg" alt=""></li>
+          <li><img src="images/3.jpg" alt=""></li>
+          <li><img src="images/4.jpg" alt=""></li>
+      </ul>
+  </div>
+
+</body>
+</html>
+<script src="utils.js"></script>
+<script>
+      var oDiv=document.getElementById('div1');
+      var oUl=oDiv.getElementsByClassName('ul_box')[0];
+      oUl.innerHTML+=oUl.innerHTML;
+    utils.setCss(oUl,'width',utils.css(oUl,'width')*2);
+    var maxL=oDiv.scrollWidth-oDiv.clientWidth;// 最大可卷去的宽度
+    var timer=setInterval(function () {
+        oDiv.scrollLeft++;
+        if(Math.ceil(oDiv.scrollLeft)>=maxL){
+            oDiv.scrollLeft=0;
+        }
+    },20)
+
+
+
+</script>

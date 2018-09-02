@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+   <style>
+       #div1{
+           width: 200px;
+           height: 200px;
+       }
+   </style>
+</head>
+<body>
+  <div id="div1" style="background: green">计算元素</div>
+</body>
+</html>
+<script>
+    /*
+    * getComputedStyle
+    * */
+    var oDiv=document.getElementById('div1');
+   // console.log(oDiv.style);
+    // 这种方式只能获取行内设置的样式
+
+    // 怎么获取oDiv的宽高
+   // console.log(oDiv.clientWidth);
+    //console.log(window.getComputedStyle(oDiv, null));
+    // 通过window.getComputedStyle(ele, null) 获取到的是个对象
+    // ie 6-8 不支持getComputedStyle 这个方法 --》 currentStyle --> ele.currentStyle
+    //ele 是要获取样式的元素 ， 第二个参数是这个元素对应的伪类
+    //对象中存储是ele 当前所有的样式
+//    var styleObj=window.getComputedStyle(oDiv);
+//    console.log(styleObj.height);
+//    console.log(styleObj.width);
+
+    /*
+    * 函数功能：实现获取某个元素对应的样式的样式值
+    * */
+
+//    function getCss(ele,temp) {
+//        return  window.getComputedStyle(ele)[temp];
+//
+//    }
+//    console.log(getCss(oDiv, 'height'));//200
+  // 处理兼容性的问题
+//     function getCss(ele,attr) {
+//         var res=null;
+//         try {
+//             res= window.getComputedStyle(ele)[attr];
+//
+//         }catch (e){
+//             res=ele.currentStyle[attr];
+//         }
+//         return res;
+//     }
+/*  function getCss2(ele,attr) {
+      var res=null;
+      if(window.getComputedStyle){ // typeof  window.getComputedStyle =='undefiend'
+          // 先去判断window下有没有这个属性；若是undefined 则直接走else 中的代码
+          res=window.getComputedStyle(ele)[attr];
+      }
+      else{
+          res=ele.currentStyle[attr];
+      }
+      return res;
+  }
+  */
+//----------------------------------------------------------------------
+  // navigator.userAgent ：用户使用浏览器的版本
+   // 使用  浏览器版本判断 是否是IE浏览器
+   var str="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; McAfee)";
+    var reg=/MSIE *\d/g;
+    console.log(reg.test(str));
+
+     function getCss3(ele,attr) {
+         var res=null;
+         var reg=/MSIE *[5-8]/;
+         if(!reg.test(navigator.userAgent)){
+             res=ele.getComputedStyle(ele)[attr];
+         }else {
+
+             res=ele.currentStyle[attr];
+         }
+         return res;
+     }
+//-------------------------------------------
+     // 提高函数的适用率
+    // 返回值是数字加单位的  直接处理成数字返回
+    // 没有数字加单位的      直接返回原值
+
+
+    function getCss(ele,attr) {
+        var res=null;
+        try{
+            res=window.getComputedStyle(ele)[attr];
+
+        }catch (e){
+            res=ele.currentStyle[attr];
+        }
+        // 判断是不是数字加单位的类型
+        var reg=/[+-]?(\d|[1-9]\d+)(\.\d+)?(px|rem|em|pt)?/g;
+        if(reg.test(res)){
+            parseFloat(res);
+        }
+        return res;
+    //-------------------------------
+//        if(!isNaN(parseFloat(res))){
+//            res= parseFloat(res);
+//        }
+//        return res;
+    }
+
+
+
+
+</script>

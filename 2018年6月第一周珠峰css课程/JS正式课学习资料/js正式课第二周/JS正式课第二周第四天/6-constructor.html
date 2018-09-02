@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    function Person(name,age) {
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.getName = function () {
+        console.log(this.name)
+    };
+    Person.prototype.name = '珠峰培训';
+    var per1 = new Person('小明',18);
+    per1.__proto__.getName = function () {
+        console.log(12);
+    };
+    per1.getName();// 12
+    var per2 = new Person('小红',20);
+    per2.getName();// 12
+
+    Person.prototype = {
+        name:'珠峰',
+        getName: function () {
+            console.log('www.zhufengpeixun.com')
+        }
+    };
+    var per3 = new Person();
+    per3.getName();// 'www.zhufengpeixun.com'
+    per2.getName();// 12
+    per1.getName();// 12
+   // per1 和 per2 是在 修改Person原型指向 之前创造出来的实例；
+    // 所以他们的__proto__ 仍然是指向 原有默认的Person原型对象
+    // per3 是在修改原型指向之后创造的实例；那么 他的 __proto__ 就是指向 新的原型对象
+    console.log(per1.constructor === Person);//true
+    console.log(per3.constructor === Object);// true
+    console.log(per2.constructor === per3.constructor);// false
+    console.log(per2.constructor === per1.constructor);//true
+    /*
+    *当我们手动把 自定义类 的原型指向更换之后，要注意constructor 的指向问题；
+    * 内置类的默认原型指向 是不能修改的；
+    * */
+
+    var obj={};
+    console.log(obj.constructor);// ƒ Object() { [native code] }
+
+    //--------------------------------------------
+    var name = '中国',age = 5000;
+    function Person() {
+        getName = function () {
+            console.log(this.name)
+        };
+        this.name = 'zfpx';
+        this.age = 9;
+    }
+    Person.name = '珠峰';
+    Person.getName = function () {
+        console.log(this.name);
+    };
+    Person.prototype.getName = function () {
+        console.log(this.name);
+    };
+    var obj = {name:'培训',f:Person};
+    var per = new Person();
+    per.getName = function(){
+        console.log(12)
+    };
+    var per2 = new Person();
+    obj.f();//
+    Person();//
+    per.getName();//12
+    per2.getName();////zfpx
+    console.log(per2.getName);// undefined
+    getName();// zfpx 这是全局的g etName();
+    Person.getName(); //  Person  --?name 是函数自带的属性 name:Person 是改不掉的
+   /*
+   * 这个练习 体现了函数的三种角色
+   * 1、作为普通函数    obj.f(); Person();
+   * 2、构造函数
+   * 3、普通对象
+   * */
+   //---------------------------------------------
+
+    function Foo() {
+        getName = function () {console.log(1);};
+        return this;
+    }
+    Foo.getName = function () {console.log(2);}; // 当作对象
+    Foo.prototype.getName = function () {console.log(3);};
+    var getName = function () {console.log(4);};
+    function getName() {console.log(5);}
+
+    Foo.getName();//2
+    getName();//4
+    Foo().getName();//1
+    getName();//1
+    var a = new Foo.getName();//2 a是{}
+    var b = new Foo().getName();//3  返回一个b是 undefined
+    // b=foo.getName() foo 是new Foo()得到的一个实例
+    var c = new new Foo().getName();//3  c是{}
+    // c=new  foo.getName()
+    console.log(c.__proto__ == Foo.prototype.getName.prototype);// true
+    //------------------------------------------------------------
+
+
+
+
+
+
+</script>

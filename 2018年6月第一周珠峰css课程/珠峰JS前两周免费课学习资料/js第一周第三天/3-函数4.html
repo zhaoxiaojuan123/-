@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<div id="div1"></div>
+
+</body>
+</html>
+<script>
+
+    var sum=function (a,b) {
+        console.log(this);// window
+        return a + b;
+
+    };
+    // 函数中的this 指向问题：函数执行 看点前面是谁 函数中的this 就是谁；
+    console.log(sum());
+
+    var obj={
+        fn: sum,
+        w: 12
+    };
+
+    sum();
+    obj.fn();
+
+    var oDiv= document.getElementById('div1');
+    oDiv.onclick=function () {
+        console.log(this); //结果是fn
+
+    }
+
+    //itar tab快捷键 是生成for循环的快捷键
+    for (var i = 0; i < array.length; i++) {
+        var obj = array[i];
+
+    }
+
+
+
+</script>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        #div1{
+            width: 100%;
+            height: 800px;
+            background-color: #cccccc;
+        }
+        img{
+            margin: auto;
+            width: 620px;
+            height: 200px;
+        }
+        #bottom{
+            width: 100%;
+            height: 200px;
+            background-color: rosybrown;
+        }
+
+    </style>
+</head>
+<body>
+   <div id="div1"></div>
+   <img src="images/jzgifs.gif" realSrc="images/2.jpg" alt="">
+<div id="bottom"></div>
+</body>
+</html>
+<script>
+
+    /*
+    * 图片懒加载原理：不在可视区域的图片不加载， 只有出现在可视区域中才去加载；
+    * 什么时候才算是出现在可视区域；
+    * 出现到可视区域之后，怎么让他加载真正的图片
+    * */
+
+    var oImg=document.getElementsByTagName('img')[0];
+
+    /*
+    * 出现可视区域 图片的顶部刚刚出现在页面下方
+    * document.compatMode:"CSS1Compat"  /"BackCompat" （没有<!DOCTYPE html> ）
+    * */
+    var flag=false; // 默认false 时代表没有加载图片；true 表示加载过图片了；
+    window.onscroll=function () {
+     // 监听 页面滚动事件
+        // 我们要用页面滚动的距离 跟图片距离body 的距离做个比较
+        // 要把一屏的高度给算上
+        if(flag) return;
+          var sT=document.documentElement.scrollTop;// 卷上去的内容高度
+          var cT= document.documentElement.clientHeight;// 一屏高度
+          var tarT=oImg.offsetTop;// 目标图片边框到body
+        var maxL=sT+cT;
+        if(maxL>tarT){
+            var realSrc=oImg.getAttribute('realSrc');
+            // 先用一个自定义属性把真正的路径保存起来
+            // 然后等条件符合的时候再把这个真实路径赋值给图片的src属性
+            oImg.src=realSrc;
+            flag=true;
+        }
+        console.log(12);
+    };
+   // 写一个load函数 ；去做图片的懒加载
+    function loadImag(ele) {
+        if(ele.loaded) return;
+        var scrollT=document.documentElement.scrollTop; // 卷去的高度
+        var clientH=document.documentElement.clientHeight;//一屏的高度
+        var tarT=oImg.offsetTop; // 目标到body的top值
+       if(scrollT+clientH>tarT){
+           var realSrc=ele.getAttribute('realSrc');
+          // ele.src=realSrc; // 给ele换成真实路径
+           // 先去用一张不显示的图去加载真正的图片
+           // 等这张大图加载完之后，再去把真实img标签的src 换成这张大图
+          // var temp=new Image();
+           var temp=document.createElement('img');
+             temp.src=realSrc;
+             temp.onload=function () { // 图片加载完成的一个事件
+               ele.src=realSrc;
+               ele.loaded=true;
+
+           };
+          // ele.setAttribute('loaded',true);// 这种我们只能通过getAttribute获取
+           //ele.loaded=true;// 通过这种方式加上属性，我们只能通过打点或者加中括号的方式获取；给元素ele添加一个自定义属性 loaded
+       }
+    }
+   window.onscroll=function () {
+       loadImag(oImg);
+   }
+
+
+
+
+</script>

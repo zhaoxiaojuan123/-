@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+ <div id="div1"></div>
+
+</body>
+</html>
+<script>
+    /*
+    *  事件绑定
+    *  DOM0级事件绑定
+    *  DOM2级事件绑定
+    *
+    *
+    *
+    */
+    // 事件对象 -->系统会给绑定的函数默认的传递一个对象
+    var oDiv=document.getElementById('div1');
+     oDiv.onclick=function () {
+        console.log(1);
+    };
+    oDiv.onclick=function (e) {
+        e=e||window.event; // 兼容IE低版本的写法
+        var tar=e.target||e.srcElement;//e.target 是事件源--> 也就是具体行为作用到谁的身上; 兼容IE低版本这样写
+        console.log(2);
+        e.clientX // 是指鼠标操作的位置到浏览器可视窗口左上角的x的距离
+        e.clientY // 是指鼠标操作的位置到浏览器可视窗口左上角的y的距离
+        e.pageX; // 是指鼠标操作的位置到body左上角的x的距离
+        e.pageY;// 是指鼠标操作的位置到body左上角的y的距离
+        //e.pageX=e.clientX+(docement.documentElemet.scrollTop||document.body.scrollLeft)
+    };
+    // 重复绑定会覆盖掉
+
+    // e.key 按下键的值
+    //e.keyCode 值对应的键值码
+    // e.keyCode==13 代表按下了回车键
+
+</script>

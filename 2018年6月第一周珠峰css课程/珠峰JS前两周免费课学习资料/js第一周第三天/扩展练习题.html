@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    var obj2 = {
+        name: '小明',
+        age: '12',
+        sex: 1,
+        height: '120cm',
+        weight: '30kg'
+    };
+    console.log(obj2);
+    var obj2_2 = {};
+    //要求 把obj2中的属性值中含有数字的键值对 复制一份到obj2_2中
+
+   for (var i in obj2) {
+       if(typeof obj2[i] =='number'){ // 数字没有循环 ，是不是=='number',是判断 属性值是不是数字！！！
+           obj2_2[i] = obj2[i];}
+          for(var j=0;j<obj2[i].length;j++) {
+            if (obj2[i][j]>='0' &&obj2[i][j]<= '9' ) {
+                obj2_2[i] = obj2[i];
+            }
+        }
+
+    }
+    console.log(obj2_2); //正确了
+/*-------------------*/
+/*var j=0;
+    for (var i in obj2) {
+        if (!isNaN(parseInt (obj2[i]))) {
+                obj2_2[i] = obj2[i];
+        }
+    }
+    console.log(obj2_2);*/
+
+// 对象  没有length属性
+
+    /*--------------------*/
+
+   /* for (var i = 0; i <obj2 .length; i++) {
+        var j=0;
+            if (parseFloat(obj2[i])>=0&&parseFloat(obj2[i])<=9) {
+                obj2_2[j] = obj2[i];
+                j++
+            }
+        }
+    console.log(obj2_2);
+*/
+
+
+
+
+
+   // 第四题
+   var str = 'qwwrwer123sdfsf234';
+   var str2 = '';
+   //要求  str2 的内容是 str 除去数字的剩余字符组成的新字符串
+   // 提示 用 for循环操作
+   for (var i = 0; i < str.length; i++) {
+      if(str[i]>='0'&&str[i]<='9') { // 还可以if(isNaN(str[i])){ str2=str2+str[i];  }
+         continue;
+      }else {
+          str2=str2+str[i];
+
+      }
+
+   }
+console.log(str2) // 结果： qwwrwersdfsf
+
+
+
+
+
+
+</script>

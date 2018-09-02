@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #litBox{
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            float: left;
+            cursor: move;
+        }
+        #litBox  img{
+            width: 100%;
+            height: 100%;
+        }
+        #litBox .mask{
+            width: 200px;
+            height: 200px;
+            background: rgba(0,0,0,0.5);
+            position: absolute;
+            display: none;
+        }
+        #bigBox{
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            float: left;
+            margin-left: 20px;
+            display: none;
+            position: relative;
+        }
+        #bigBox img{
+            position: absolute;
+            width: 200%;
+            height: 200%;
+        }
+
+    </style>
+</head>
+<body>
+ <div id="litBox">
+     <img src="images/pic1.png" alt="">
+     <div class="mask"></div>
+ </div>
+<div id="bigBox">
+    <img src="images/pic1.png" alt="">
+</div>
+
+</body>
+</html>
+<script>
+ var litBox=document.getElementById('litBox'),
+      mask= litBox.getElementsByClassName('mask')[0],
+      bigBox=document.getElementById('bigBox') ,
+      bigImg=bigBox.getElementsByTagName('img')[0];
+ litBox.onmouseenter=function (e) {
+     e=e||window.event;
+     this.startL=this.offsetLeft;
+     this.startH=this.offsetTop;
+     this.mx=e.pageX;
+     this.my=e.pageY;
+     mask.style.display='block';
+     bigBox.style.display='block';
+     this.maxL=this.clientWidth-mask.clientWidth;
+     this.maxH=this.clientHeight-mask.clientHeight;
+     this.percent=mask.clientWidth/bigBox.clientWidth;
+ }
+ litBox.onmousemove=function (e) {
+     e=e||window.event;
+     var x=e.pageX-this.startL-mask.clientWidth/2,
+          y=e.pageY-this.startH-mask.clientHeight/2;
+     x= x>this.maxL?this.maxL:(x<0?0:x);
+     y= y>this.maxH?this.maxH:(y<0?0:y);
+     mask.style.left=x+this.startL+'px';
+     mask.style.top=y+this.startH+'px';
+     bigImg.style.left=-x/this.percent+'px';
+     bigImg.style.top=-y/this.percent+'px';
+ };
+ litBox.onmouseleave=function () {
+     mask.style.display='none';
+     bigBox.style.display='none'
+ }
+
+
+
+</script>

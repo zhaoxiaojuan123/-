@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>this的指向</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<div id="div1">this的指向</div>
+
+</body>
+</html>
+<script>
+
+    /*
+    函数里边的两个特殊属性  this(函数的执行主体)   arguments(实参集合)
+    * this 的指向问题
+    * 1、看函数执行时 前边有没有点， 有点， 点前边是谁， this就是谁；没有的就是默认window
+    * 2、自执行函数的this 是指向 window 的
+    * 3、DOM事件绑定 的this 是指向绑定的DOM元素
+    *
+    * */
+    (function () {
+        console.log(this); // window
+    })();
+    div1.onclick=function () {
+        console.log(this); // div1
+    };
+
+    //-----------------------------------
+
+
+
+
+
+</script>

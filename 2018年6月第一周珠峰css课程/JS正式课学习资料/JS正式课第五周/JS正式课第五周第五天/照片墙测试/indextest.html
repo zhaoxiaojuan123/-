@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+   <style>
+       *{
+           padding: 0;
+           margin: 0;
+           list-style: none;
+       }
+       #box{
+           width: 490px;
+           height: 650px;
+           overflow: hidden;
+           margin: 50px auto;
+           border: 2px dashed #f54343;
+           padding: 10px 0 0 10px;
+           position: relative;
+       }
+       #box li{
+           float: left;
+           width: 150px;
+           height: 150px;
+           margin:  0 10px 10px 0;
+           box-sizing: border-box;
+       }
+       #box li img{
+           width: 100%;
+           height: 100%;
+       }
+
+   </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li><img src="images/img1.jpg" alt=""></li>
+        <li><img src="images/img2.jpg" alt=""></li>
+        <li><img src="images/img3.jpeg" alt=""></li>
+        <li><img src="images/img4.jpeg" alt=""></li>
+        <li><img src="images/img5.jpeg" alt=""></li>
+        <li><img src="images/img6.jpg" alt=""></li>
+        <li><img src="images/img7.jpg" alt=""></li>
+        <li><img src="images/img8.jpg" alt=""></li>
+        <li><img src="images/img9.jpg" alt=""></li>
+        <li><img src="images/img10.jpg" alt=""></li>
+        <li><img src="images/img11.jpg" alt=""></li>
+        <li><img src="images/img12.jpg" alt=""></li>
+
+    </ul>
+</div>
+
+</body>
+</html>
+<script src="js/drag.js"></script>
+<script src="js/event.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+    var oLis=document.getElementsByTagName('li');
+    // 循环每个li，设置li的top,left值还有设置定位
+    [...oLis].reverse().forEach((item)=>{
+        item.style.left=item.offsetLeft+'px';
+        item.style.top=item.offsetTop+'px';
+        item.style.position='absolute';
+        on(item,'onmousedown',dragStart);
+        on(item,'myIndex',addZIndex);
+        on(item,'myIsHit',isHit);
+        on(item,'myChange',changePos)
+    });
+    var n=1;
+    function addZIndex() {
+        this.style.zIndex=n++;
+    }
+    // 下面是图片撞击 上 下左 右
+    function isHit() {
+        this.curL=this.offsetLeft;// 当前拖动元素的左边
+        this.curR=this.offsetLeft+this.offsetWidth;
+        this.curT=this.offsetTop;
+        this.curB=this.offsetTop+this.offsetHeight;
+        // 接下来拿当前拖动的元素和所有的li 进行比较看看是否碰上
+        this.ary=[]; //里面存放能碰上的元素li
+        [...oLis].forEach((item)=>{
+            if(item===this)return;
+            item.liL=item.offsetLeft;
+            item.liR= item.liL+item.offsetWidth;
+            item.liT=item.offsetTop;
+            item.liB=item.liT+item.offsetHeight;
+            // 现在看看碰上和碰不上的情况
+            if(this.curL>item.liR|| this.curR<item.liL|| this.curB<item.liT||this.curT>item.liB){
+                // 这种情况的碰不上；
+             item.style.border='';
+            }else {  //这种情况是碰上
+                item.style.border='2px dashed #f54343';
+                this.ary.push(item)
+            }
+        });
+    }
+    // 交换位置  拖动元素和最近的li 交换位置
+    function changePos() {
+          this.ary=this.ary||[];
+        this.ary.forEach((item)=>{   // 循环碰撞的li 算出距离的差值
+            var L=this.offsetLeft-item.offsetLeft, //拖动元素和当前碰撞元素li 的横向差值
+                T=this.offsetTop-item.offsetTop; //拖动元素和当前碰撞元素li 的纵向差值
+            this.instance=Math.pow(L,2)+Math.pow(T,2);
+            item.style.border='';// 让发生碰撞的li 松手时颜色变回原来的样子
+        });
+      // 找出距离最近的那个li
+        this.ary.sort((a,b)=>{
+            return a.instance-b.instance;
+        });
+        if(!this.ary.length){
+            // 判断是拖拽元素和谁也没碰撞上，就回到自己原来的位置
+//            this.style.left= this.startX+'px';
+//            this.style.top= this.startY+'px';
+            $(this).animate({
+                left:this.startX,
+                top:this.startY
+            },300)
+        }else {
+            $(this).animate({
+                left:this.ary[0].offsetLeft,
+                top:this.ary[0].offsetTop
+            },300);
+            $(this.ary[0]).animate({
+                left:this.startX,
+                top:this.startY
+            },300)
+        }
+//        this.ary[0].style.left=this.startX+'px';
+//        this.ary[0].style.top=this.startY+'px';
+//        this.style.left= this.ary[0].offsetLeft+'px';
+//        this.style.top= this.ary[0].offsetTop+'px';
+
+    }
+
+
+
+</script>

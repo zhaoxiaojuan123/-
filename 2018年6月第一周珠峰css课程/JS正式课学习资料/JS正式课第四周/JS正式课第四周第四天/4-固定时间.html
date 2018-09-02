@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #div1{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            left: 100px;
+            border-radius: 50%;
+            background-color: coral;
+            border: 1px dashed greenyellow;
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+
+</body>
+</html>
+<script src="js/utils.js"></script>
+<script>
+    /*
+    * 固定时间
+    * 多上时间必须从哪到哪运动完
+    * 用2s 走完 400px 的距离
+    * 需要知道运动的距离、时间
+    * */
+    // 把div1从 left 100px 运动到600px  运动2s
+    var oDiv=document.getElementById('div1');
+//    var duration=2000;
+//    var beginL=utils.css(oDiv,'left');
+//    var tarT=600;
+//    var speed=(tarT-beginL)/duration;// 运动的速度
+//    var time=0;
+//    var timer=window.setInterval(function () {
+//        time+=20;
+//        if(time>=duration){
+//            clearInterval(timer);
+//            time=duration;
+//        }
+//        utils.css(oDiv,'left',time*speed+beginL)
+//
+//    },20);
+
+
+    function move(ele,attr,tarT,duration) {
+        var beginL=utils.css(oDiv,'left');
+        var speed=(tarT-beginL)/duration;// 运动的速度
+        var time=0;
+        var timer=window.setInterval(function () {
+            time+=20;
+            if(time>=duration){
+                clearInterval(timer);
+                time=duration;
+            }
+            utils.css(ele,attr,time*speed+beginL)
+        },20);
+    }
+    move(oDiv,'left',600,2000)
+    move(oDiv,'top',400,1000)
+
+</script>

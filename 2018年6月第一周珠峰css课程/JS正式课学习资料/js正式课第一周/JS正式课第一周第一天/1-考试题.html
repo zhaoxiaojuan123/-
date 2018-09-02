@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    // 任意数求和
+/*function sum() {
+    var arg=arguments;
+    var total=0;
+    for (var i = 0; i < arg.length; i++) {
+        if(!isNaN(arg[i])&&(typeof arg[i]) =='number'){
+            total+=arg[i]  ;
+        }
+    }
+    return total;
+}*/
+// 这是一个for循环
+/*var oLis=document.getElementsByTagName('li');
+    for (var i = 0; i < oLis.length; i++) {
+        var n=i%3;
+        if(n==0){
+
+        }else if(n==1){
+
+        }else{
+
+        }
+
+    }*/
+    // 将for 循环转化成 while和switch
+/*var i=0;
+    while (i < oLis.length){
+        var n=i%3;
+        switch (true){
+            case n==0:
+                ...
+                break;
+            case n==1:
+            ...
+                break;
+            default:
+                ...
+        }
+        i++
+    }*/
+
+   /* var i=0;
+    while (i < oLis.length){
+        var n=i%3;
+        switch (n){
+            case 0:
+            ...
+                break;
+            case 1:
+            ...
+                break;
+            default:
+            ...
+        }
+        i++
+    }
+    */
+
+   // 能被5 或者7 整除的数
+  /* function sum(n) {
+       var total=0;
+       for (var i = 0; i <=n; i++) {
+          if(i%5==0 || i%7==0){
+              total+=i;
+          }
+       }
+       return total;
+   }
+sum(100);*/
+// 用递归方法  能被5 或者7 整除的数
+/*
+  function sum1(n) {
+      if(n<=0){
+          return 0;
+      }
+      if(i%5==0 || i%7==0){
+          return n+sum1(n-1);
+      }
+      return sum1(n-1);
+  }
+*/
+
+/*
+var oP=document.createElement('p');
+//    oP.innerHTML='这是';
+//    document.body.appendChild(oP);
+
+    document.body.innerHTML=oP;//[object HTMLParagraphElement]     做了一次转化op.toString
+    //document.body.innerHTML='<p>这是pppp</p>';
+
+*/
+
+function quChong(ary) {
+
+    for (var i = 0; i < ary.length; i++) {
+        for (var j = i+1; j < ary.length; j++) {
+            //ary[i] 是当前的项 和后面项比较
+          if(ary[i]==ary[j]){
+              aty.splice(j,1);
+              j--;
+          }
+        }
+
+    }
+    return ary;
+}
+
+// 不改变原有数组可以复制一份 用slice() / slice(0)  / concat()
+
+function quChong2(ary) {
+    // 利用新作的一个数组 新数组中存储的都是不重复的项
+    var arr=[];
+    for (var i = 0; i < ary.length; i++) {
+     if(arr.indexOf(ary[i])==-1){
+         arr.push(ary[i])
+     }
+    }
+    return arr;
+}
+
+   // 利用对象去重
+function quChng3(ary) {
+    var obj={},arr=[];
+    for (var i = 0; i < ary.length; i++) {
+        obj[ary[i]]=ary[i];
+
+    }
+    for(var k in obj){
+        arr.push(obj[k])
+    }
+    return arr;
+}
+
+// 四位验证码 不重复
+
+    function getRandom(str) {
+        var str="qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM0123456789";
+        var str1='';
+        for (var i = 0; i < 4; i++) {
+           var n=Math.round(Math.random()*61);
+            if(str1.indexOf(str[n])==-1){
+               str1+=str[n];
+            }else {
+                i--;
+            }
+        }
+      return str1;
+    }
+
+
+
+</script>

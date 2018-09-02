@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    /*
+    * 正则：处理字符串的规则
+    * 正则的用途
+    * 匹配 ： reg.test(str)  检验某个字符串是否符合定义的正则
+    * 捕获 ：reg.exec(str)   在某个字符串中获取符合正则 的某个字符或字符串
+    *
+    * 正则的语法：
+    * 1、字面量 ：var reg=/w/;
+    * 2、构造函数式： var reg=new RegExp();
+    *
+    * */
+    /*
+    * 字面量定义的方式 双斜杠 之间包住的字符 我们称之为 元字符
+    * 与元字符相关联还有一个 修饰符（i m g）
+    *
+    * */
+   /*
+   * 元字符
+   * 特殊含义的元字符
+   *  . --> 代表除了换行以外的所有的字符
+   *  \ --->代表转义的意思 转义一些有特殊含义的字符 转义成字符本身
+   *  ^ --> 代表以某个字符开头 var reg=/^q/  代表以q 开头
+   *  $ --> 代表以某个字符结尾
+   *  \d --> 表示0-9之间的数字
+   *  \D --> 表示跟\d取反 除了0-9之外的其他字符
+   *  \w -->代表数字字母下划线 这三类字符
+   *  \W -->表示跟\w取反 除了数字字母下划线以外的字符
+   *  \n -->代表 换行
+   *  \s -->代表 空白符 (空格 换行 tab 等一些看不见的字符)
+   *  \b --> 代表边界符
+   *  [abc]--> 代表 a或b或c 的一个字符
+   *  [a-c]-->代表a-c之间任意字符；a或b或c一样
+   *  [^abc] --> ^ 在中括号中表示取非的意思; 除了abc以外的字符
+   *  [^a-c]--> 同上
+   *  x|y --> x或y
+   *
+   *
+   *  量词元字符
+   *  ? -->代表前边字符出现0次或1次
+   *  * -->代表前边字符出现0次或多次
+   *  + -->代表前边字符出现1到多次
+   *  {n}-->代表前边字符出现n次
+   *  {n,}-->代表前边字符出现至少 n 次，n到多次
+   *  {n,m}-->代表前边字符出现n到m次
+   * */
+   var reg=/\\w/; // 测试结果 是转化斜杠
+    console.log(reg.test('w'));// false
+    console.log(reg.test('\w'));// false
+    console.log(reg.test('\\w'));// true
+   var reg2=/\\\w/;
+    console.log(reg2.test('q'));// false
+    console.log(reg2.test('\\q'));// true
+    console.log(reg2.test('\\\q'));// true
+    var reg3=/^199|200$/; // 以199开头，或者以200 结尾
+
+    var reg4=/^(199|200)$/;// 只能匹配199 或者200
+
+   /*
+   * 分组 () 的三个作用
+   * 1、提升优先级
+   * 2、分组匹配
+   * 3、分组捕获
+   * */
+
+   var reg5=/^1([345789]\d{9})|66\d{8}$/;
+
+    /*
+    * 18-65
+    * 18-19
+    * 20-59
+    * 60-65
+    * */
+
+  var reg6=/^((18|19)|([2-5]\d)|6[0-5])$/;
+
+    /*
+    * 捕获 reg.exec(str)
+    * 返回值
+    * 第一项 代表 大正则（整个正则）捕获内容
+    * index 是这个字符串中从哪个字符开始 符合正则的 从哪开始捕获的；
+    * input 是指整个字符串
+    * */
+    var reg=/\d+/;
+    reg2=/(\d+)/;
+    var reg3=/(\d)+/;
+    var str='zhufeng2018zhu2019';
+    console.log(reg3.exec(str));
+    console.log(reg.exec(str));
+
+    // ["2018", index: 7, input: "zhufeng2018zhu2019", groups: undefined]
+   console.log(reg2.exec(str));
+    //["2018", "2018", index: 7, input: "zhufeng2018zhu2019", groups: undefined]
+    // 多的一项是小正则返回的结果
+    console.log(reg3.exec(str));
+   // ["2018", "8", index: 7, input: "zhufeng2018zhu2019", groups: undefined]
+    /*
+    * 正则捕获的懒惰性 --> 解决方案 加个全局修饰符g
+    *
+    * */
+
+    var reg4=/\d+/g;
+
+  //  console.log(reg4.exec('zhufeng2018zhu2019'));//["2018", index: 7, input: "zhufeng2018zhu2019", groups: undefined]
+  //  console.log(reg4.exec('zhufeng2018zhu2019'));//["2019", index: 14, input: "zhufeng2018zhu2019", groups: undefined]
+   // console.log(reg4.exec('zhufeng2018zhu2019'));// null
+  // 有test 会改变lastindex 的值
+    console.log(reg4.test ('zhufeng2018zhu2019'));//true  lastindex 7
+    console.log(reg4.exec('zhufeng2018zhu2019'));//["2018", index: 7, input: "zhufeng2018zhu2019", groups: undefined]
+    console.log(reg4.exec('zhufeng2018zhu2019'));//null
+    console.log(reg4.exec('zhufeng2018zhu2019'));//["2018", index: 7, input: "zhufeng2018zhu2019", groups: undefined]
+    var reg5=/^w$/;
+    var reg6=/^w$/m;
+    console.log(reg5.exec('qserw\nw'));// null
+    console.log(reg6.exec('qserw\nw'));// ["w", index: 6, input: "qserw↵w", groups: undefined]
+//------------------------------------------------------------------
+
+    RegExp.prototype.execAll=function(str) {
+        var temp;
+        if(!this.global){
+            /*
+            * 在这里可以新造一个正则；是用this+g  拼接的一个正则
+            * */
+            var res=this.exec(str)||{}; //防止获取的是个null ，null不能设置属性
+            res.error='缺少全局修饰符g';
+            return res;
+        }
+        var ary=[];
+        temp=this.exec(str);
+        while (temp){
+         ary.push(temp[0]);
+            temp=this.exec(str);
+        }
+      return ary;
+    };
+   var reg7=/\d+/;
+    console.log(reg7.execAll('zhu2018feng2019'));
+   var reg8=/\d+/g;
+    console.log(reg8.execAll('zhu2018feng2019'));
+
+    /*
+    * split
+    * replace
+    * match
+    * 都属于字符串的方法
+    * str.split(reg)
+    * */
+    var str9='珠峰2018珠峰2018';
+    var reg9=/[ -+]/; // 代表空格 到 加号 的范围
+    var reg9_1=/[ +-]/ ;// 这个才代表空格 加号 减号
+
+   /*
+   * match
+   * 匹配的正则没有全局修饰符g 时，结果跟exec一样
+   * 有全局修饰符g 时，只捕获大正则的内容
+   * */
+   /*
+   * replace(old,new);
+   * replace(reg,function(){})
+   *
+   * */
+   var str='zhufeng2018feng2019';
+    console.log(str.replace(/(\d+)([a-z]+)/g, '$2--$1'));// zhufengfeng--20182019
+    console.log(str.replace(/(\d+)([a-z]+)/g, '$2--$1$3'));// zhufengfeng--2018$32019  $3不存在当字符返回去
+    // $1 代表正则的第一个小分组（2018）
+    // $2 代表第二个小分组（feng）
+    // '$2--$1' 替换的是大正则的内容
+
+    /*
+    * 获取一个字符串中出现次数最多的字母 及其 次数
+    * */
+    /*
+    * 循环字符串；把字符串放到一个对象中；
+    * 每次放的时候先去查看有没有这个属性；
+    * 如果有的话 就给这个属性值+1；
+    * 若没有；赋初始值为1；
+    * */
+
+
+    var str='abxhsngdgkagnhcngsg';
+    var obj={};
+    for (let i = 0; i < str.length; i++) {
+       if(obj.hasOwnProperty(str[i])){
+           obj[str[i]]++;
+       }else {
+           obj[str[i]]=1;
+       }
+    }
+    console.log(obj);
+    var n=1; // 假设最多的次数是1
+    var str2='';// 用最大值对应的字符
+    for(var k in obj){
+        if(obj[k]>n){
+            n=obj[k];
+            str2=k;
+        }
+    }
+    console.log(str2,n);
+
+    /*
+    *
+    * */
+    var reg=/(\w)(\w)\1/; // \1 代表匹配到的第一个分组的字符
+    console.log(reg.test('qwq'));// true
+    console.log(reg.test('qww'));//false
+    //-------------
+    var reg=/(\w)(\w)\2/; // \2 代表匹配到的第二个分组的字符
+    console.log(reg.test('qwq'));// false
+    console.log(reg.test('qww'));//true
+
+    var reg=/(\w)(\w)\2\1/;
+    console.log(reg.test('abba'));//true
+    var reg=/(\w)(\w)\1\2/;
+    console.log(reg.test('abab'));//true
+//---------------------------------------------
+     // 思路二：
+    // 先把字符串变成aaaaabbbbbcccxxxx重复组成的这种---> /(\w)\1+/
+    // 再去用正则 结合 replace方法求出最大值
+
+
+    var str='abxhsngdgkagnhcngsg';
+    var str2=str.split('');
+    console.log(str2);
+   var ary= str2.sort(function (a,b) {
+        return a.localeCompare(b);
+    });
+
+    var str3=ary.join('');//aabcdggggghhknnnssx
+    var reg=/(\w)\1*/g;
+    var arr=str3.match(reg);
+    var arr=arr.sort(function (a,b) {
+        return b.length-a.length
+    });
+
+console.log(arr);
+    //-------------------------------
+    /*
+    * 千分符
+    * */
+    var str='123456789'; //123,456,789
+    var reg=/(\d)(?=(\d{3})+$)/g;
+    console.log(str.replace(reg, '$1,'));
+
+
+</script>

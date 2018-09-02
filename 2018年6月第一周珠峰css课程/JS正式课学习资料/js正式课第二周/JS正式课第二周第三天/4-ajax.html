@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>ajax</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<div class="btn">排序</div>
+<ul>
+    <li>姓名：小明1</li>
+    <li>姓名：小红2</li>
+    <li>姓名：小李3</li>
+</ul>
+
+</body>
+</html>
+<script>
+    /*
+    * JSON
+    * 不同语言传输数据
+    * 它是一种数据格式； 引用数据类型里边只包含数组和对象
+    * 字符串出现时，需要用双引号包住；
+    * 字符串属性名都要用双引号包含
+    * */
+   /* var obj={
+        name:'zf'
+    };
+    var json={
+        "name":"zf",
+        "age":1,
+        "ary":[1,2,3,"www"]
+    };
+
+    var json2=[{"name":"zfpx"},{"name":"zf"},{"name":"px"}];
+    var a=JSON.stringify(json);
+    var b=JSON.parse(a);*/
+
+    // JSON.stringify 把json数据转成ss字符串
+
+    // JSON.parse      把JSON 转换为对象
+    //----------------------------------------------------------------
+    //要实现从对象转换为 JSON 字符串，使用 JSON.stringify() 方法：
+    // var json = JSON.stringify({a: 'Hello', b: 'World'}); //结果是 '{"a": "Hello", "b": "World"}'
+   //要实现从 JSON 转换为对象，使用 JSON.parse() 方法：
+    // var obj = JSON.parse('{"a": "Hello", "b": "World"}'); //结果是 {a: 'Hello', b: 'World'}
+    // 例子：
+    /*
+    * // JSON
+     var obj={name:'zf',age:9};
+     var ss=JSON.stringify(obj);
+     //将obj 转换成JSON数据用JSON.stringify(obj)
+     console.log(ss,typeof ss);//  '{"name":"zf","age":9}' string
+     // 若想再把转化的JSON数据转化成对象用 JSON.parse(ss)
+     var ww=JSON.parse(ss);
+     console.log(ww,typeof ww);// {name: "zf", age: 9} "object"
+    * */
+
+
+  //  console.log(b);
+
+    /*
+    * ajax 是一门技术； 是用来实现局部数据请求的
+    *
+    *
+    * */
+    var data =null;
+    var xhr=new XMLHttpRequest();
+    // 创建一个ajax 实例
+    xhr.open('get','huawei/data.json',false);
+    // 第一个参数 是获取的数据的请求类型 get  post put delete
+    // 第二个参数 是获取数据的路径 （平时说的接口）
+    // 第三个是控制同步异步 ， true是异步；false 是同步
+    xhr.onreadystatechange=function () {
+        //xhr.readyState // 请求状态码
+        // 0 未发送请求-->请求未初始化
+        // 1 发送请求-->服务器连接已建立
+        // 2 接收响应头-->请求已接收
+        // 3 接收响应体-->请求处理中
+        // 4 请求成功  -->请求已完成，且响应已就绪
+       // xhr.status // 网络状态码
+        // 2 开头的一般代表 成功
+        // 3 开头代表重定向
+        // 4 开头代表路径错误 （404 一般是前端错误）
+        // 5开头的一般都是服务器错误
+        if(xhr.readyState==4 &&xhr.status==200){
+            // xhr.responseText 是一个JSON字符串
+            // 需要我们用JSON.parse() 转成JSON 对象
+          //  console.log(JSON.parse(xhr.responseText));
+            data=JSON.parse(xhr.responseText)
+        }
+    };
+    // responseText  是XMLHttpRequest里的一个属性：获得字符串形式的响应数据。
+    // responseXML  是XMLHttpRequest里的一个属性：获得 XML 形式的响应数据。
+    // 请求发送出去
+    xhr.send();
+    console.log(data);
+   // 接下来是要把数据放到页面上展示
+    var oLis=document.getElementsByTagName('li');
+    for (let i = 0; i < oLis.length; i++) {
+        oLis[i].innerHTML='姓名：'+data.data[i].name;
+
+    }
+    var btn=document.getElementsByClassName('btn')[0];
+    var flag=0;// 我去让他变成 升序； flag==1 变成降序
+    btn.onclick=function () {
+        if(flag==0){
+            data.data.sort(function (a,b) {
+                return a.name.localeCompare(b.name,'zh');
+            });
+            flag=1;
+        }else {
+            data.data.sort(function (a,b) {
+                return b.name.localeCompare(a.name,'zh');
+            });
+            flag=0
+        }
+        for (let i = 0; i < oLis.length; i++) {
+            oLis[i].innerHTML='姓名：'+data.data[i].name;
+        }
+    };
+
+    /*
+    * 再次点击按钮 让排序翻转过来
+    * */
+
+
+
+
+
+</script>

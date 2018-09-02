@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+
+<script>
+    var user={
+        name:'zfpx',
+        age:9,
+        sex:'男',
+        height:'180cm',
+        weight:'90kg',
+        0:'12',
+        1:'13',
+        2:'14'
+    };
+    var str ='';
+    for( var a in user){
+        //str=str+a+'是'+user[a]+',';
+        str=str+`${a}是${user[a]},`
+    }
+    console.log(str);
+
+    //循环就是为了让我们不用做这些重复性的工作，让电脑去做这些重复性的工作
+    /*
+    * for( var key in obj )
+    * key: 是每一个属性名 对应对象里的每一个属性名
+    * obj：是我们要循环的对象
+    * obj[key] ： 是该属性名对应的属性值
+    * 一般是用来循环 普通对象
+    *
+    *
+    * for 循环
+    * i++ ---->  i=i+1;
+    * i--   ----->i=i-1;
+    * break 跳出整个循环
+    * continue 跳出当次循环 continue 下面的代码不再执行，开始执行i++
+    *
+    * for( var i=0; i<10;i++){
+    *   //第一次 i=0 ; i<10 执行内部代码，然后 i++
+    *   // 第二次 i=1; i<10 执行内部代码，然后 i++
+    * console.log(i);
+    * }
+    * */
+for (var i=0;i<10;i++){
+    if(i==5){
+        continue;//不会输出5，下面的代码不会执行，开始执行i++
+    }
+    console.log(i)
+}
+
+/*
+*  while(){
+*
+*  }
+*
+* */
+var a=3;
+    // 当a 大于0 的时候 我要干嘛
+    // 一般用于我们不知道要循环多少次的时候用
+    while (a>0){
+        console.log(a);
+        a=a - 1;
+    }
+
+
+</script>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        #div1{
+            width: 300px;
+            height: 300px;
+            border: 10px solid #ccc;
+            padding: 20px;
+            margin: auto;
+            overflow: scroll;
+        }
+
+    </style>
+</head>
+<body>
+  <div id="div1">盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型盒子模型</div>
+
+</body>
+</html>
+<script>
+
+    /*
+    * css 盒子模型 width height padding margin  border
+    * 弹性盒子模型  display:flex
+    *
+    * */
+    /*
+    * JS 盒子模型
+    *通过ele.style.xxx 这种方法 我们只能获取到元素的行内的样式
+    *
+    * client  四舍五入
+    * offset  四舍五入
+    * scroll四舍五入
+    * */
+    //clientWidth  :盒子（不包括边框）宽度+ 左右的padding  （内容溢出没有影响）
+    //clientHeight :盒子（不包括边框）高度+ 上下的padding
+    //clientLeft   ：盒子左边框的宽度
+    //clientTop    ：盒子上边框的宽度
+
+    var oDiv=document.getElementById('div1');
+    //console.log(oDiv.clientWidth);// 340-->盒子width+左右padding
+   // console.log(oDiv.clientHeight);// 340-->盒子width+左右padding
+    //console.log(oDiv.clientLeft);// 10-->盒子左边框的宽度
+
+    // offsetWidth ：clientWidth+左右border （内容溢出没有影响）
+    //offsetHeight ：clientHeight+上下border
+    //offsetTop    ：元素的外边框距离上级参照物的内边框top值
+    //offsetLeft   ：元素的外边框距离上级参照物的内边框left值
+    //offsetParent ：上级参照物（有定位的父级元素），若所有父级都没有定位，那么这个盒子的offsetParent就是body；body.offsetParent===null;
+    // table 没有加定位元素的特殊情况：在table标签中需要注意特殊情况  td 的offsetParent是table;
+    // td 没有加定位元素的特殊情况：td 里边的标签的offsetParent 是这个 td;
+   // console.log(oDiv.offsetWidth);
+
+    /*
+    * 结合client 和offset  我们可以求出右边框的宽度和下边框的宽度
+    * clientRight=oDiv.offsetWidth-oDiv.clientWidth=oDiv.clientLeft
+    * */
+
+    /*
+    * scroll
+    * scrollWidth ：
+    * 当元素内容没有溢出时，结果是等同于clientWidth;
+    * 当元素内容溢出时，但是没有设置overflow，结果是左padding+内容的宽度
+    * 若设置overflow 则结果是 左右padding +内容宽度
+    *
+    * scrollHeight
+    * scrollTop   ：卷上去的高度
+    * scrollLeft  ：左边的卷去的宽度
+    * */
+
+    /*
+    * 13个属性  除了 offsetParent 其他的属性值都是数字
+    * 其中只要scrollTop 和scrollLeft 是可以修改的
+    * 其他都是只读属性
+    * */
+    /*
+     *获取浏览器一屏的高度（可视窗口的高度）
+     * document.documentElement.clientHeight || document.body.clientHeight
+     * 有<!DOCTYPE html> 这个文档声明时document.documentElement.clientHeight 这个值是正确的
+     * 没有<!DOCTYPE html>  这个文档声明时，document.body.clientHeight这个值是准确的
+     * */
+
+//    window.onresize=function () {
+//        // 监听可视窗口变化的
+//        console.log(document.documentElement.clientWidth||document.body.clientWidth)
+//
+//    }
+
+//    document.body.onresize=function () {
+//        // 监听可视窗口变化的
+//        console.log(document.documentElement.clientWidth||document.body.clientWidth)
+//
+//    }
+
+//    document.documentElement.onresize=function () { // 测试监听不到
+//        // 监听可视窗口变化的
+//        console.log(document.documentElement.clientWidth||document.body.clientWidth)
+//
+//    }
+
+
+    /*
+    * 获取整个文档的高度
+    * document.documentElement.scrollHeight||document.body.scrollHeight
+    * */
+    //document.documentElement.scrollHeight
+   // document.body.scrollHeight
+
+
+
+</script>

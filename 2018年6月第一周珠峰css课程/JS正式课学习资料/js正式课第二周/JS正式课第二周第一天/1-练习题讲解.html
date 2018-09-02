@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    // arguments 映射的前提是 arguments 中有对应的项；当arguments中没有对应项时，形参跟后边不存在的arguments项之间没有任何映射；映射关系是在函数刚执行时建立的，后期不再重新建立
+
+    var name='中国';
+    var age=5000;
+    name=(function (name,age) {
+        arguments[0]='珠峰';
+        console.log(name,age);// arguments的长度length的值是一开始的传递的值的长度，之后增加项长度length 不会改变；
+        age=age||this.age;//-->age=undefiend||5000 结果 age=5000
+        console.log(name,age);//'珠峰'  5000
+    })(name);// 没有return的返回值
+    console.log(name,age);// undefiend（name没有返回值）  5000
+
+    //----------------------------------------------
+
+    var ary=[100,200];
+    ~function (ary) {
+        ary.length--;// 原先的全局的ary 的长度减一，减去200 则ary[100]
+        ary=[];  // 重新给形参赋值
+        ary[ary.length]=300;// 给新的形参赋值
+        alert(ary);// '300'字符串
+    }(ary);
+    alert(ary);//[100]
+    //---------------------------------------------
+
+
+
+
+
+</script>

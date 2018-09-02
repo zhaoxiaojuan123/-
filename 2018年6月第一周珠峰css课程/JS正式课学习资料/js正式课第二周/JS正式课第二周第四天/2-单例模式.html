@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    /*
+    * 单例模式  就是一个普通的对象
+    * 避免 命名冲突； 实现模块化开发最基本的模式；
+    * var obj={name:'', setName:function(){}}
+    * 在对象中，我们把obj 成为对象名； 在这里 它还有另外一个名称 （命名空间）
+    * 每一个 命名空间之间 是相互独立 互不影响
+    * */
+    var name='小明';
+    var name='小红';
+    var person1={
+        name:'小明',
+        setName:function () {
+            person2.setName();
+        }
+    };
+   //  person1.setName();  放在这里会报错因为person2只是声明了没有定义赋值 cannot read property 'setName' of undefined
+    var person2={
+        name:'小明',
+        setName:function () {
+            console.log(this.name);
+        }
+    };
+    person1.setName();//小红
+    // 这行执行的时候，person2已经定义好了
+    // 先去person1中找到setName 属性
+    // 让对应的属性值执行 也就是其对应的函数体执行
+    // 改函数体执行，让里边的person2.setName执行
+    // 找到 person2.setName 让其对应的函数体执行
+    // 也就是执行 console.log(this.name);
+    // 这个this 就是person2 ，结果输出 小红
+
+    /*
+    * 不同命名空间之间 属性的相互调用：通过命名空间.属性名
+    * 同一个命名空间中 相互调用自己的属性：可以通过this ,也可以通过命名空间.属性名
+    * */
+    /*
+    * 高级单例模式
+    * 先去执行一个自执行函数；让自执行函数返回一个 命名空间
+    * 想让外界用什么属性就返回什么属性，不想暴露给外界的，直接不返回就可以了
+    * */
+    var person3=(function () {
+        var name='小明';
+        var setName=function () {
+            getName();
+            console.log(name);
+        };
+        var getName=function () {
+            console.log(122);
+        };
+        return {
+            init:function () {
+                setName();
+                setName()
+            },
+            setName:setName
+        }
+    })();
+
+
+
+</script>

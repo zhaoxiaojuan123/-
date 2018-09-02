@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style type="text/css">
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: #007aff;
+            border-radius: 50%;
+            animation: box 5s ease-out infinite alternate;
+        }
+
+        /*动画分为两大步：
+        1.通过 @keyframes 规定好动画的运动的基本轨迹
+        2.通过animation 属性去调用动画名称 实现元素动画*/
+        @keyframes box {
+            0% {
+                transform: translateX(0)
+            }
+            /*translateX(0)  代表水平位移*/
+            50% {
+                transform: translateX(1000px)
+            }
+            100% {
+                transform: translateX(0)
+            }
+        }
+
+        .red {
+            width: 100px;
+            height: 100px;
+            background: url("images/气球.jpg") no-repeat center top;
+            background-size: cover;
+            margin:auto;
+            animation: red 1s ease infinite;
+        }
+
+        @keyframes red {
+            0% {
+                transform: translateY(-30px)
+            }
+            50% {
+                transform: translateY(-10px)
+            }
+            100% {
+                transform: translateY(-20px)
+            }
+        }
+        /*性感的嘴唇*/
+        .mouth{
+            width: 280px;
+            height: 200px;
+            background: url("images/mouth.png") no-repeat;
+            background-size: contain;
+            margin: 100px auto;
+            animation: mouth 1s ease infinite;
+        }
+        @keyframes mouth {
+            0%{transform: scale(0)}
+           50%{transform: scale(2)}
+           100%{transform: scale(1)}
+        }
+    </style>
+
+</head>
+<body>
+<!--css气球一直漂浮-->
+<div class="box"></div>
+<div class="red"></div>
+<div class="mouth"></div>
+
+</body>
+</html>

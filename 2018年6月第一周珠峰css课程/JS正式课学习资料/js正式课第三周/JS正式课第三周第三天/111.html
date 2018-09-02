@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+ <div id="div1">测试</div>
+
+</body>
+</html>
+<script>
+
+    var oDiv=document.getElementById('div1');
+
+
+    //  设置样式setcss
+    function setCss(ele,attr,temp) {
+        var res=null;
+        var reg=/width|height|margin|padding|top|left|bottom|right|fontSize/i;
+        if(reg.test(attr)){
+         temp=parseFloat(temp)+'px';
+        }
+       return ele.style[attr]=temp;
+    }
+    console.log(setCss(oDiv, 'width', 100));
+  // 获取样式 width   getCss
+
+    function getCss(ele,attr) {
+        var res=null;
+        try {
+        res= window.getComputedStyle(ele)[attr];
+
+        }catch (e){
+            res=  ele.currentStyle[attr]
+        }
+
+        var reg=/^[+-]?(\d|[1-9]\d+)(\.\d+)?(px|rem|em|pt)?$/g;
+        if(reg.test(res)){
+           res= parseFloat(res);
+        }
+        return res;
+
+    }
+    console.log(getCss(oDiv, 'width'));
+  // 设置一组样式setGroup
+      function setGroup(ele,obj) {
+          if(Object.prototype.toString.call(obj)!="[object Object]"){
+             return;
+          }
+        for (var k in obj){
+            if(obj.hasOwnProperty(k)){
+                setCss(ele,k,obj[k]);
+            }
+        }
+      }
+    console.log(setGroup(oDiv, {'width': 300, 'height': 300}));
+// css 综合函数
+    function css() {
+        var rag=arguments;
+
+
+    }
+    
+    
+    
+
+</script>

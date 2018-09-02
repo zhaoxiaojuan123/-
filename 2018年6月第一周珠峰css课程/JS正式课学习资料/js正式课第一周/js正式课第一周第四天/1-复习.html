@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+<p>数字</p>
+<div>1</div>
+<div>2</div>
+<div id="div3">3</div>
+
+</body>
+</html>
+<script>
+
+    /*
+    * 不同数据间的比较
+    * */
+    /*
+    * 1、对象和对象的比较 比较的是对象的地址
+    * 2、对象和字符串的比较 先把对象转化成字符串(调用自身的toString()方法)  然后再去比较
+    * 3、null==undefined -->true   null===undefined--->false
+    * 4、其他情况 是吧=把两边转化成数字再去比较 其中 引用数据类型是先转成 字符串 再转成 数字
+    * */
+    // 隐式数据类型转化
+    //  +  只要碰见字符串  就变成了  字符串拼接
+    // ！ 取反，先把后边的内容转成布尔类型  然后再去取反
+    // -   1-'a'-->NaN : 先把两边用number转化 然后再去进行运算（- *  / %）
+    // isNaN(xx) : 先把参数转化成number ; 然后再去判断
+    //if(条件) 把条件转成布尔   再去判断
+    //不同数据类型比较
+
+
+
+  /*  []==![]//true
+    []==false;
+    [].toString()//-->''
+    ''==false;
+    0==0;//-->true
+  */
+  /* var a={};
+   var b=[];
+   var  str='[object object]';
+   var  str2='';
+    a==str;//-->true
+    b==str2;//-->true*/
+
+
+  /* function getBigBrother(ele) {
+        var temp=ele.previousSibling;
+        while (temp &&temp.nodeType != 1){
+            temp=temp.previousSibling;
+        }
+        return temp;
+
+    }
+
+    var oDiv3=document.getElementById('div3');
+    function getIndex(ele) {
+        var ary=[]; // 有几个哥哥；ele 的索引就是几
+        var temp=getBigBrother(ele);
+        while (temp){
+            ary.push(temp);
+            temp=getBigBrother(temp)
+        }
+        return ary.length;
+    }
+    console.log(getIndex(oDiv3));
+    */
+
+     /*
+     * 集中式 svn
+     * 分布式 git
+     * git 工作区 缓存区  历史区
+     * git status 查看工作取得状态
+     * git add 文件名或 . 把工作区的内容提交到缓存区
+     * git commit -m 'xxx'  把缓存区的内容提交到历史区
+     *
+     * 对应git 有一个免费的远程服务器可用  gitHub
+     * 怎么把本机的代码提交至远程服务器
+     *1、在本机初始化自己 个人信息（是你在gitHub上注册的git 账号）
+     * git config -- global user.name zhaoxiaojuan123 初始化自己的git账号名
+     * git config --global user.email .......  初始化自己的git邮箱
+     * git config --list  查看自己的信息是否初始化成功了
+     * 初始化的操作只做一次就够了
+     * 2、再在远程服务器上创造自己的一个库；也就是在gitHub 上造一个自己的库（new  repository）
+     *3、 把自己的本地文件夹和远程库链接起来
+     *搭建一个桥梁 git remote add 桥梁名 git远程仓库地址
+     * 查看目前有哪些桥梁 git remote -v
+     * 4、使用 git push 命令 把本地代码 通过桥梁推送到远程仓库
+     * git push 桥梁名 master(分支名)
+     * 5、使用 git pull 下拉远程库的代码
+     * git pull 桥梁名 master（分支名）
+     *
+     * 另一种简要方法：
+     * 是直接通过 git clone  把远程仓库 直接克隆岛本地；
+     * 这个方法省掉了我们  搭建桥梁的操作
+     *有个默认桥梁 origin;默认桥梁 可以不写
+     * git pull 直接下拉
+     *git push  直接推送
+     *
+     * */
+
+     /*
+     * Linux 常用操作
+     *  ls ：查看这个文件夹下所有的文件以及文件夹
+     *  cd : 切换路径
+     *  cd ../ 切换到上一级路径
+     *cd 文件路径 --》直接切换到对应的路径
+     * mkdir : 创建文件夹
+     *touch ：创建文件
+     *cat ：查看文件
+     *vi : 编辑 文件 需要按英文字母的  i 键 进入编辑状态；开始编辑文件；编辑完成后要退出 按esc键退出编辑状态；输入 :wq 在敲回车键即可
+     *
+     * */
+
+      /*
+      * 变量提升
+      * 在当前作用域，代码执行前，浏览器会统一的预览一遍代码，把其中的带var 和function 关键字提前声明；把var声明的值声明 不定义（给一个undefined的默认值）；带function 的声明加定义
+      *
+      *变量提升的一些特殊情况
+      * 1、只提升 等号 左边的内容
+      * 2、不管条件是否成立  都要进行变量提升；对于函数function 声明比较特殊，在标准浏览器下只声明不定义，在IE低版本即声明又定义；
+      * 3、所有的匿名函数 都是不会进行变量的提升；
+      * 4、return 后边的内容是不会进行变量提升的；但是 return 下边的带var 是可以进行变量提升的；
+      * 5、所有的自执行函数，都不会进行变量提升
+      * */
+
+    var a1=12;// 给window 添加了一个a1的属性
+    b1=13;   //给window 添加了一个b1的属性
+    console.log(a1, b1);//12 13
+    console.log(window.a1, window.b1);//12 13
+
+    console.log(b);// 报错  b is not defined
+    b=12;
+    /*
+    * es6 的声明
+    * let const  : 是没有变量提升的；不会给window添加属性
+    * let a=12; 不能重复声明;不管上边是怎么声明过的；但是能重复定义
+    * const b=12; 声明一个常量；不能重复声明，也不能重复定义
+    *
+    * */
+    /*
+     var a=12;
+    let a=13 ; // 报错 a重复声明了
+    */
+    /*
+    * var b=12;
+    * const b=13// 报错 不能重新赋值和定义
+    * */
+    /*
+    * console.log(q); 报错 q is not defined
+    * let q=12;
+    * */
+  // console 中换行快捷键是 shift + enter
+
+    /*
+    *栈内存：存储基本数据类型 提供代码运行的环境
+    * 堆内存：存储的对象键值对和函数的函数体
+    *
+    *
+    * 作用域
+    * 代码执行都会有一个运行环境；我们把这个运行环境成为作用域
+    *
+    * 全局作用域：页面打开就会形成一个全局作用域；这个作用域是提供整个JS执行环境的
+    * 私有作用域：函数执行会形成一个私有作用域，提供函数执行的环境
+    *
+    * 全局变量：在全局作用域下声明的变量叫做全局变量；var a;b=12 function f(函数名也是变量)
+    * 私有变量：在私有作用域下声明的变量叫做私有变量；var c;形参，function  f(函数名也是变量)
+    *
+    * 上级作用域
+    * 函数执行就会形成一个私有的作用域；那这个私有作用域的上级作用域 是谁？
+    * 跟函数在哪个作用域定义 有关系；
+    * 在哪个作用域定义的，那么他的上级作用域就是谁；
+    *
+    *
+    * */
+
+   /* var a=12;
+    function f() {
+        if( a in window){
+            a=12;
+
+        }
+        console.log(a)
+    }
+    console.log(f());
+   */
+
+   // 引用数据类型的深入
+    var a={x:1};
+    a.c=a={y:1};// .点的优先级高于 赋值，先让a里多一个c属性等着赋值；
+    console.log(a.c);//undefined
+    //-------------------------------------------------------
+    console.log(a, b, c);//undefined undefined undefined
+    var a=10,b=20,c=30;
+    function f(a) {
+        console.log(a, b, c);//10 undefined 30
+        var b=a=c=100;
+        console.log(a, b, c);// 100 100 100
+    }
+    f(10,20);
+    console.log(a, b, c);//10 20 100
+  //------------------------------------------------------
+
+   function a() {
+       console.log(1);
+   }
+
+    function c() {
+        console.log(2);
+    }
+    (function (b) {
+        b();c();
+        var b=c=function (a) {
+            console.log(3);
+        };
+        function b() {
+            console.log(4);
+        }
+        b();
+    })(a);
+    c();//4 2 3 3
+
+  //--------------------------------------------------
+  var n=5;
+    function a(n) { // undefined
+        n++;
+        console.log(n);// NaN
+        n=10;
+        function b() {
+            n++;
+            alert(n);//11
+        }
+    }
+    a();
+    alert(n);//5
+//-------------------------------------------------------
+    /*
+    * 闭包 ： 它是一种保护机制，保护内部变量不受外界的影响；
+    * 函数执行会形成一个作用域，用来保护内部变量，这个作用域就是一个闭包；
+    * 外界认为的闭包一般是指不销毁的作用域；
+    *
+    * 作用域销毁
+    * 一般情况下，一个函数执行形成的作用域都是及时销毁的；
+    * 当一个作用域中有内容被外界所占用，那么这个作用域就不会销毁；
+    * 当函数执行，返回值是一个引用数据类型，并且被外界接收，那么这个作用域就不会被销毁；
+    * 当一个作用域有内容临时被外界占用，那么当这个占用解除时，作用域再去销毁；
+    *
+    * */
+
+    /*
+    * 闭包的形式
+    * */
+    //形式1：
+    var fn=(function () {
+        return function () {
+            console.log(1);
+        }
+    })();
+
+    //形式2：
+    var obj=(function () {
+        var fn=function () {
+            console.log(12);
+        };
+        return {
+            f:fn
+        }
+    })();
+
+    //形式3：
+    var fn=(function () {
+        var a=12;
+        return function () {
+            console.log(12);
+        }
+    })();
+
+
+
+
+
+
+</script>

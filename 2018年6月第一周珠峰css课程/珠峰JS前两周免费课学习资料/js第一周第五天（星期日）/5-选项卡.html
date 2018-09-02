@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #box{
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+   #div1{
+       float: left;
+       width: 50px;
+       height: 200px;
+       text-align: center;
+       background-color: #ccc;
+
+   }
+        li{
+            color: #fff;
+            background-color: #00ae66;
+            line-height: 65px;
+           border: 1px solid #fff;
+
+        }
+        #div2{
+            float: left;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            background-color: #ccc;
+            overflow: hidden;
+        }
+        .cl{
+            width: 200px;
+             height: 100%;
+            background-color: #7dcfa0;
+            padding-top: 50px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="box">
+<div id="div1">
+    <ul>
+        <li>家电</li>
+        <li>水果</li>
+        <li>产品</li>
+    </ul>
+</div>
+<div id="div2">
+    <div class="cl">这是家电</div>
+    <div class="cl">这是水果</div>
+    <div class="cl">这是产品</div>
+</div>
+</div>
+</body>
+</html>
+<script>
+
+   /* for (var i = 0; i < array.length; i++) {
+        (function (n) {
+            til.onclick=function () {
+                content[n]
+            };
+                }
+        )(i)
+    }
+//  i=0 这种方法比上面错误的方法多了一层
+*/
+
+/*   function f1(){
+       var n=999;
+      return  function(){
+           alert(n) ;
+       }
+
+   }*/
+
+/*
+   function f1(n) {
+         n=55;
+        return function f2(){
+            console.log(n)
+        }
+    };
+
+var resault=f1();
+    resault();//结果是55
+*/
+
+
+
+  /* function f1(n) {
+       return function f2(){
+           console.log(n)
+       }
+   };
+
+   var resault=f1(12);
+  resault(); // 结果是12*/
+
+   (function fll(n) {
+       return function b(){
+           console.log(n)
+       }
+   })(88)// 为什么这样实现不了 输出不了n=88
+
+
+</script>

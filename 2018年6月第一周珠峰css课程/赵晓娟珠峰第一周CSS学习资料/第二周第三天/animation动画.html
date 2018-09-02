@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+分两步：
+1.@keyframes 动画名称{
+
+               0%{} 开始帧  0%= from
+               50%{} 中间帧
+               100%  结束帧  100%=to
+}
+2.通过animation 的八大属性去调用上面规定的动画名称以及其他的属性
+简写：animation：1 2 3 4 5 6 7 8 ；
+1） animation-name  动画名称
+2） animation-duration 动画持续时间-时间越长 运动的越慢 反之越快
+3）animation-timing-function  动画的运动曲线
+   ease 匀速
+   ease-in 由慢到快
+   ease-out 由快到慢的过程
+   ease-in-out 由慢到快再到慢的过程
+4）animation-delay 动画的延迟时间
+5）animation-interation-count 动画运动的次数 默认1次 infinite无限次
+6）animation-direction 动画的运动方向
+         normal：正常方向
+         reverse：反方向运行
+         alternate：动画先正常运行再反方向运行，并持续交替运行
+         alternate-reverse：动画先反运行再正方向运行，并持续交替运行
+7）animation-play-state 动画的运动状态
+        running：运动
+        paused：暂停
+8）animation-fill-mode 动画运动结束之后保留的
+        none：默认值。不设置对象动画之外的状态
+（结束）forwards：保留在动画结束时的状态
+（开始） backwards：保留在动画开始时的状态
+        both：设置对象状态为动画结束或开始的状态
+
+</body>
+</html>

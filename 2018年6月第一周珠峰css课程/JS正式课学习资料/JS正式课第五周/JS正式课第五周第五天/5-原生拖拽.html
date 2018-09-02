@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: #7dcfa0;
+            border-radius: 50%;
+            cursor: move;
+            position: relative;
+        }
+        #div2{
+            width: 400px;
+            height: 400px;
+            border: 2px dashed #f54343;
+            margin: auto;
+        }
+    </style>
+
+</head>
+<body>
+<div id="div1" draggable="true"></div>
+<div id="div2"></div>
+
+</body>
+</html>
+<script>
+    var oDiv=document.getElementById('div1');
+    var oDiv2=document.getElementById('div2');
+
+    oDiv.ondragstart=function (e) {  // 开始拖拽
+        console.log(1);
+    };
+    oDiv.ondragover=function (e) {
+        console.log(2);
+    };
+    oDiv.ondragend=function (e) {
+        console.log(3);
+    };
+    // 以上三个是给拖动元素绑定的
+
+    //给目标元素绑定的
+    oDiv2.ondragenter=function (e) {  // 拖个东西进去会触发
+        console.log('enter');
+    };
+    oDiv2.ondragleave=function (e) {
+        console.log(leave);
+    };
+    oDiv2.ondragover=function (e) {
+        e.preventDefault();
+    };
+    // drop ：必须配合 dragover
+    oDiv2.ondrop=function (e) {
+        console.log(e);
+    }
+
+</script>

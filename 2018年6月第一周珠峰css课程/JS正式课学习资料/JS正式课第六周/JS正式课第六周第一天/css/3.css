@@ -1,0 +1,24 @@
+/*
+混合
+*/
+.public,
+#div1,
+.oul2 {
+  width: 400px;
+  height: 300px;
+  background: #ee2ad6;
+  list-style: none;
+}
+.public .oul1 {
+  color: #fff;
+  font-size: 20px;
+  list-style: none;
+}
+#pub,
+.oul2 {
+  width: 100px;
+  height: 100px;
+}
+#div1 {
+  background: #00ae66;
+}

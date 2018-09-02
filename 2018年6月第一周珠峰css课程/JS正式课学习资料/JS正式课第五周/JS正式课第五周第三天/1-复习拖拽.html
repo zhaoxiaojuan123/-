@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+   <style>
+
+       *{
+           padding: 0;
+           margin: 0;
+       }
+       #div1{
+           width: 100px;
+           height: 100px;
+           background: #ee2ad6;
+           border-radius: 50%;
+           text-align: center;
+           line-height: 100px;
+           position: absolute;
+       }
+   </style>
+</head>
+<body>
+<div id="div1">拖拽</div>
+
+</body>
+</html>
+<script>
+    var oDiv=document.getElementById('div1');
+//    oDiv.onmousedown=function (e) {
+//        dragStart.call(this.e);
+//        this.onmousemove=dragMove;
+//        this.onmouseup=dragEnd;
+//    };
+   oDiv.onmousedown=dragStart;
+
+    function dragStart(e) {
+        clearInterval(this.flsyTimer);
+        e=e||window.event;
+
+        this.DragMove=dragMove.bind(this);
+        this.DragEnd=dragEnd.bind(this); // 强行转变this指向
+        document.onmousemove=this.DragMove;
+        document.onmouseup=this.DragEnd;
+
+        this.startX=this.offsetLeft;
+        this.startY=this.offsetTop; // 盒子的初始值
+        this.mx=e.pageX; // 鼠标的初始值
+        this.my=e.pageY;
+    }
+    function dragMove(e) {
+
+        e=e||window.event;
+        var x=e.pageX-this.mx,
+            y=e.pageY-this.my;
+        this.style.left=this.startX+x+'px';
+        this.style.top=this.startY+y+'px';
+        if(!this.prevX){
+            this.prevX=0
+        }
+        this.speed=e.pageX-this.prevX; // 两次move 触发时 移动的距离当做速度
+        this.prevX=e.pageX;
+    }
+   function dragEnd(e) {
+     document.onmousemove=null;
+     document.onmouseup=null;
+       this.maxL=(document.documentElement.clientWidth||document.body.clientWidth)-this.offsetWidth;
+       if(!this.running){  // 上一次的fly不停止，新的flay就不执行
+           fly.call(this);
+       }
+       // 最大top值
+     this.maxT=(document.documentElement.clientHeight||document.body.clientHeight)-this.offsetHeight;
+       drop.call(this);
+   }
+
+   function fly() {
+       this.running=true;
+       clearInterval(this.flsyTimer);
+       this.speed*=0.98;
+       var l=this.offsetLeft+this.speed;
+       if(l>this.maxL){  // 右边界
+           this.speed*=-1;
+           l=this.maxL;
+       }
+       if(l<0){ // 左边界
+           this.speed*=-1;
+           l=0;
+       }
+       this.style.left=l+'px';
+       if(Math.abs(this.speed)<0.1){
+           clearInterval(this.flsyTimer);
+           this.running=false
+       }else {
+           this.flsyTimer=setTimeout(fly.bind(this),30)
+       }
+   }
+
+   function drop(e) {
+       if(!this.flag){
+           this.flag=0
+       }
+       if(!this.dropSpeed){
+           this.dropSpeed=5;
+       }else {
+           this.dropSpeed+=5;
+       }
+       this.dropSpeed*=0.98;
+       var t=this.offsetTop+this.dropSpeed;
+       if(t>=this.maxT){
+           this.dropSpeed*=-1;
+           t=this.maxT;
+           this.flag++;
+       }else {
+           this.flag=0
+       }
+       this.style.top=t+'px';
+       if(this.flag>2){
+           clearInterval(this.dropTimer);
+       }else {
+           this.dropTimer=setTimeout(drop.bind(this),30);
+       }
+   }
+
+
+
+
+</script>

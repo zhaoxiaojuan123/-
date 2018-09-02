@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+/* var n=isNaN(parseFloat('12p'));// n=false
+    if(n){
+        console.log(n+1)
+
+    }else{
+        console.log(n+'3'); //结果是 'false3'
+    }
+    console.log(n);// false*/
+
+ // 查看对象的四种方法
+
+ // 1、 用typeof 查看对象
+
+    var str='www',a=12;
+    console.log(str.constructor.toString()); // constructor 是指向构造函数的 function String() { [native code] }
+    console.log(a.constructor.toString());   //function Number() { [native code] }
+    console.log(({}).constructor.toString());//function Object() { [native code] }
+    console.log(([]).constructor.toString());//function Array() { [native code] }
+    //2、用constructor 可以用正则截取 function 后面的类型
+
+    var obj={};
+    var  ary=[];
+    console.log(obj instanceof  Object);// true
+    console.log(ary instanceof  Array);//true
+    console.log(obj instanceof  Array);//false
+
+    //  3、instanceof  查看对象  猜出大概是啥
+
+    // 4、Object.prototype.tostring.call(xxx);  对象原型上的 tostring 的方法
+ console.log(Object.prototype.toString.call([]));    //[object Array]
+ console.log(Object.prototype.toString.call(/\d/));  //[object RegExp]
+ console.log(Object.prototype.toString.call(12));    //[object Number]
+ console.log(Object.prototype.toString.call('www'));//[object String]
+ console.log(Object.prototype.toString.call(true)); //[object Boolean]
+
+
+
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    var ary=[]; //声明式
+  //  var ary= new Array();//构造函数
+
+
+    // 数组的每一项都有一个属性名（数组本身就是一个对象，他只是对象的一个细分）和它对应。这里的属性名（依次递增的数字） 我们叫做索引   （**数组中的属性名的数字其实是 string 类型**）
+    // 数组的每一项的数据类型 是 可以是任意类型
+    var sum=function (a,b) {
+        return a+b;
+    }
+    var arry=[1,true,'qqq',null,undefined,{q:1},function () {console.log(2)
+
+    },sum,sum()];
+    console.log(sum()); // 函数执行口号里没有实参，传递过去是 undefined ,a+b = undefined+undefined = NaN
+    console.log(arry[7](1,2),ary[8]);
+    // 数组里的变量 我们是要把对应的变量值放到相应的位置
+
+    // 对象的查看 打点   ['']
+    // 数组本身也应该有打点和['']两种方式，但是 对象中数字的属性名，我们只能用[''][]的方式，所以数组中的查看我们只能用[''][]
+
+    //for  in 循环数组
+    arry.aaa='wwwww';
+    Array.prototype.aa='hhhhh';
+    for(var k in arry){
+        // k 每一个属性名
+        console.log(arry[k]); // 可以输出 'wwwww',也可以将自定义的原型上的输出来 'hhhhh'
+    }
+
+// for 循环
+    for (var i = 0; i < arry.length; i++) {
+        console.log(arry[i]);// 不可以输出 'wwwww' 因为 i是数字拿不到,数不出来在原型上自定义的'hhhhh'
+    }
+
+   // while
+  var n=0;
+    while (n<arry.length){
+        console.log(arry[n]);
+        n++;
+    }
+
+
+</script>

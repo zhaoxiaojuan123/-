@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    /*
+    * 循环数组的两个方法
+    * forEach ：必须以函数作为参数
+    * map ：
+    * */
+
+    let ary=[12,14,23,55,66];
+   var a= ary.forEach(function (item,index) {
+        console.log(item,index);
+       // item 是数组中的项
+       // index 是对应的索引
+       // forEach 没有返回值
+       // item=0; 不改变原有数组
+       console.log(arguments);
+   });
+    console.log(a);//undefined  forEach 没有返回值
+    console.log(ary);
+  /*  var ary1=[1,2,3];
+    var total=0;
+    ary1.forEach(function (item,index) {
+        total+=item;
+
+    });
+    console.log(total,ary1);*/
+    /*
+    * map 有返回值 ；是个数组
+    * 返回值是由回调函数内的 return 确定的；
+    * 没有return 默认返回 undefined 组成的数组
+    *
+    * */
+    let ary=[12,14,23,55,66];
+//    var c=ary.map((item,index)=>{
+//        console.log(item,index);
+//        // 箭头函数没有 arguments
+//    });
+    var c=ary.map(function(item,index){
+        console.log(item,index);
+        console.log(arguments);
+    });
+    console.log(c,ary);// c是[undefined,undefined,undefined,undefined,undefined,]
+                        // ary是[12,14,23,55,66]
+
+
+
+</script>

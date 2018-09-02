@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            margin: auto;
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            border: 10px solid rebeccapurple;
+        }
+    </style>
+
+</head>
+<body>
+<div id="div1">盒子模型</div>
+
+</body>
+</html>
+<script>
+
+
+    /*
+    * JS 盒子模型
+    * client ---》 取值时，四舍五入，跟内容是否溢出无关
+    * clientWidth ：盒子的宽度+左右padding
+    * clientHeight ：
+    *clientLeft  ：左边框（border-left）的宽度
+    * clientTop:上边框的高度
+    *
+    * offset  -->取值 四舍五入 跟内容溢出无关
+    * offsetWidth-->clientWidth+左右border
+    * offsetHeight-->clientHeight+上下border
+    * offsetParent --> 上级参照物 离他最近的一个有定位的父亲盒子
+    * offsetLeft --> 盒子外边框 到 上级参照物 内边框的 距离
+    * offsetTop  -->元素的外边框距离上级参照物的内边框top值
+    *
+    *
+    * scroll  取值 四舍五入
+    * scrollWidth : 内容无溢出时 他的值跟clientWidth 一样
+    *                   有溢出时，但是没有设置overflow属性，它的值是 盒子的内容宽+左padding
+    *                     溢出时，设置了overflow属性，他的值是   盒子的内容宽+左右padding
+    * scrollTop 卷上去的高度
+    * scrollHeight
+    *
+    * 以上只有scrollTop 和 scrollLeft 是可以修改的；其他属性都是只读属性
+    *
+    * */
+    /*
+    * 获取一屏的高度
+    * document.documentElement.clientHeight||document.body.clientHeight
+    *
+    * 获取整个文档的高度  ：document.documentElement.scrollHeight||document.body.scrollHeight
+    *
+    * 获取页面卷上去的高度 ：document.documentElement.scrollTop||document.body.scrollTop
+    * */
+
+    // 求一个盒子外边框到body的距离
+
+
+
+
+
+</script>

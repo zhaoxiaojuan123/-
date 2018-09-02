@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    function f1() {
+        console.log(1);
+    }
+    function f2(f) {
+        setTimeout(f,3000)
+        console.log(2);
+    }
+    function f3() {
+        setTimeout(f1,3000)
+    }
+    f2(f1);
+    f3();
+    /*
+    * 一个函数F1的执行的过程中 让另一个函数F2执行；那么我们称F2为回调函数
+    * callback   cb  回调函数
+    * */
+
+
+</script>

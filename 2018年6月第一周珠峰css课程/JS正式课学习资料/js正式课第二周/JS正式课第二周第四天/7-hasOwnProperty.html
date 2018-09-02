@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    /*
+    * hasOwnProperty: 查看是否是私有属性的一个方法
+    * */
+    console.log(Array.prototype.hasOwnProperty('toString'));//true
+    console.log(Array.prototype.hasOwnProperty('hasOwnProperty'));//false
+    var obj={};
+    /*
+    * in 查看某个对象中 是否有该属性
+    * 不管是私有还是公有 只要有 就是true
+    * */
+    console.log('hasOwnProperty' in obj);// true
+    function Person() {
+        this.name='zfpx';
+        this.age=9;
+    }
+    Person.prototype.getName=function () {
+        console.log(this.name);
+    }
+
+    /*
+    * instanceof
+    * 查看 这个类 是否在 这个实例的原型链上
+    * per1 instanceof Person
+    * */
+    console.log(per1 instanceof Person);//true
+    console.log(per1 instanceof Array);//false
+    console.log(per1 instanceof Object);//true
+
+    /*
+    * 根据 in 和 hasOwnProperty 可以写出一个检测是否是公有属性的方法
+    *
+    * 先用 in 检测 某个对象 是否存在这个属性
+    * 再用 hasOwnProperty 是否是他的私有属性
+    * 满足上边属性  但不满足下边的属性 就证明这个属性是公有的
+    * */
+    Object.prototype.hasPublicProperty=function (attr) {
+        if(attr in this&& this.hasOwnProperty(attr)==false){
+            return true
+        }
+        return false;
+        // return  attr in this&& this.hasOwnProperty(attr)==false
+    }
+
+
+
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        div{
+            height: 100px;
+        }
+
+        /*导入式 扩展导入式和外链式的本质区别*/
+        @import "css/1-import.css";
+
+    </style>
+    <!--外链式-->
+    <link rel="stylesheet" href="css/1-import.css">
+</head>
+<body>
+<!--行内：HTML和CSS混淆，代码结构混乱-->
+<div style="width:100px;"></div>
+
+<script>
+    //真实项目中我们一般会把css放在body的上面，吧js放在body末尾（约定俗称的规范）
+    //标签，js很多时候需要操作这些元素，首先我们要保证元素加载成功，才可以再js中获取到（js放在结构之后加载，js放在body的末尾）
+    //如果把js放在HTML的前面了，如何等到结构加载完成再加载js？
+    //JS:window.onload=function(){}页面中所有的资源文字都加载完成执行操作
+    //JQ:$(document).ready(function(){})  页面中的结构加载完成就会操作 window.addEventListener('load',function(){},false) / window.attachEvent('onreadystatechange',function(){})
+
+
+    //1、写静态页面
+    //从UI设计师手里拿到设计稿（静态的图片：psd）,使用HTML和css图片变成静态的HTML页面
+    //2、js
+    //那js写一些用户交互效果，例如：；点击某一个按钮，实现图片的切换等。js中有一个很常用的操作就是用来操作页面中的HTML标签的（DOM元素的）
+</script>
+</body>
+</html>

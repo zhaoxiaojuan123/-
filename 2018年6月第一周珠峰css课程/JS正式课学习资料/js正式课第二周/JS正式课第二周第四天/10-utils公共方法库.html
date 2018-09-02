@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+//=> utils:属于一个项目的公共方法库，在这里存放了常用到的一些方法
+    var utils=(function () {
+        //=>把数组转换为数组（兼容所有浏览器）
+        function toArray(classAry) {
+            var ary=[];
+            try {
+                ary=Array.prototype.slice.call(classAry)
+            }catch (e){
+                for (var i = 0; i < classAry.length; i++) {
+                    ary[ary.length]=classAry[i]
+                }
+            }
+            return ary;
+        }
+        return {
+            toArray:toArray
+
+        }
+
+
+    })();
+
+
+
+</script>

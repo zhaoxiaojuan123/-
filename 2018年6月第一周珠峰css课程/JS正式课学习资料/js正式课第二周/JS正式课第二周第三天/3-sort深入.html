@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+   var ary=[
+       {name:'小红',age:9,hobby:'eat'},
+       {name:'张三',age:7,hobby:'sleep'},
+       {name:'张三',age:5,hobby:'singing'}
+   ];
+   /*
+   * 根据 age 排序
+   * */
+   var arr=ary.sort(function (a,b) {
+       return  a.age-b.age;
+   });
+
+   console.log(arr); // 和 arr2输出一样
+   // 'a'.localeCompare('b');//-1
+  //  'a'.localeCompare('a');//0
+   // 'b'.localeCompare('a');//1
+
+    var arr2=ary.sort((a,b)=>{
+        return a.hobby.localeCompare(b.hobby);
+    });
+
+   console.log(arr2);
+
+    var arr3=ary.sort(function (a,b) {
+        return  a.name.localeCompare(b.name,'zh');
+        // 'zh' 是根据汉语拼音
+    })
+
+
+
+
+</script>

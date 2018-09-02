@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    /*
+     * 订阅
+     * 发布
+     * 取消订阅
+     */
+
+    var ary=[]; //报社订阅人的名单
+    function on(f) {  // on 自己起的名字 这个函数时用来把订阅人加入到名单里
+        ary.push(f)
+    }
+    function fire() {  // 循环每一个人，对每一个人进行发报纸（每一个人执行）
+        ary.forEach((item)=>{
+            item&&item();
+        })
+    }
+    function off(f) {
+        var n=ary.indexOf(f);
+        if(n!==-1){ //查看这个人是否在名单里
+            ary.splice(n,1); // 把这个人从名单中移除
+        }
+    }
+    function f1() {
+        console.log(1);
+    }
+    function f2() {
+        console.log(2);
+    }
+
+    on(f1);
+    on(f2);
+    fire(); // 1 2
+    off(f2);
+    fire();// 1
+
+
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    /*
+    *通过正则 把下面的日期字符串转化成对应的汉字的年月日时间
+    * */
+
+    var str="2018/8/8 15:24:34";
+    var str2="今天是2018年8月8号 中午12点24分34秒"; // 目标字符串
+    /*
+    * split 结合正则
+    * replace
+    * match
+    * */
+
+/*    // replace 结合正则方法
+  var reg1=/(\d{4})[/](\d)[/](\d)[ ](\d{2})[:](\d{2})[:](\d{2})/g;
+    var str3=str.replace(reg1,function () {
+        console.log(arguments);
+     return  `今天是${arguments[1]}年${arguments[2]}月${arguments[3]}号 ${arguments[4]<10?'上午':(arguments[4]<14?'中午':'下午')}${arguments[4]}点${arguments[5]}分${arguments[6]}秒`
+    });
+  console.log(str3);*/
+
+    /*  split结合正则方法
+    var reg=/[/: ]/g;
+    var str4=str.split(reg);//["2018", "8", "8", "12", "24", "34"]
+        var str5=`今天是${str4[0]}年${str4[1]}月${str4[2]}号 ${str4[3]<10?'上午':(str4[3]<14?'中午':'下午')}${str4[3]}点${str4[4]}分${str4[5]}秒`;
+    console.log(str5)*/
+    // match 结合正则方法
+    var reg2=/\d+/g;
+    var str6=str.match(reg2);
+    console.log(str6);
+    var str7=`今天是${str6[0]}年${str6[1]}月${str6[2]}号 ${str6[3]<10?'上午':(str6[3]<14?'中午':'下午')}${str6[3]}点${str6[4]}分${str6[5]}秒`;
+    console.log(str7)
+
+</script>

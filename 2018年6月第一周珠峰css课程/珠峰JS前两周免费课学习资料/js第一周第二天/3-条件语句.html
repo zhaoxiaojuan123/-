@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+
+<script>
+   var n= parseFloat('12q.23');//-->12
+   // 在if 的括号里面 它会先把括号里的内容转化成布尔类型，再去做判断
+    if(n){
+        console.log(n+1)
+
+    }else {
+        console.log(n+'3')
+    }
+
+    /*
+    // && (并且)  ||(或者)
+    * ### if（判断条件）{
+    *        条件成立要执行的代码
+    * }elae{
+    * 条件不成立时要执行的代码
+    * }
+    *
+
+    *if（判断条件1）{
+     *        条件1成立时要执行的代码
+     * }elae if(判断条件2){
+     * 条件1不成立时，条件2要执行的代码
+     * }else{
+     * 两个条件都不成立时执行的代码
+     * }
+    * */
+
+
+
+//    ==是相对比较  会默认的把 == 两边的值转化成统一类型再去比较
+//   ===是绝对比较  两边的类型和值是否相等
+
+   var  n=5%4;
+   switch (n){
+       case 1:
+       case 2:
+           console.log('1 or 2');
+           break;// 一定要有这个break,没有的话会一直往下执行，直到碰到break或者把最后的default执行完
+       case 3:
+           console.log('3');
+       default:
+           console.log('4')
+   }
+
+
+   //m>10 为true 时才能进到这个条件里
+ var m=10;
+   switch (true){
+       case m>10://若想进这个条件里，必须让m>10的值跟switch 条件的值绝对相等
+           console.log('大于5');
+           break;
+       case m<5:
+           console.log('小于10');
+           break;
+       default:
+           console.log('5-10');
+   }
+
+   var c=1 && 2;// 返回的值 2
+   var d=1 || 2;//返回的值  1
+   var c1=0 && 1;//返回的值 0 ，0 是false 不成立
+   console.log(c, d);
+
+
+   /*
+    * switch  case 是===绝对比较
+    * switch(值){
+    * case  值1：
+    *    xxxxx
+    *    case  值2：
+    *    xxxxx..;
+    *    break;
+    *  default:
+    *  xxxxxxxx
+    * }
+    *
+    *
+    * */
+</script>

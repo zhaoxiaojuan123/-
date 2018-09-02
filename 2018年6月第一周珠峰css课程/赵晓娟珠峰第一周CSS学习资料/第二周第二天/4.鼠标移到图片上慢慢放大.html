@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style type="text/css">
+        /* animation : 动画的名称 动画的持续时间 动画的运动曲线（steps/ease） 动画的延迟时间 动画的运动次数*/
+        /*transition:过渡动画 - 缓冲
+        过渡动画的属性名称 过渡动画持续的时间 过渡动画的运动曲线 过渡动画的延迟时间*/
+
+        img {
+            width: 145px;
+            height: 80px;
+            transition: all 2s ease
+        }
+
+        /*图片慢慢放大和缩小对应的是（ img:hover）hover里的所有属性*/
+
+        .pic {
+            width: 145px;
+            height: 80px;
+            overflow: hidden;
+        }
+
+        /*transform:变换  scale:缩放2倍*/
+        img:hover {
+
+            height: 90px;
+        }
+    </style>
+</head>
+<body>
+<div class="pic">
+    <img src="http://img1.gtimg.com/ninja/2/2018/06/ninja152996799986025.jpg" alt="">
+</div>
+
+</body>
+</html>

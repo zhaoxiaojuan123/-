@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+   <style>
+       *{
+           padding: 0;
+           margin: 0;
+       }
+       #box{
+           overflow: hidden;
+       }
+       #div1{
+           width: 200px;
+           height: 200px;
+           float: left;
+       }
+       #div1 img{
+           width: 100%;
+           height: 100%;
+       }
+       #div2{
+           width: 300px;
+           height: 300px;
+           float: left;
+           overflow: hidden;
+       }
+       #div2 img{
+           position: absolute;
+           width: 100%;
+           height: 100%;
+           display: none;
+       }
+   </style>
+</head>
+<body>
+<div id="box">
+<div id="div1">
+    <img src="images/pic5.jpg" alt="">
+</div>
+<div id="div2">
+    <img src="images/pic5.jpg" alt="">
+</div>
+</div>
+</body>
+</html>
+<script>
+  var oDiv=document.getElementById('div1'),
+       img=oDiv.getElementsByTagName('img')[0],
+       oDiv2=document.getElementById('div2'),
+        bigImg=oDiv2.getElementsByTagName('img')[0];
+  oDiv.onmouseenter=function (e) {
+      e=e||window.event;
+      var tar=e.target||e.srcElement;
+      bigImg.style.display='block';
+  };
+  oDiv.onmousemove=function (e) {
+      bigImg.style.left= e.clientX+20+'px';
+      bigImg.style.top=e.clientY+20+'px';
+  };
+   oDiv.onmouseleave=function (e) {
+       bigImg.style.display='none';
+
+   };
+   //----------------
+
+
+</script>

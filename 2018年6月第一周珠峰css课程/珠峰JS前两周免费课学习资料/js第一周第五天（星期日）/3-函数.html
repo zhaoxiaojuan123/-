@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    /*
+    *  this :调用主体==》 谁函数执行；简单的规律就是看 点前面是谁 this就是谁
+    * */
+
+    /*
+    *  function 函数名（）{
+    *      函数体
+    *
+    *   }
+    *
+    * 函数的调用  函数名（）；
+    * 函数的存储过程：
+    * 1、先开辟一个堆内存
+    * 2、把函数体里边的代码 以字符串的形式存储到堆内存中
+    * 3、把堆内存的地址赋给 函数名
+    *
+    * */
+    /*
+    *  实参个数 大于 形参个数 形参拿不到； 按照正常拿到的形参计算
+    *  实参个数 小于 多余的形参部分 给的默认值是undefined  1+undefined ==NaN
+    * */
+    /*  不定项求和 利用的是 函数里的内置属性 arguments (实参集合)类数组 还有一个是获得元素集合这两个是类数组
+    *  字符串拼接时 ，" "字符串里面有空格也要算上
+    * */
+    function sum() {
+
+        console.log(10+20);
+    }
+
+    sum();
+   var tol=0;
+    function sum1() {
+    var a=10,b=20;
+        tol=a+b;// 调用函数 tol不累加
+        tol+=a+b;// 调用一次函数 tol 累加一次
+    }
+    sum1();
+    sum1();
+    //return 有跳出函数的作用； 遇见return 后边代码不执行；类似于for的break；
+    // return后边不写内容时 ，返回的结果是undefined
+    // 函数体里面 不写return 默认返回的也是  undefined
+    // return 的位置不固定 根据自己的业务逻辑来确定
+
+    function sum4() {
+         var a=10;
+         var b=20;
+        console.log('1111');
+        function q() {
+            console.log(0)
+        }
+         return function q() {
+             console.log(0)
+         }
+
+    }
+    var a=sum4();
+    console.log(a);// 有 return 返回值：1111   function q() {
+                   // console.log(0)
+                   //   }
+   console.log(sum4());//有 return  返回值：1111   function q() {
+                        // console.log(0)
+                        //  }
+
+    //console.log(a); // 没有return 结果  1111  undefined
+  //  console.log(sum4());// 没有return 结果 1111   undefined
+
+    // 要求 能被2 或者3 整除的数相加的结果
+/*   function summ() {
+       var total=0;
+       for( var i=0;i<arguments.length;i++){
+           if(!isNaN(arguments[i])&&(typeof arguments[i])=='number' )
+           if(arguments[i]%2==0||arguments[i]%3==0){
+               total+=arguments[i];
+           }
+       }
+  return total;
+   }
+ summ(NaN,'NaN',2,'33',3,6);
+    console.log( summ(NaN,'NaN',2,'33',3,6))*/
+
+
+    function summ() {
+        var total=0;
+        for( var i=0;i<arguments.length;i++){
+            if((typeof arguments[i])=='number' )
+                //!isNaN(arguments[i])&&
+                if(arguments[i]%2==0||arguments[i]%3==0){
+                    total+=arguments[i];
+                }
+        }
+        return total;
+    }
+    summ(NaN,'NaN',2,'33',3,6);
+    console.log( summ(NaN,'NaN',2,'33',3,6))
+
+
+
+</script>

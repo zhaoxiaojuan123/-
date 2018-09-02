@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #litBox{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            float: left;
+            margin-left: 20px;
+            overflow: hidden;
+            cursor: move;
+        }
+        #litBox img{
+            width: 100%;
+            height: 100%;
+        }
+        #litBox .mask{
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            left: 0;
+            top:0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+        }
+        #bigBox{
+            width: 400px;
+            height: 400px;
+            float: left;
+            overflow: hidden;
+            margin-left: 20px;
+            display: none;
+        }
+        #bigBox img{
+            width: 200%;
+            height: 200%;
+            position: relative;
+
+        }
+    </style>
+</head>
+<body>
+<div id="litBox">
+    <img src="imgs/2.jpg" alt="">
+    <div class="mask"></div>
+</div>
+<div id="bigBox">
+    <img src="imgs/2.jpg" alt="">
+</div>
+
+</body>
+</html>
+<script>
+    var litBox=document.getElementById('litBox'),
+        bigBox=document.getElementById('bigBox'),
+        mask=litBox.getElementsByClassName('mask')[0],
+        bigImg=bigBox.getElementsByTagName('img')[0];
+     litBox.onmouseenter=function (e) {
+         // 鼠标进来让遮罩层和大图片显示
+         mask.style.display='block';
+         bigBox.style.display='block';
+      // 获取鼠标进入小图片的一开始的初始值
+      this.percent= this.clientWidth/mask.clientWidth;// 2倍
+     };
+     litBox.onmousemove=function (e) {
+         var maxL=this.clientWidth-mask.clientWidth,
+             maxH=this.clientHeight-mask.clientHeight;
+         var mx=e.clientX-this.offsetLeft-mask.clientWidth/2,
+              my=e.clientY-this.offsetTop-mask.clientHeight/2 ;
+         mx=mx>maxL?maxL:(mx<0?0:mx);
+         my=my>maxH?maxH:(my<0?0:my);
+         mask.style.left=mx+'px';
+         mask.style.top=my+'px';
+         // 让大图片跟着动
+         bigImg.style.left=-mx*this.percent+'px';
+         bigImg.style.top=-my*this.percent+'px';
+     };
+
+   litBox.onmouseleave=function (e) {
+       // 鼠标离开后让遮罩层和大图片消失
+       mask.style.display='none';
+       bigBox.style.display='none';
+   }
+
+</script>

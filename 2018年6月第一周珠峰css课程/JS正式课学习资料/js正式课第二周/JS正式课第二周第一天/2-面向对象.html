@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    //面向对象  是一种 编程思想，它是以对象数据类型为导向的一种编程思想；
+    /*
+    * 类     实例
+    * Array   []
+    * */
+    /*
+    * 单例模式
+    * var obj={
+    * }
+    * obj 在单例模式中 被称为‘命名空间’； 多个命名空间直接相互独立；
+    * var obj2={
+    * }
+    * */
+    /*
+    * 高级单例模式：具有一定的隐私空间；外界只能访问到你自执行函数返回的内容；
+    * var obj=(function(){
+    *      var name='zfpx';
+    *      return {}
+    * })()
+    * 可以通过单例模式 实现简单的模块化开发；
+    * var up=(function(){
+    *     var setData=function(){
+    *     };
+    *     var banner=function(){
+    *     }
+    *     return {
+    *     init:function(){
+    *        setData();
+    *        banner()
+    *     }
+    * })();
+    *  up.init();
+    * */
+
+    /*
+    * 工厂模式：利用函数去批量生产 命名空间；
+    * function factory(name,age){
+    *        var obj={
+    *        name:name,
+    *        age:age
+    *        }
+    *        return obj;
+    * }
+    * var obj=factory('xh',9)
+    * */
+   /* function factory(name,age){
+        var obj= {
+            name: name,
+            age: age,
+        };
+        return obj;
+    }
+    var obj=factory('xh',9);
+    var obj1=factory('xh',9);
+    console.log(obj==obj1);//---> false 不是同一个地址
+*/
+   //-----------------------------------------------------------
+    /*
+    * 构造函数模式
+    *
+    * */
+    function Person(name,age) {
+        this.name=name;
+        this.age=age;
+    }
+    var obj1=Person('xh',9);
+    console.log(obj1);// undefined
+     // new 执行，第一步跟普通函数执行一样；先形参赋值，再变量提升；在代码执行之前，又添加了一步（开辟一个堆内存，把函数的执行主体this 指向这个堆内存），然后代码再去执行；执行完成后，默认把创建的对象返回；
+    // 在这里我们把Person 称作一个类；把obj2称为Person的一个实例
+    var obj2=new Person('xm',11);
+    console.log(obj2);// {name:xm,age:11}
+
+    var obj3=new Person('xm',11);
+    console.log(obj2);
+
+    console.log(obj2==obj3);// -->false不是一个地址
+    // 构造函数模式 比 工厂模式 省了var 和 return
+    //-------------------------------------------------------------------
+
+    /*
+    * 原型模式
+    * 利用构造函数
+    * 原型：prototype
+    * 每一个函数都有一个属性：prototype 这个属性指向函数自己的原型对象
+    * 每一个对象都有一个 __proto__的属性，指向 所属类的 原型对象
+    * 每一个默认的原型对象都有一个属性 constructor ；指向所属的函数本身
+    * // 所有的实例都是一个对象
+     // 所有的类 都是一个函数
+    * */
+
+
+
+    function Person(name,age) {
+        this.name=name;
+        this.age=age;
+    }
+    var per1=new Person('zfpx',9);
+    var per2=new Person('xh',12);
+    /*
+    * JS 中的内置类 对应的实例 有两种创造方式
+    * 字面量(直接量） var ary=[1,2]; var obj={}
+    * 通过构造函数  var ary2= new Array(1,2); var obj2=new Object();
+    *
+    * JS 中的自定义类 对应的实例  我们只能通过new 的方式创建
+    *
+    * */
+    // Object 的原型也是个对象，是对象就有一个__proto__的属性，指向所属类（Object）的原型，也就是指向他自己，这时JS默认把这个指向改成了null
+
+    // Function 它所属的类还是一个函数，它自己是它自己的一个实例，它的__proto__就是指向他自己的原型对象
+   // 所有的实例都是一个对象
+   // 所有的类 都是一个函数
+
+
+</script>

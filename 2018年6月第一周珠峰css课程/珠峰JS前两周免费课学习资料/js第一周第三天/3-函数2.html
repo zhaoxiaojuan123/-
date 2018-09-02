@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+ <div id="div1">这是盒子1</div>
+ <div id="div2">这是盒子2</div>
+ <div id="div3">这是盒子3</div>
+ <div id="div4">这是盒子4</div>
+
+</body>
+</html>
+<script>
+
+
+
+    /*
+    * 函数的传参   （就是一个接受的过程）
+    * function sum(a,b){
+    *     // a和b 叫做形参（形式上的参数）
+    * }
+    *return 返回值  遇见return 后面的代码不再执行   跟for中的break和continue 类似
+    * */
+
+    function sum(a,b){
+        console.log(a , b);
+        var total =a+b;
+        console.log(total);
+
+   }
+   sum(1,2); // 1,2 是实参（实际的参数）
+
+    sum(1,2,3,4)// 当实参个数大于形参个数时，他们是按照先后顺序一一对应的
+    console.log(sum(1));// 当实参个数小于形参个数时，没有对应上的形参会有一个（undefined）默认值。后面的实参没有给，传递过去是undefined ,输出结果是1+undefined=>NaN
+    // arguments
+    function sum() {
+        console.log(arguments)
+    }
+    sum(1,2,3,4);
+
+    function sum2() {
+        console.log(arguments);
+        var total=0;
+        for(var i=0;i<arguments.length;i++){
+            total=total+arguments[i];
+        }
+        console.log(total);
+        return total;
+    }
+    console.log(sum2(1,2,3,4));
+    sum2(1,2,3,4);
+
+
+
+
+    /*
+      arguments 是实参的集合
+    *  this 函数的执行主体 （谁调用的这个函数）
+    *
+    * */
+</script>
+
+
+

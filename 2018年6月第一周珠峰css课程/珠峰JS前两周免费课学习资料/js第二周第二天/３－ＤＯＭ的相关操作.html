@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+<div class="div2">DOMde操作</div>
+<!--这是注释-->
+<div id="div1"><span>Old</span>DOM操作</div>
+
+
+</body>
+</html>
+<script>
+
+    /*
+    *   一个页面只有一个根节点 document; 一个页面只有一个根元素 html
+    *    节点： 文档document  元素节点div span      <!-- -->注释节点     文本节点
+    *              nodeType(节点类型)  nodeName(节点名称)  nodeValue(节点内容)
+    *  元素节点      1                 "大写的标签名"       null
+    *  文本节点      3                 "#text"             文本的内容
+    *  注释节点      8                 "#comment"          注释的内容
+    * document      9                  "#document"         null
+    * */
+
+ //所有带Element 不兼容 IE6-8
+
+  /*  oDiv.parentNode ;// 父节点
+    oDiv.previousElementSibling; // 哥哥元素节点  不兼容 IE6-8
+    oDiv.previousSibling; //哥哥节点
+    oDiv.nextSibling ; // 弟弟节点
+    oDiv.nextElementSibling; //弟弟元素节点   不兼容 IE6-8
+    oDiv.firstChild // 第一个子节点
+    oDiv.firstElementChild // 第一个元素节点    不兼容 IE6-8
+    oDiv.lastChild // 最后一个子节点
+    oDiv.lastElementChild // 最后一个元素子节点  不兼容 IE6-8*/
+
+    var oDiv=document.getElementById('div1');
+
+    function brotherEle(ele) {
+        var ele=ele.previousSibling;
+        while( ele&& ele.nodeType!=1){
+              ele=ele.previousSibling
+        }
+        return ele;
+    }
+
+    console.log(brotherEle(oDiv));
+
+   // 通过 标签名获取body 和html
+    //var body=document.getElementsByTagName('body')[0]
+   // var html=document.getElementsByTagName('html')[0]
+// body  html 通过document 获取body 和html
+    var body=document.body;
+    var html=document.documentElement;
+
+    // innerHTML  修改元素的内部结构
+    oDiv.innerHTML='hello word!';
+
+    // innerText 修改元素内部文本
+    oDiv.innerText='hello word2!';
+
+  // 两者的区别  innerHTML 会识别 字符串内部的 标签   可以把里面的标签拿到
+    //           innerText 不会识别 字符串内部的标签 ，是整个当做字符串放在页面上
+
+    oDiv.innerHTML='<h1>hello word!</h1>';
+    //oDiv.innerText='<h1>hello word2!</h1>';
+
+    // 创造一个元素标签
+    var span1=document.createElement('span');
+    span1.innerHTML='这是一个我创造的标签';
+    span1.className='myspan';
+    span1.style.backgroundColor='blue';
+     oDiv.appendChild(span1);//在 oDiv 孩子中的子元素的后边添加标签
+
+  // 父节点：insertBefore(createEle,oldEle)
+
+    //oDiv.insertBefore(span1,oSpan);
+
+    document.querySelector('div');
+    document.querySelectorAll('div');
+    // querySelector()   参数是css选择器 大部分用在移动端 pc端有兼容问题
+    //querySelectorAll()
+    document.getElementsByClassName('div2');
+    document.querySelectorAll('.div2');
+
+</script>

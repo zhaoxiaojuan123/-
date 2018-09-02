@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    /*
+    * 1、 reverse  :反转 ； 数组的反转
+    * 参数： 无
+    * 返回值 反转后的数组
+    * 原数组改变
+    * */
+    var ary=[1,2,3,5,6];
+    /*ary.reverse();
+    console.log(ary);*/
+    /*  function myReverse(ary) {
+         var temp=[],j=0;
+         for(var i=ary.length-1;i>=0;i--){
+              temp[j]=ary[i];
+              j++;
+         }
+         return temp;
+     }
+ var temp1=myReverse(ary);
+    console.log(temp1);
+    console.log(myReverse(ary)); 自己写的*/
+
+    //  利用unshift 插入一项
+
+   /* function myUnShift(ary) {
+        var temp=[];
+      for (var i = 0; i < ary.length; i++) {  //i=0,1,2,3
+          temp.unshift(ary[i]);
+    }
+    return temp;
+    }
+    var temp2=myUnShift(ary);
+    console.log(temp2)*/
+
+   // 利用 push 向数组后面插入一项
+   /* function myPush(ary) {
+        var temp=[];
+        for (var i = ary.length-1; i >=0;i--) {
+            temp.push(ary[i]);
+        }
+        return temp;
+    }
+    var temp3=myPush(ary);
+    console.log(temp3);
+    */
+
+    // 前面的项和后面的项交换顺序进行排序
+   /* function myReverse1(ary) {
+        for (var i = 0; i < ary.length/2; i++) {
+            var temp = ary[i]; // temp 存储 改变之前的当前项的值
+            ary[i]=ary[ary.length-1-i]; //把当前项的值 用 后边对应项的值覆盖
+            ary[ary.length-1-i]=temp; //把后边对应项的值 改成 当前项的值
+
+        }
+        return ary;
+    }
+    var res=myReverse1(ary);
+    console.log(res,ary)
+*/
+
+   /*
+   *  数组的排序
+   *   sort
+   *   参数可以没有 没有参数时，它只是实现 10以内的排序
+   *   有参数时，参数是个函数（回调函数）
+   *   返回值 是排好序的 数组 跟原数组是一个地址
+   *
+   * */
+
+   /* var ary2=[7,2,6,1,5];
+     var res2= ary2.sort();
+    res2[0]=8;
+    console.log(res2,ary2); // 指向同一个地址
+
+    // 有回调函数时
+    var ary3=[7,2,6,100,222,1,5];
+    ary3.sort(function (a,b) {
+        //console.log(ary3);
+       // console.log(a,b);
+         return a-b; // 当返回值是 正数时 对应的两项要调换位置 ;这是升序
+    });
+ console.log(ary3);
+
+    ary3.sort(function (a,b) {
+        //console.log(ary3);
+        // console.log(a,b);
+        return b-a; // 当返回值是 正数时 对应的两项要调换位置； 这是降序
+    });
+    console.log(ary3);*/
+
+    var ary4=['a','f','b','b','k']; // localeCompare
+
+    ary4.sort (function(a,b){
+        return a.localeCompare(b);
+    });
+    console.log(ary4);// 结果是： ["a", "b", "b", "f", "k"]
+
+
+
+
+
+
+
+
+</script>

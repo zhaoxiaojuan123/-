@@ -1,0 +1,56 @@
+/*清楚标签默认样式*/
+*{ margin: 0;  padding: 0; }
+a{  text-decoration: none; }/*去掉间距*/
+li{list-style: none;}/*去掉li的小黑点*/
+body{
+    font-family: SimSun,"Arial Narrow",HELVETICA;
+}
+.areaContent{  width: 330px; margin: 50px auto; }
+.hd{
+    height: 32px;
+    /*height和line-height像素一样就是文字垂直居中*/
+    line-height: 32px;
+    font-size: 12px;
+    border-top: 1px solid #c8dcf2;
+}
+.hd h3{  font-weight: normal;  }
+.hd h3 a{  color: #0873c0;  }
+.picArea{ overflow: hidden;
+margin-top: 12px;
+margin-bottom: 17px;}/*清楚浮动，子元素浮动导致父div识别不了高度为0，所以下面元素上去*/
+
+.pic{  width: 145px;  }
+.fl{ float: left;  }
+.fr{  float: right;}
+
+.pic img{
+    width: 145px;
+    height: 80px;
+    display: block;/*清楚图片产生的间距*/
+}/*控制图片大小防止图片过大过小导致网页变形*/
+.pic p{
+    font-size: 12px;
+        height: 40px;
+   line-height: 18px;
+    text-align: center;
+    margin-top: 5px;
+}
+.pic p a{
+    color: #172c45;
+}
+.areaContent ul li{
+    font-size: 14px;
+    color: #74808f;
+    line-height: 28px;
+    height: 28px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.areaContent li a{
+    color: #172c45;
+}
+
+
+
+

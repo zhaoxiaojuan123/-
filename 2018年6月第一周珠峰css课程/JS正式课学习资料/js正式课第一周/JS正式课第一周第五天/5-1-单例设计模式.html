@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    /*
+    * 单例设计模式
+    * 本身就是一个普通对象
+    * 
+    * */
+    // 单例模式 调用自己的属性的方法
+    // 对象名.属性名
+    // this调用 ； 需要注意this 的指向问题
+    // 调用其他人的属性 我们只能通过 对象名.属性名
+    // 单例模式 每次都要重新 var 个对象；属于手工模式；
+
+    // 命名空间  --> 就是咱们定义的这些对象名
+    // 单例 --》 单独的实例 --> 就是利用普通的对象作为命名空间；--> 所有的普通对象都属于  Object 基类的一个实例
+    //
+    //高级单例模式
+    //由于普通的单例模式没有什么隐私 谁都能看，谁都能改；有时我们需要保护自己的一些隐私；这时就需要我们这些高级单例模式
+    // 缺点： 会形成一个不销毁的作用域；占用浏览器内存
+    // return function  父作用域查看不到子作用域的东西
+
+    var fn=(function () {
+        return function () {
+
+        }
+    })();
+    //高级单例模式例子
+    var person=(function () {
+        var  name='zfpx';
+        var fn=function () {
+            console.log(12);
+        };
+        var fn2=function () {
+            console.log(name);
+        };
+        var fn3=function () {
+            fn2();
+        };
+        return {
+            f:fn
+        }
+    })();
+
+
+    var obj={
+        name:'小明',
+          set:function () {
+              console.log(obj.name);
+              console.log(this.name);
+          },
+        get:function () {
+            
+        }
+    
+    };
+   obj.set();
+
+    var obj2={
+        name:'小红',
+        set:function () {
+            console.log(obj.name);
+        },
+        get:function () {
+
+        }
+
+    };
+  obj2.set();
+    
+    
+</script>

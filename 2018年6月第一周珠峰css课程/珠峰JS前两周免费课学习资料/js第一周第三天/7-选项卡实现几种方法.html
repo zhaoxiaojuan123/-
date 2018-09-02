@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .til{
+            margin:auto;
+            width: 400px;
+            height: 50px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .til ul{
+            overflow: hidden;
+        }
+        .til ul li{
+            float: left;
+            line-height: 50px;
+            width: 33%;
+            font-size: 25px;
+            text-align: center;
+        }
+        .til ul li.select{
+            background: chartreuse;
+            color: white;
+        }
+
+        .body{
+            margin: auto;
+            width: 400px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            font-size: 30px;
+        }
+        .body ul{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+        }
+        .body ul li{
+            width: 100%;
+            height: 100%;
+            background: rosybrown;
+            display: none;
+        }
+        .body ul li.select{
+            display: block;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="til">
+    <ul>
+        <li class="select">css</li>
+        <li>js</li>
+        <li>html</li>
+    </ul>
+</div>
+<div class="body">
+    <ul>
+        <li class="select">这是cssbody</li>
+        <li>这是jsbody</li>
+        <li>这是htmlbody</li>
+    </ul>
+</div>
+<script src="js/tab.js"></script>
+</body>
+</html>

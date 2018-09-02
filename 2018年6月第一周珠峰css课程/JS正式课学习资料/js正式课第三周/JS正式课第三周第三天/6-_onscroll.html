@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            height: 2000px;
+            background-color: #ccc;
+        }
+        .bottom{
+            height: 200px;
+            background-color: #4d4d4d;
+        }
+
+    </style>
+
+
+</head>
+<body>
+   <div id="div1">滚动事件</div>
+   <!--
+    1.jpg 当做默认图 2.jpg当做真正的图片链接
+   -->
+   <img src="images/jzgifs.gif" alt="">
+   <div class="bottom"></div>
+
+</body>
+</html>
+<script>
+
+  //  window.onresize   // 监听浏览器 可视窗口的变化
+   // window.onscroll   // 监听 页面滚动事件
+//window.onscroll=function () {
+  //  console.log(12);
+//};
+    /*
+    * 图片懒加载：只有当页面滚动到图片位置显示的时候，采取加载；
+    * 一开始的位置可以放一张小的默认图;
+    * 优势：提升页面的加载速度
+    *       在移动端省流量
+    *
+    * 实现原理：监听页面滚动；当页面滑到图片位置的时候，再去让图片显示（图片的src换成真正的链接）
+    * */
+    /*
+    * 需求是：当页面滑到  图片的头部刚刚露出来时；让图片的链接换成images/2.jpg
+    * */
+    function imgLoad(ele) {
+        //var tarT=ele.offsetTop;
+        var tarT=ele.offsetTop+ele.clientHeight;// 滚动条到图片的底部时加载出来新的图片
+        var cliH=document.documentElement.clientHeight||document.body.clientHeight;// 获取一屏的高度
+        var scrH=document.documentElement.scrollTop;// 页面滚上去的高度
+        if(scrH+cliH>tarT){ // 当一屏的高度+滚上去的高度 大于目标图片的tarT 的时候换图片的路径
+            ele.src='images/2.jpg';
+        }
+    }
+  var img=document.getElementsByTagName('img')[0];
+    window.onscroll=function () {
+        imgLoad(img);
+    }
+
+
+
+</script>

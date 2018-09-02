@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    class A{
+        constructor(){
+            this.a=12;
+            this.b=13;
+        }
+        getName(){
+            console.log(1);// 公有属性
+        }
+        static  getName(){
+            console.log(2);// 私有属性
+        }
+    }
+    var a=new A;
+    class B extends A{
+        constructor(){
+            super();// 所有私有属性 跟call比较像
+            this.c=14;
+            this.d=15;
+        }
+        getAge(){
+            console.log('age');
+        }
+        static getAge(){
+            console.log('static age');
+        }
+    }
+    var b=new B;
+
+
+
+
+
+</script>

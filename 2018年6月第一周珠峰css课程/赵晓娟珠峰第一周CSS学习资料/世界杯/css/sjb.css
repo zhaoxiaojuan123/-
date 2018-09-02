@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    background-image: url("../images/bg1.jpg");
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 400px;
+    height: 500px;
+    animation: main 10s infinite;
+}
+
+.box {
+    opacity: 0;
+    width: 113px;
+    height: 145px;
+    background: url("../images/黑色人1.png") no-repeat;
+    animation: box 3s steps(12) infinite, box1 2s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes box {
+    0% {
+        background-position: 0 0;
+        opacity: 0;
+    }
+    100% {
+        background-position: -1350px 0;
+        opacity: 1;
+    }
+}
+
+@keyframes box1 {
+    0% {
+        transform: translate(0, 0)
+    }
+    100% {
+        transform: translate(150px, 300px)
+    }
+}
+
+.xingtiao {
+    font-size: 40px;
+    margin-top: 50px;
+    text-align: center;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0, red), color-stop(.4, goldenrod), color-stop(.5, white), color-stop(.6, #4d4d4d), color-stop(1, #4d4d4d));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: animate 1s infinite;
+
+}
+
+@-webkit-keyframes animate {
+    from {
+        background-position: -100px;
+    }
+    to {
+        background-position: 100px;
+    }
+}
+
+@keyframes animate {
+    from {
+        background-position: -100px;
+    }
+    to {
+        background-position: 100px;
+    }
+}
+
+.zuqiu {
+    opacity: 0;
+    position: absolute;
+    top: 50px;
+    margin-left: 20px;
+    width: 350px;
+    height: 243px;
+    background: url("../images/花球5.png") no-repeat;
+    animation: huaqiu 1s steps(7) 2s forwards;;
+}
+
+@keyframes huaqiu {
+    0% {
+        background-position: 0 0;
+        opacity:0;
+    }
+    100% {
+        background-position: -2450px 0;
+        opacity:1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

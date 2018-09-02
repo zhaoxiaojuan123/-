@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+  <style>
+  </style>
+</head>
+<body>
+<!--<ul>
+    <li>11111111
+        <a href="##">这是a标签</a>
+    </li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>-->
+<ul id="box">
+    <li>
+        <span>一级菜单1</span>
+        <ul>
+            <li>
+                <span>二级菜单21</span>
+                <ul>
+                    <li>
+                        <span>三级菜单31</span>
+                    </li>
+                    <li>
+                        <span>三级菜单32</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span>二级菜单22</span>
+                <ul>
+                    <li>
+                        <span>三级菜单312</span>
+                    </li>
+                    <li>
+                        <span>三级菜单323</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span>一级菜单2</span>
+        <ul>
+            <li>
+                <span>二级菜单21</span>
+            </li>
+            <li>
+                <span>二级菜单22</span>
+                <ul>
+                    <li>
+                        <span>三级菜单312</span>
+                    </li>
+                    <li>
+                        <span>三级菜单323</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span>一级菜单3</span>
+        <ul>
+            <li>
+                <span>二级菜单31</span>
+            </li>
+            <li>
+                <span>二级菜单22</span>
+                <ul>
+                    <li>
+                        <span>三级菜单312</span>
+                    </li>
+                    <li>
+                        <span>三级菜单323</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+</body>
+</html>
+<script>
+    var oUl=document.getElementById('box');
+        oSpan=document.getElementsByTagName('span');
+
+    [...oSpan].forEach((item)=>{
+        var oUl=item.nextElementSibling;
+        if(oUl&&oUl.nodeName.toLowerCase()=='ul'){
+            oUl.style.display='none'
+        }
+    });
+     oUl.onclick=function (e) {
+         e=e||window.event;
+         var tar=e.target||e.srcElement;
+         if(tar.nodeName.toLowerCase()==='span'){
+             var oUl=tar.nextElementSibling;
+             if(oUl&&oUl.nodeName.toLowerCase()=='ul'){
+                  if(oUl.style.display=='none'){
+                      oUl.style.display='block'
+                  }else {
+                      oUl.style.display='none';
+                     var ouls=oUl.querySelectorAll('ul');
+                      [...ouls].forEach((item)=>{
+                          item.style.display='none'
+                      })
+
+                  }
+             }
+         }
+     }
+
+
+</script>

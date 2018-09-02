@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<div id="div1">关灯睡觉</div>
+
+</body>
+</html>
+<script>
+
+    var oDiv=document.getElementById('div1');
+    var col=1;
+    oDiv.onclick = function () {
+    if(col==1){
+        document.getElementsByTagName('body')[0].style.backgroundColor='black';
+        col=0;
+    }else if(col==0){
+        document.getElementsByTagName('body')[0].style.backgroundColor='#fff';
+        col=1;
+    }
+    }
+
+</script>

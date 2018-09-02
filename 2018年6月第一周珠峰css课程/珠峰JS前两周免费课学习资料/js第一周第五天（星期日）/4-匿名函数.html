@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<div id="div1"></div>
+
+</body>
+</html>
+<script>
+    sum();
+    //sum2(); // 报错 sum2 不是个function
+    function sum() {
+        // 这种声明方式 是在上下都能调到
+         // 函数体
+    }
+     // 第一种匿名函数
+    var sum2=function () {
+        //  只能在声明下面调用
+        //函数体
+    };
+    sum2();
+    // 第二种匿名函数
+    (function () {
+        console.log('这是一个自执行函数1')
+    })();
+
+    !function () {
+        console.log('这是一个自执行函数2')
+    }();
+
+    ~function () {
+        console.log('这是一个自执行函数3')
+    }();
+
+    // DOM的事件绑定
+    div1.onclick=function () {
+
+    };
+
+    /*
+    * 匿名函数 就是没有名字
+    * */
+
+    //1 、函数的定义（2种）
+    // function 函数名（）{}
+    // var fn=function(){}
+
+    // 2、 return 可有可无
+    /*
+    * 跳出函数体
+    * 确定返回值
+    * 当不写 return时，函数执行返回的  结果 是undefined
+    * 当写了 return  a+b ; 它是把表达式运行的结果返回去
+    * return 的位置 不固定 ，根据业务需求来确定 return的位置
+    * */
+    // 3、形参 和 实参
+    /*function(a,b){} // a.b 在函数定义阶段确定的参数是形参
+    sum(1,2)  //在函数调用的阶段，传进去的参数叫做实参
+     sum(1)  多余的形参给的默认值是undefined
+     sum(1,2,3,4)  多余的实参没有对应的形参接受，形参是按照先后顺序来接受
+    *
+    * */
+    // 4、 arguments 实参集合
+    /*
+    * 它是一个函数内部的属性，跟设不设置形参和传不传实参是没有关系的，它是一直都存在的*/
+    // 5、this 函数的执行主体；谁调用的函数；简单规律就是看点  点前面是谁 函数中的this 就是谁
+
+    function summ(a) {
+        console.log(arguments)
+    }
+    summ(1,2,3);
+
+</script>

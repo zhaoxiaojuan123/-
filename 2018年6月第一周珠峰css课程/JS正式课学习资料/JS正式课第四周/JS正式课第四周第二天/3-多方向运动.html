@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            left: 0;
+            background: #ee2ad6;
+            opacity: 1;
+        }
+    </style>
+
+</head>
+<body>
+ <div id="div1">多方向</div>
+
+</body>
+</html>
+<script src="js/utils.js"></script>
+<script>
+    var oDiv=document.getElementById('div1');
+
+    // 单向运动
+//    function move(ele,duration,attr,tar) {
+//        var beginL=utils.css(ele,attr);
+//        var changeL=tar-beginL;
+//        var times=0;
+//        var speed=changeL/duration ;// 运动速度
+//        var timer=window.setInterval(function () {
+//            times+=20;
+//            ele.style[attr]=times*speed+'px';
+//            if(times>=duration){
+//                clearInterval(timer);
+//                times=duration
+//            }
+//            // times*speed 是运动的距离
+//            // 当前位置=运动距离+初始值
+//            var curPos=linear(times,changeL,duration,beginL);
+//            // var curPos=times*speed+beginL;
+//            // oDiv.style[attr]=curPos+'px';
+//            utils.setCss(ele,attr,curPos)
+//        },20);
+//    }
+//    move(oDiv,3000,'top',200);
+    function linear(times,changeL,duration,beginL) {
+        return changeL/duration*times+beginL;
+    }
+    // 多方向运动
+    function move2(ele,duration,obj) {
+        var beginL={};// 存放初始值
+        var changeL={};
+        for(var k in obj){
+            if(obj.hasOwnProperty(k)){
+                beginL[k]=utils.css(ele,k);
+                changeL[k]=obj[k]-beginL[k];// 需要改变的值
+            }
+        }
+        var times=0;
+        var timer=setInterval(function () {
+            times+=20;
+            if(times>duration){
+                clearInterval(timer);
+                times=duration;
+            }
+            for(var  k in obj){
+                if(obj.hasOwnProperty(k)){
+                    var curPos=linear(times,changeL[k],duration,beginL[k]);
+                    utils.setCss(ele,k,curPos);
+                }
+            }
+        },20);
+    }
+
+    move2(oDiv,2000,{left:300,top:400,opacity:0.5});
+
+
+    //-------------
+//    function move2(ele,duration,obj){
+//        var beginL = {};
+//        var changeL = {};
+//        for(var k in obj){
+//            if(obj.hasOwnProperty(k)){
+//                beginL[k] = utils.css(ele,k);
+//                changeL[k] = obj[k] - beginL[k];
+//            }
+//        }
+//        var times = 0;
+//        var timer = setInterval(function () {
+//            times += 20;
+//            if(times >= duration){
+//                clearInterval(timer);
+//                times = duration;
+//            }
+//            for(var k in obj){
+//                if(obj.hasOwnProperty(k)){
+//                    var curPos = linear(times,changeL[k],duration,beginL[k]);
+//                    utils.setCss(ele,k,curPos);
+//                }
+//            }
+//        },20);
+//
+//    }
+//    move2(oDiv,2000,{left:300,top:400,opacity:0.5})
+
+
+</script>

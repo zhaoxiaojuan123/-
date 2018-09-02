@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+
+</head>
+<body>
+<div id="div1">js输出方式</div>
+
+
+</body>
+</html>
+<script>
+    /*
+    * JS的输出方式
+    * 输出目的：以后调试用的
+    * 1-alert()  弹出框  有“确定”按钮
+    * 2-console.log(div1)  是在浏览器的控制台输出
+    * 3-console.dir(div1)  是在浏览器的控制台输出该元素的详细信息,是为了我们程序员调试BUG用的
+    * 4-confirm(1); 弹出框  有“确定”和“取消”两个按钮，有两个返回值，“确定”返true ,“取消”返回值 false
+    *  alert  confirm  都会阻断DOM的渲染
+    *  debugger
+    * */
+    /*console.log(div1); debugger;//相当于一个挡板，把代码执行挡住，不让代码往下执行
+    console.dir(div1);*/
+
+    /*
+    代码的执行：
+    一般会把js放在最下面，把css放在上边
+    把js放在下面的原因：
+    1-要操作DOM的时候我们必须保证 DOM已经被加载
+    2-当前面加载的JS特别大的时候，会影响整个页面的加载速度，导致页面出现空白期
+    */
+</script>

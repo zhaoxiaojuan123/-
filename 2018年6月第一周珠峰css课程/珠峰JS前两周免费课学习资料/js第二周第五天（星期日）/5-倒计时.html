@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<div id="div1">课间</div>
+
+</body>
+</html>
+<script>
+
+    function getTime() {
+    var target=new Date('2018/7/22 18:30:00').getTime();// 目标时间距离1970年的毫秒数
+    var now=new Date().getTime();//当前时间距离1970年的毫秒数
+    var time=target-now;// 当前时间距离目标时间的毫秒数
+     // 接下来我们要把这个毫秒数转成 咱们能看到的 时 分 秒
+     //1h = 60*60*1000=3600000毫秒
+    // 1m=60*1000 毫秒
+    // 1s=1000毫秒
+    // time 中有几个整小时
+        if(time<=0){
+            clearInterval(timer2);
+            time=0;
+        }
+    var h=Math.floor(time/3600000);
+     time=time-h*3600000; // time 现在是刨去整数个小时之后剩余的毫秒数
+    var m=Math.floor(time/60000);
+    time=time-m*60000;     // time 现在是刨去整数个分钟之后剩余的毫秒数
+    var s=Math.floor(time/1000);
+    var str=`距离下课还有 ${h<10?'0'+h:h}小时 ${m<10?'0'+m:m}分钟 ${s<=10?'0'+s:s}秒`;
+    var oDiv=document.getElementById('div1');
+     oDiv.innerText=str;
+    }
+// 定时器
+    // setTimeout(f,time); 到达指定时间后执行一次函数体
+    // clearTimeout(定时器名字) 清除定时器
+   // setInterval(f,time); 每隔time时间 执行一次 函数体
+    // clearInterval(定时器名字) 清除定时器
+  /*   var timer1=setTimeout(function () {
+         getTime()
+     },3000);*/
+    var timer2=setInterval(function () {
+        getTime()
+    },1000);
+
+    var oDiv=document.getElementById('div1');
+    oDiv.onclick=function () {
+        clearInterval(timer2);
+    }
+    
+</script>

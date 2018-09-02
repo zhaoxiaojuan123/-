@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    var str='abc';
+    var reg=/abc/;
+    var reg2=new RegExp('abc');
+    var reg3=new RegExp(str);
+
+    var str2='www';
+    var reg4=new RegExp(`^a`+str2+`c$`);
+    var reg4_1=new RegExp(`^a${str2}c$`);
+
+    var reg5=new RegExp('\d');
+    var reg5_1=new RegExp('\\d');
+    console.log(reg5.test('123'));// false
+    console.log(reg5.test('d')); // true
+    console.log(reg5_1.test('d'));// false
+    console.log(reg5_1.test('123'));// true
+
+
+
+
+</script>

@@ -1,0 +1,78 @@
+*{
+    margin:0;
+    padding: 0;
+}
+em{
+    font-style: normal;
+}
+
+.jdm-toolbar{
+    position: fixed;
+    top:50%;
+    margin-top: -80px;
+    right: 0;
+    width: 35px;
+    
+}
+.bar{
+    position: relative;
+    width: 35px;
+    height: 35px;
+    background-color: #7a6e6e;
+    cursor: pointer;
+    margin-bottom: 1px;
+}
+/*让文字消失的窗口*/
+.tab-text{
+    position: absolute;
+    right: -70px;
+    z-index: -1;
+    display: block;
+    font-size: 12px;
+    width: 62px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: white;
+    background-color: #7a6e6e;
+    transition: all 1s ease;
+}
+
+
+.tab-icn{
+    display: block;
+    width: 34px;
+    height: 35px;
+
+}
+.tab-tip{
+    position: absolute;
+    display: block;
+    width: 6px;
+    height: 6px;
+    top: 8px;
+    right: 10px;
+    background: url("../images/toolbars.png") no-repeat -150px -150px;
+}
+
+.bar:hover .tab-text{
+    right: 35px;
+    background-color: #c81623;
+}
+.bar:hover{
+    background-color: #c81623;
+}
+.bar:hover .tab-tip{
+    display: none;
+}
+.tab-icn-vip{background: url("../images/toolbars.png") no-repeat -85px -175px; }
+.tab-icn-cart{background: url("../images/toolbars.png") no-repeat -50px 0px; }
+.tab-icn-focus{background: url("../images/toolbars.png") no-repeat -50px -50px; }
+.tab-icn-msg{background: url("../images/toolbars.png") no-repeat -190px -150px; }
+.tab-icn-jimi{background: url("../images/toolbars.png") no-repeat -50px -150px; }
+.tab-icn-feedback{background: url("../images/toolbars.png") no-repeat -50px -300px; }
+
+
+
+
+

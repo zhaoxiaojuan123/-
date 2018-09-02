@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<div id="div1"></div>
+<div class="box"></div>
+<div class="box1"></div>
+<div class="box1 box"></div>
+
+</body>
+</html>
+<script>
+    // IE8 即一下都不支持
+    document.getElementsByClassName('box');
+    document.getElementsByClassName('box box1');
+    //------------------------------------------
+   // 单个类名
+    function getByClass(str,context) {
+        context=context||document;
+        str=str.replace(/^ +| +$/g,'');// 去除首尾空格
+        var ary=[];//存放查找符合要求的元素
+        var ele=context.getElementsByTagName('*');//context 下所有元素
+        for (var i = 0; i < ele.length; i++) {
+            // 查看每一个元素的类名中是否含有 str 这个类名
+            var reg=new RegExp('(^| +)'+str+'( +|$)');
+            if(reg.test(ele[i].className)){
+                ary.push(ele[i]);
+            }
+        }
+        return ary;
+    }
+    console.log(getByClass('box', document));
+    console.log(getByClass('box '));
+   //-----------------------------------------
+    // 多个类名
+    function getByClass2(str,context) {
+        context=context||document;
+        str=str.replace(/^ +| +$/g,'');
+        var classAry=str.split(/ +/g);//把字符串按照空格拆分 拆成不同类名组成的数组
+        var eles=context.getElementsByTagName('*');//context 下所有元素
+        for (var i = 0; i < classAry.length; i++) {
+            var ary=[];//存放符合要求的元素，放在循环里每次循环清空，如果放在外面会出现死循环
+            var reg=new RegExp('(^| +)'+classAry[i]+'( +|$)');
+            for (var k = 0; k < eles.length; k++) {
+                if(reg.test(eles[k].className)){
+                    ary.push(eles[k]);
+                }
+            }
+           // 第一次循环完毕，ary数组里面存储的都是含有 box 的元素
+            eles=ary;// eles里面放的是含有box的元素
+        }
+        return eles;
+
+    }
+    console.log(getByClass('box box1 '));
+
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+function sum() {
+    console.log(arguments);
+    var total=0;
+    for(var i=0;i<arguments.length;i++){
+
+        if(typeof arguments[i] == "number")// 不要忘记加 typeof
+        {
+            total=total+arguments[i];
+    }
+
+    }
+    console.log(total);
+    return total;
+}
+  console.log(sum('1',1,1,1,1))  ;
+
+/*
+* 不定数的求和
+* */
+
+</script>

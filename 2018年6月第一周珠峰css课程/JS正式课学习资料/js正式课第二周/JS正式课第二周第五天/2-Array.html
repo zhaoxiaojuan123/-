@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    /*
+    * 从数组中随机删除n项；并把删除的n项 组成一个新数组返回
+    * 在数组的原型上添加
+    * 改变原有数组
+    * */
+    var ary=[1,2,3,4];
+       Array.prototype.removeRan=function (n) {
+           // n 是要删除的 次数
+           if(n>=this.length){
+               // this 是要操作的数组
+               // 当删除项超过数组长度时，我们把数组中的所有项都删除
+               // 返回一个所有项组成的新数组，原有数组变成空数组
+               return this.splice(0);
+           }
+           var arr=[];
+           for (var i = 0; i < n; i++) {
+            arr.push(this.splice(Math.floor(Math.random()*this.length),1)[0]);// 产生随机的一项，然后删除
+           }
+           return arr;
+       };
+    console.log(ary.removeRan(2));
+
+    //------------------------------------
+    // myBind
+      Function.prototype.myBind=function (...arr) {
+          var that=arr.shift();
+          var _this=this; // 每个函数都有自己的this ,所以要先存一下
+          return function (...ary) {
+              _this.apply(that,[...arr,...ary]);
+          }
+      };
+    var f1=function () {
+        console.log(this);
+        console.log(arguments);
+    };
+    var f3=f1.myBind(obj,1,2,3);
+    f3();
+    f3(4,5,6);
+    //------------------------------------------
+    // ary.sort((a,b)=>{return a-b;})
+    ary.sort(function (a,b) {
+        return a.name.localeCompare(b.name,'zh');
+    })
+
+
+
+
+</script>

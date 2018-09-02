@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style type="text/less" rel="stylesheet">
+        @w:200px;
+        @h:200px;
+        #div1{
+            width: @w;
+            height: @h;
+            background: #7dcfa0;
+            .div3{
+                width: @w / 2;
+                height: @h / 2;
+                background: #ee2ad6;
+                border: 1px solid #0873c0;
+            }
+        };
+        #div2{
+            /*#div1;  !*把#div1 中的样式统一复制（包含子元素样式）统一复制过来*!*/
+            &:extend(#div1); /*这样是只把#div1的样式引入进来，不包括子元素的样式*/
+
+        }
+
+    </style>
+       <script src="less/less.js"></script>
+</head>
+<body>
+   <div id="div1">
+       <div class="div3"></div>
+   </div>
+   <div id="div2">
+       <div class="div3"></div>
+   </div>
+
+</body>
+</html>
+<script>
+
+    /*
+     * 1、嵌套
+     * 2、变量 @ww:200px;@img:'../images/'
+     * 3、混合 .w{width:100%;heighr:100%}
+     * 4、函数 .fn(@a:100px,@b:200px){
+     *            width:@w;
+     *            height:@b
+     *            }
+     *5、循环 .a(@n) when(@n<5){
+     *            .box_@{n}{
+     *            width:200px
+     *            height:300px
+     *           }
+     *
+     *  @import "1.less" 引入外边的less 文件
+     *  @import(reference) "1.less" 不把1.less 编译成css ;  sass stylus 这两个比less 强大
+     *
+     *
+     */
+
+</script>

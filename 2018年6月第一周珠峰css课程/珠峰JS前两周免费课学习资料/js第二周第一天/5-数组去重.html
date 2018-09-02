@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+      var ary=[12,1,2,1,2,3,5,4,5,4];
+    // 数组去重
+    // 拿每一项和后面的每一项比较 如果相等 证明 后边的项时重复的；我们把 后边重复的项 删除即可
+// 数组塌陷问题，解决方案一：
+     /*function removeRep(ary) {
+         for (var i = 0; i < ary.length;i++) {
+             var cur=ary[i];
+             for (var j = i+1; j < ary.length; j++) {
+                 if(ary[i]==ary[j]){
+                     ary.splice(j,1);// 我们要拿当前项和后边的每一项作比较，如果相等，就把后边相等的这一项删除;
+                     // 当我们删除数组的某一项时，会导致 后边的项统一向前错一位（数组塌陷问题），这时我们若还想拿到数组的每一项，需要将我们变化的索引 -1；
+                     j--;
+                 }
+             }
+         }
+         return ary;
+     }
+
+     console.log(removeRep(ary));*/
+
+    //  方案二：利用对象属性名不能重复的特性
+    // 循环数组 把数组的每一项 当做某个对象的属性名 存储到 这个对象中;
+    // 将存储对象 再放到 一个新的数组里面
+
+     function removeRep1(ary) {
+         var obj={},arr=[];
+         for (var i = 0; i < ary.length; i++) {
+            obj[ary[i]]=ary[i];// 属性名和属性值相等都是 ary里面的值
+         }
+        // console.log(obj);//结果是：{1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 12: 12, aa: "aa"}
+         for( var k in obj){
+              arr.push(obj[k]);// 向空数组arr 里面添加元素
+         }
+         return arr; // 输出添加后的数组arr
+     }
+
+      var ary1=[12,1,2,1,'aa',2,3,5,4,5,4];
+    console.log(removeRep1(ary1)); //结果是: [1, 2, 3, 4, 5, 12, "aa"]
+
+
+
+</script>

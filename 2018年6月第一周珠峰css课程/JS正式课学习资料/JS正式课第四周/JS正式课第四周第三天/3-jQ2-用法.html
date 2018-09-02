@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div id="div1"></div>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+
+</body>
+</html>
+<script>
+    /*
+    * $() 参数接收 css选择器
+    *     参数接收 原生JS对象
+    * */
+    var oDiv=document.getElementById('div1');
+    console.log($(oDiv));// 把原生对象 转成JQ对象 //=>jQuery.fn.init [div#div1]
+    console.log($('ul>li')[0]); // 把JQ对象转成原生对象 加索引 //=><li>1</li> 这是一个原生对象
+    console.log($($('ul>li')[0])); // 再把  //=>jQuery.fn.init [li]
+    console.log($('ul>li').eq(0));  //=>jQuery.fn.init [li, prevObject: jQuery.fn.init(4)]
+
+
+    var oLis=document.getElementsByTagName('li');
+    for (let i = 0; i < oLis.length; i++) {
+        oLis[i].onclick=function () {
+            alert(i+1);
+        }
+    }
+      //console.log($('ul>li'));//jQuery.fn.init(4) [li, li, li, li, prevObject: jQuery.fn.init(1)]
+    $('ul>li').click(function () {
+        console.log(arguments);
+
+
+    });
+//    $('ul>li').on('click',function (index) {
+//
+//    });
+//    $('ul>li').click=function () {
+//
+//    }
+
+
+
+</script>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>变量提升</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<div id="div1">变量提升</div>
+
+</body>
+</html>
+<script>
+    /*
+    * 变量提升（声）
+    * 在JS代码执行之前，浏览器要先过一遍代码，把其中 带var 和 function 关键字内容提前声明；
+    * 带var 是只声明(给个默认值undefined) 不定义
+    * 带function 是 声明 加 定义
+    *
+    * 因为用function关键字声明的函数 在变量提升阶段已经赋好值了，所以 我们可以在JS文件中的任意位置调用这个函数
+    *
+    * 变量提升 只会提升 = 号  左边的部分 不会提升右边的部分
+    * var  一个变量 ，相当于给window 添加一个属性
+    * 带var 会进行变量提升，不带var 没有变量提升 ,也不能重复定义
+    *
+    *
+    * var a=12;
+    * let a=12; //不能重复声明；能重复定义
+    * let 是没有变量提升的
+    *
+    * const a=12; 声明常量用的; 不能重复声明；
+    * const 没有变量提升
+    * 变量提升 是不看条件成不成立； 这个是针对 var 来说的
+    * 针对function 来说 ，在条件语句中的function声明；标准浏览器下是只声明，不定义的，在IE低版本 是即声明 也定义
+    * */
+ /*   console.log(a,b,c);//undefined undefined undefined
+    var  c; //这是声明
+    c=14;  //这是定义
+    var  a=12;
+    //let  a=111;//报错 a已经被定义过了
+    var b=13;
+    let e=13;
+    e=15;
+    console.log(e);
+
+    //    console.log(sum2()); // 报错不是个函数
+   var sum2= function sum() {
+        console.log(1);
+    };
+
+    //const a=14;// 报错，a已经声明过了
+         //a=15;//报错不能再给常量赋值*/
+
+    console.log(sum2,sum3);///undefined undefined
+   if(1>2){
+       var f=12;
+       function sum2() {
+           console.log(11);
+       }
+   }else {
+       var g=14;
+       function sum3() {
+           console.log(22);
+       }
+   }
+
+ console.log(sum2,sum3());//undefined undefined 这两个undefined的含义不一样
+
+    var a = {
+        x:1
+    };
+    var b = a;
+    b.c = a = {y:1};//点 的 优先级 高于 = 的优先级
+    console.log(a, b);
+
+
+
+
+</script>

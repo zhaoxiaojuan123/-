@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #div1{
+            width: 800px;
+            height: 200px;
+            overflow: hidden;
+            border: 1px dashed #ccc;
+            margin: auto;
+        }
+
+        #div1 li{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        #div1 li img{
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+
+
+</head>
+<body>
+  <div id="div1">
+      <ul class="ul_box">
+          <li><img src="images/1.jpg" alt=""></li>
+          <li><img src="images/2.jpg" alt=""></li>
+          <li><img src="images/3.jpg" alt=""></li>
+          <li><img src="images/4.jpg" alt=""></li>
+          <!--<li><img src="images/1.jpg" alt=""></li>
+          <li><img src="images/2.jpg" alt=""></li>
+          <li><img src="images/3.jpg" alt=""></li>
+          <li><img src="images/4.jpg" alt=""></li>-->
+      </ul>
+  </div>
+
+</body>
+</html>
+<script src="utils.js"></script>
+<script>
+    var oDiv=document.getElementById('div1');
+    var oUl=document.getElementsByClassName('ul_box')[0];
+         oUl.innerHTML+=oUl.innerHTML;
+    oUl.style.width=utils.getcss(oUl,'width')*2+'px';
+     var timer=window.setInterval(()=>{
+      var w=oDiv.scrollLeft++;
+         if(w==oDiv.scrollLeft){
+             oDiv.scrollLeft=0;
+         }
+     },20)
+</script>

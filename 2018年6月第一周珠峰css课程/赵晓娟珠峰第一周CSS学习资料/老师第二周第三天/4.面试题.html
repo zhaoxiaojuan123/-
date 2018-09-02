@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /* 动画分为二步:
+        1.通过@keyframes 规定好动画的运动的基本轨迹
+        2.通过animation属性去调用动画名称 实现元素动画
+        forwards 停留在最后一帧 100%
+        */
+
+        /* 黑色的圆球 */
+        .box{width: 400px;height:400px;background-color: #000;border-radius: 50%;animation:box 3s ease-out alternate infinite }
+        @keyframes box {
+            0%{transform: translateX(0)}   /*translateX 水平位移*/
+            50%{transform: translateX(1500px)}
+            100%{transform: translateX(0)}
+        }
+
+        /*红色的气球*/
+        .red{width:500px;height: 1000px;margin:100px auto;background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530094139250&di=6ff4db3c46c8285f0500c43a4a19553c&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Fb8014a90f603738daea0cd0bb81bb051f819ec35.jpg") no-repeat center top;background-size: cover;animation: red 1s ease infinite}
+        @keyframes red {
+            0%{transform: translateY(-200px)}
+            50%{transform: translateY(-100px)}
+            100%{transform: translateY(-200px)}
+        }
+
+        /* 性感的嘴唇*/
+        .mouth{width: 280px;height: 200px;margin:50px auto;background: url("images/mouth.png") no-repeat;background-size: contain;animation: mouth 1s ease infinite}
+         @keyframes mouth {
+             0%{transform:scale(.5)}
+             50%{transform:scale(1)}
+             100%{transform:scale(.5)}
+         }
+    </style>
+</head>
+<body>
+<!--css3动画，比如做一个气球一直在页面上漂浮怎么实现(小米面试题)-->
+<div class="mouth"></div>
+
+<div class="box"></div>
+
+<div class="red"></div>
+
+
+</body>
+</html>

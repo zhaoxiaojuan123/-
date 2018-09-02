@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        #div1{
+            height: 2000px;
+            background: linear-gradient(#00ae66 ,#ee2ad6,#24ccc8);
+        }
+    </style>
+</head>
+<body>
+<div id="div1">固定时间</div>
+<a href="javascript:;" class="btn">回到顶部</a>
+
+</body>
+</html>
+<script src="js/utils.js"></script>
+<script>
+
+    var btn=document.getElementsByClassName('btn')[0];
+   // 设定固定步长回到顶部
+    btn.onclick=function () {
+        var timer=window.setInterval(function () {
+            // 控制 document.documentElement.scrollTop或document.body.scrollTop
+             var tarT=utils.scrollT();//目标的高度即卷去的高度
+            tarT-=10; // 每次让卷去的高度减10
+            if(tarT<=0){ //当卷去的高度为0时  这是设定边界
+                clearInterval(timer);
+                tarT=0;
+            }
+            document.documentElement.scrollTop=tarT;// 让文档卷去的高度每隔20毫秒等于tarT
+            document.body.scrollTop=tarT;
+        },20)
+    };
+//------------------------------
+   // 在固定时间里回到顶部
+   // var duration=2000;
+    var duration = 1000;// 设定总的时间是1000毫秒
+    btn.onclick = function () {
+        var changT = utils.offset(btn).t - utils.clientH();//总共需要运动的距离
+        var speed = changT/duration;// 每毫秒运动的速度
+        var time = 0;// 记录运动的时间，一开始没运动时，时间为0
+        var timer = window.setInterval(function () {
+            time+=30;//每次时间相加30毫秒
+            var moveL = time*speed;// 每次运动的距离
+            if(time>=duration){ //边界
+                clearInterval(timer);
+                moveL = changT;
+            }
+            document.documentElement.scrollTop = changT - moveL;///总共运动的距离减去每次固定时间运动的距离
+            document.body.scrollTop = changT - moveL;
+        },30)
+    }
+
+
+
+</script>

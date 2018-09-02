@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+  <div id="div1"></div>
+  <div class="box box box2 box3"></div>
+
+</body>
+</html>
+<script src="js/utils.js"></script>
+<script>
+    /*
+    * 判断元素有没有某个类名
+    * */
+    function hasClass(ele,str) {
+        str=str.replace(/^ +| +$/g,'');// 去掉前后空格
+        var reg = new RegExp("(^| +)"+str+"( +|$)");
+        return reg.test(ele.className);
+    }
+    var box=utils.getByClass('box')[0];
+    console.log(hasClass(box,'box5'));//false
+  //-----------------------------------------
+    // 判断有没有多个类名
+    function  hasClass2(ele,str) {
+        str=str.replace(/^ +| +$/g,'');
+        var ary=str.split(/ +/g);//将传进来的字符串分割成数组
+        for (var i = 0; i < ary.length; i++) {
+            var reg = new RegExp("(^| +)"+ary[i]+"( +|$)");
+           if(!reg.test(ele.className)){
+               return false;
+           }
+        }
+        return  true;
+    }
+    console.log(hasClass2(box,'box box2'));//true
+
+    //-----------------------------------
+    /*
+    * 给元素添加类名 addClass
+    * 思路1：先把str 跟元素之前的类名拼接起来；然后分割成数组，给数组去重；
+    * 去重之后 再用空格拼接成字符串；把这个字符串 赋给元素的className
+    * */
+    function addClass(ele,str) {
+        str=str.replace(/^ +| +$/g,'');
+        if(hasClass(ele,str))return;
+        var ary=str.split(/ +/);
+        for (var i = 0; i < ary.length; i++) {
+            if(!hasClass(ele,ary[i])){
+                ele.className+=(' '+ary[i]);
+            }
+        }
+    }
+    addClass(box,'boxs box55');
+
+    //---------------------------------
+    // 去除类名
+    function removeClass(ele,str) {
+        var str=str.replace(/^ +| +$/g,'');
+        var ary=str.split(/ +/g);
+        for (var i = 0; i < ary.length; i++) {
+           var reg=new RegExp("(^| +)"+ary[i]+"( +|$)",'g');
+            ele.className=ele.className.replace(reg,' ')
+        }
+    }
+
+    removeClass(box,'box55 box')
+
+
+
+
+
+
+</script>

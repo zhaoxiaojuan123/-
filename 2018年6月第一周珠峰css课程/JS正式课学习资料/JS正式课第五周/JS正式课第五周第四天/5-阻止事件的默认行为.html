@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+   <a href="javascript:;" id="btn">百度一下</a>
+
+</body>
+</html>
+<script>
+    /*
+     *  阻止事件的默认行为
+     *  结构上阻止默认行为 ##  javascript:;
+     */
+    var btn=document.getElementById('btn');
+    btn.onclick=function (e) {
+        // 点击事件是在 默认事件 执行之前 执行的
+        alert('qqq');
+        console.log(e);
+        //e.preventDefault();// 通过JS阻止默认事件
+        e.returnValue=false;
+    };
+    // 兼容性写法
+    try{
+        e.preventDefault();
+    }catch (e){
+        e.returnValue=false;
+    }
+
+    
+    
+</script>

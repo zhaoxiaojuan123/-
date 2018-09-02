@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+
+    // unique
+   /* function unique(ary) {
+        let obj={};
+        for (var i = 0; i < ary.length; i++) {
+            if(obj.hasOwnProperty(ary[i])==false){
+                obj[ary[i]]=ary[i];
+            }
+            else{
+                ary.splice(i,1);
+                i--;
+            }
+        }
+        return ary;
+    }*/
+    var ary=[1,2,1,2,3,7,8,9,5,6];
+   // console.log(unique(ary));
+    // 放到原型上，改变原有数组去重
+    Array.prototype.myUnique=function () {
+        let obj={};
+        for (var i = 0; i < this.length; i++) {
+            if(obj.hasOwnProperty(this[i])==false){
+                obj[this[i]]=this[i];
+            }
+            else{
+                this.splice(i,1);
+                i--;
+            }
+        }
+        return this;
+    };
+   // var ary1=[1,2,1,2,3,7,8,9,5,6];
+   // console.log(ary.myUnique(ary1),ary1);
+    //console.log(ary1.reverse());
+
+
+
+    // var arr=ary.myUnique().pop();
+    // 这种能通过连续打点的方式调用的形式，我们称之为链式调用;
+    // 实现链式调用的关键 是看返回值 是否仍然是该类的一个实例；
+    // 若每个函数返回值都是this；那么 我们就能实现连续的链式调用
+
+    Array.prototype.myPush=function(n) {
+        this[this.length]=n;
+        return this;
+    };
+
+    Array.prototype.myPop=function() {
+        this.length--;
+        return this;
+    };
+    var arr2=ary.myUnique().myPush(12).myPush(12).myPop().myPop().myPush(14).myUnique();
+    console.log(arr2);
+    //---------------------------
+
+
+   /* var a=12;
+    a.add(12).minus(10);//12+12-10
+
+    Number.prototype.add=function(n) {
+        // this 是个引用数据类型
+        return this + n;
+    };
+    Number.prototype.minus=function(n) {
+        return this - n;
+    };
+    // a 是不会发生任何改变*/
+
+
+</script>

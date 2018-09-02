@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<div id="div1"></div>
+
+</body>
+</html>
+<script>
+    var oDiv=document.getElementById('div1');
+    function on(ele,f) {
+        ele.ary=ele.ary||[];
+        var n=ele.ary.indexOf(f);
+        if(n==-1){
+            ele.ary.push(f)
+        }
+    }
+    function fire(ele) {
+        ele.ary.forEach((item)=>{
+            item&&item();
+        })
+    }
+    function off(ele) {
+        var n=ele.ary.indexOf(f);
+        if(n!==-1){ //查看这个人是否在名单里
+            ele.ary.splice(n,1); // 把这个人从名单中移除
+        }
+    }
+
+</script>

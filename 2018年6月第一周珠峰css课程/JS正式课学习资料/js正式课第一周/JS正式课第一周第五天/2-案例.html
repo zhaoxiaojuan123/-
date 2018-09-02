@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        ul{
+            width: 400px;
+            border: 1px solid #ccc;
+            margin: auto;
+        }
+        ul li{
+            border-bottom: 1px solid #ccc;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        ul li:nth-child(2n){
+            background-color: green;
+        }
+        ul li:nth-child(2n-1){
+            background-color: red;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="div1">选项卡</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+
+
+</body>
+</html>
+<script>
+   /*
+   * 点击 li 弹出 我是第几个 li
+   * */
+    var oLis=document.getElementsByTagName('li');
+   // 方法1：自定义属性
+   for (var i = 0; i < oLis.length; i++) {
+       oLis[i].myIndex=i;
+      oLis[i].onclick=function () {
+          alert(this.myIndex+1)
+      }
+   }
+  // 方法2：闭包   oLis[n].onclick这个事件是外界的
+   for (var i = 0; i < oLis.length; i++) {
+       (function (n) {
+           oLis[n].onclick=function () {
+               alert(n+1)
+           }
+       })(i)
+   }
+   // 方法3： 可以看成是对上面方法2 闭包的解释
+   for (var i = 0; i < oLis.length; i++) {
+       oLis[i].onclick= (function (n) {
+         return function () {
+               alert(n+1)
+           }
+       })(i)
+   }
+   //
+   function f(n) {
+       return function () {
+           alert(n+1)
+       }
+   }
+   for (var i = 0; i < oLis.length; i++) {
+       oLis[i].onclick=f(i);
+   }
+
+
+   // let
+   for (let i = 0; i < oLis.length; i++) {
+       oLis[i].onclick=function () {
+           alert(i+1);
+       }
+   }
+
+
+
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+   <style>
+       *{
+           padding: 0;
+           margin: 0;
+       }
+       #div1{
+           width: 100px;
+           height: 100px;
+           position: relative;
+           left: 0;
+           background: #ee2ad6;
+       }
+   </style>
+</head>
+<body>
+ <div id="div1" class="box">单方向限时运动</div>
+
+</body>
+</html>
+<script src="js/utils.js"></script>
+<script>
+  var oDiv=utils.getByClass('box')[0];
+//    var duration=2000; // 总的运动时长
+//   // var changeL=400; // 总的运动距离=目标值-初始值
+//    var beginL=utils.css(oDiv,'left');
+//    var tarL=800;
+//    var changeL=tarL-beginL;//总的运动距离=目标值-初始值
+//    var times=0;
+//    var speed=changeL/duration ;// 运动速度
+//    var timer=window.setInterval(function () {
+//        times+=20;
+//        oDiv.style.left=times*speed+'px';
+//        if(times>=duration){
+//            clearInterval(timer);
+//            times=duration
+//        }
+//        // times*speed 是运动的距离
+//        // 当前位置=运动距离+初始值
+//        var curPos=linear(times,changeL,duration,beginL);
+//       // var curPos=times*speed+beginL;
+//        oDiv.style.left=curPos+'px';
+//    },20);
+//
+//      function linear(times,changeL,duration,beginL) {
+//          return changeL/duration*linear+beginL;
+//      }
+ //----------------------
+
+    /*
+    * move 需要知道
+    * 动哪个元素，
+    * 动他的哪个属性 ，
+    * 动多长时间动完，
+    * 动到多少停止
+    * */
+
+    function move(ele,duration,attr,tar) {
+        var beginL=utils.css(ele,attr);
+        var changeL=tar-beginL;
+        var times=0;
+        var speed=changeL/duration ;// 运动速度
+        var timer=window.setInterval(function () {
+            times+=20;
+            ele.style[attr]=times*speed+'px';
+            if(times>=duration){
+                clearInterval(timer);
+                times=duration
+            }
+            // times*speed 是运动的距离
+            // 当前位置=运动距离+初始值
+            var curPos=linear(times,changeL,duration,beginL);
+            // var curPos=times*speed+beginL;
+           // oDiv.style[attr]=curPos+'px';
+            utils.setCss(ele,attr,curPos)
+        },20);
+    }
+    move(oDiv,3000,'top',200);
+   function linear(times,changeL,duration,beginL) {
+    return changeL/duration*linear+beginL;
+}
+
+</script>

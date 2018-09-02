@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none}
+        #box,#box2{
+            width: 600px;
+            margin: auto;
+
+        }
+        .til{
+            width: 600px;
+            height: 50px;
+            display: flex;
+        }
+        .til li{
+            flex: 1;
+            text-align: center;
+            line-height: 50px;
+            border: 1px dashed paleturquoise;
+            cursor:pointer;
+        }
+        .til li.current{
+            background: pink;
+        }
+        .content{
+            border: 1px solid plum;
+            width: 600px;
+            height: 400px;
+            text-align: center;
+            font-size: 25px;
+            display: none;
+        }
+        .content.current{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+ <div id="box">
+     <ul class="til">
+         <li class="current">css</li>
+         <li>js</li>
+         <li>vue</li>
+     </ul>
+     <div class="contentBox">
+     <div class="content current">这是css</div>
+     <div class="content">这是js</div>
+     <div class="content">这是vue</div>
+ </div>
+ </div>
+ <div id="box2">
+     <ul class="til">
+         <li class="current">css</li>
+         <li>js</li>
+         <li>vue</li>
+     </ul>
+     <div class="contentBox">
+         <div class="content current">这是css</div>
+         <div class="content">这是js</div>
+         <div class="content">这是vue</div>
+     </div>
+ </div>
+
+</body>
+</html>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+    /*var $lis=$('#box .til>li');
+    var $contents=$('#box .content');
+    $lis.on('click',function () {
+        console.log(this);
+        var $this=$(this);
+        $this.addClass('current').siblings().removeClass('current');
+        var n=$this.index();
+        $contents.eq(n).addClass('current').siblings().removeClass('current')
+    })*/
+
+    (function () {
+        function tabPlugin(options) {
+            options=options||{};
+            var defaultOption={
+                eventType:'click',
+                index:0
+            };
+            for(var k in options){
+                defaultOption[k]=options[k];
+            }
+            var $box=this;
+            var $lis=$box.find('ul.til>li');
+            var $contents=$box.find('content');
+            $lis.eq(defaultOption.index).addClass('current').siblings().removeClass('current');
+            $contents.eq(defaultOption.index).addClass('current').siblings().removeClass('current');
+            $lis.on(defaultOption.eventType,function () {
+                console.log(this);
+                var $this=$(this);
+                $this.addClass('current').siblings().removeClass('current');
+                var n=$this.index();
+                $contents.eq(n).addClass('current').siblings().removeClass('current')
+            })
+        }
+        $.fn.extend({
+            tabPlugin:tabPlugin
+        })
+    })();
+
+    $('#box').tabPlugin({
+        eventType:'mouseenter'
+    });
+    $('#box2').tabPlugin({
+        index:1
+    });
+
+</script>

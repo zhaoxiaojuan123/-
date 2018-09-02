@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #outer{
+            width: 400px;
+            height: 400px;
+            background: #7dcfa0;
+            margin:50px  auto;
+        }
+        #center{
+            width: 300px;
+            height: 300px;
+            background: #7a6e6e;
+            margin-left:20px;
+        }
+        #inner{
+            width: 200px;
+            height: 200px;
+            background: #f54343;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">outer
+    <div id="center">center
+        <div id="inner">inner</div>
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+     /*
+      * 事件的传播
+      * 事件的传播机制 分成两个阶段：捕获 和 冒泡
+      * 捕获：当点击inner 时，浏览器是从最外层的盒子开始查找点击的事件源
+      * 冒泡：找到点击的元素之后，再一层一层的向外层传递
+      */
+      var outer=document.getElementById('outer'),
+          center=document.getElementById('center'),
+          inner=document.getElementById('inner');
+   /* outer.onclick=function (e) {
+        console.log('outer');
+    };
+     center.onclick=function (e) {
+         console.log('center');
+     };
+     inner.onclick=function (e) {
+         e.stopPropagation();// 阻止冒泡
+         e.cancelBubble=true;//IE低版本 中的阻止冒泡
+         console.log('inner');
+     };*/
+     // 点击inner 会在控制台输出： inner center outer 事件 冒泡传播机制
+     // DOM0级事件 都是在冒泡阶段执行的
+     // DOM2级事件 跟传的参数有关系
+     // e.stopPropagation();// 阻止冒泡
+    function f1() {
+        console.log(1);
+    }
+     function f2() {
+         console.log(2);
+     }
+     function f3() {
+         console.log(3);
+     }
+     function f4() {
+         console.log(4);
+     }
+    outer.addEventListener('click',f1,false);//false 代表在冒泡阶段触发
+    outer.addEventListener('click',f2,true);//true 代表在捕获阶段触发
+    inner.addEventListener('click',f3,false);
+    inner.addEventListener('click',f4,true); // 在点击哪个元素上，false和true 是不起作用的，只跟绑定的先后顺序有关系
+   //点击inner 输出顺序 2 --> 3 --> 4 --> 1
+
+</script>

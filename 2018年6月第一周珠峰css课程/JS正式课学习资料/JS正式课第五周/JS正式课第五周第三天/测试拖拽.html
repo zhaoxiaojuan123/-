@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+  <style>
+      *{
+          padding: 0;
+          margin: 0;
+      }
+      #div1{
+          width: 100px;
+          height: 100px;
+          background: #f54343;
+          border-radius: 50%;
+          text-align: center;
+          line-height: 100px;
+          position: absolute;
+      }
+  </style>
+</head>
+<body>
+<div id="div1"></div>
+
+</body>
+</html>
+<script>
+    var oDiv=document.getElementById('div1');
+
+       oDiv.onmousedown=function (e) {
+           dragStart.call(this,e);
+          document.onmousemove=dragMove.bind(this);
+          document.onmouseup=dragEnd.bind(this);
+       };
+
+  function dragStart(e) {
+      e=e||window.event;
+      var tar=e.target||e.srcElement;
+      this.startL=this.offsetLeft;// 记录开始的盒子的位置
+      this.startH=this.offsetTop;
+      this.mx=e.pageX;//记录开始的鼠标的位置
+      this.my=e.pageY;
+  }
+  function dragMove(e) {
+      e=e||window.event;
+      var x=e.pageX-this.mx,// 鼠标移动的差值
+           y=e.pageY- this.my;
+      this.style.left=x+this.startL+'px';
+      this.style.top=y+this.startH+'px';
+      if(!this.prevx){
+          this.prevx=0;
+      }
+      this.speed=e.pageX-this.prevx;// 小球速度=两次鼠标位移之差
+      this.prevx=e.pageX  ;// 再把当前鼠标的位置赋值给当前的位移
+  }
+  function dragEnd(e) {
+      document.onmousemove=null;
+      document.onmouseup=null;
+      fly.call(this);
+      this.maxL=(document.documentElement.clientWidth||document.body.clientWidth)-this.clientWidth;
+      this.maxT=(document.documentElement.clientHeight||document.body.clientHeight)-this.clientHeight;
+      drop.call(this)
+  }
+
+  function fly() {
+      this.speed*=0.98;
+      var l=this.speed+this.offsetLeft;
+
+      if(l>this.maxL){ // 小球的右边界
+          this.speed*=-1;
+          l=this.maxL;
+      }
+          if(l<=0){ // 小球的左边界
+            l=0;
+           this.speed*=-1;
+          }
+      this.style.left=l+'px';
+      this.flyTimer=setTimeout(fly.bind(this),30);// 回调函数  自己调用自己
+      if(Math.abs(this.speed)<0.01){
+          clearInterval(this.flyTimer);
+      }
+  }
+   function drop() {
+       if(!this.flag){
+           this.flag=0
+       }
+       if(!this.dropSpeed){
+           this.dropSpeed=5;
+       }else {
+           this.dropSpeed+=5;
+       }
+       this.dropSpeed*=0.98;
+       var h=this.offsetTop+this.dropSpeed;
+       if(h>this.maxT){
+           h=this.maxT;
+           this.dropSpeed*=-1;
+           this.flag++;
+       }else {
+           this.flag=0;
+       }
+       this.style.top=h+'px';
+  if(this.flag>3){
+      clearInterval(this.dropTimer)
+  }else {
+      this.dropTimer=setTimeout(drop.bind(this),30);
+  }
+   }
+
+</script>

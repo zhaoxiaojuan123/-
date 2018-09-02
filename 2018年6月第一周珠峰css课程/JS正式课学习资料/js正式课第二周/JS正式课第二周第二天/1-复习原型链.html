@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    /*
+    * 原型  原型链的查找机制
+    * obj.a
+    * 先去查找自己的私有属性
+    * 没有的话 通过__proto__ 去所属类的原型上查找
+    * 若还没有，再去通过 __proto__ 去基类（object类）的原型对象上查找
+    * 若仍没有 则是undefined
+    * 我们把这种查找机制成为 原型链
+    *
+    *
+    * 每一个函数都有一个prototype的属性，指向自己的原型对象
+    * 每一个对象都有一个__proto__的属性，指向所属类的原型对象
+    * 每一个默认的原型对象上都有一个constructor属性，指向构造函数本身
+    *
+    * 普通数组 都是 Array 这个类的一个实例
+    * 普通对象 都是 Object这个类的一个实例
+    * 所有函数 都是 Function这个类的一个实例
+    *
+    * 类 都是函数
+    * 实例 都可以理解成对象
+    *
+    * [] 他是个对象；但他的所属类Array；[] 首先是个数组，然后才是个对象
+    *
+    * */
+    function sum() {
+        console.log(12);
+    }
+    sum();// sum 就是普通函数
+    var s=new sum;// sum 就是构造函数
+
+    /*
+    * 函数的三种角色：
+    *
+    * 首先是个普通函数
+    *      跟作用域、变量提升有关系
+    * 构造函数
+    *     跟this，原型(prototype)  有关系
+    * 普通对象
+    *     跟属性名，属性值有关系；__proto__
+    *
+    * */
+    function Person() {
+        this.name='zfpx';
+        this.age=9;
+    }
+    var obj={
+        name:'zhufeng',
+        constructor:Person,
+        getName:function () {
+            console.log(10);
+        }
+
+    };
+    //var obj2={w:[1,2,3]};
+   // obj2.w=[3,4,5];
+    console.log(Person.prototype);//指向默认的原型对象
+    Person.prototype=obj;// 把Person.prototype 重新指向 obj
+    // 手动修改了Person类原型的指向，把原来默认的原型指向重新指向新的地址；原型仍然存在
+    //原来默认的原型上的方法和属性就找不到了
+
+
+    var per=new Person();// 创建Person类的一个实例
+    /*
+    * new
+    * 1、先创建一个私有作用域（同普通函数一样）
+    * 2、形参赋值，变量提升（同普通函数一样）
+    * 3、默认开辟一个空的堆内存；让函数中的执行主体（this）指向这个堆内存；
+    * 4、代码从上往下依次执行（同普通函数一样）
+    * 5、默认把 开辟的这个堆内存返回；手动写return 并且后边是个值类或者啥也不写；
+    * 这时是不能改变默认return的值；若手动改成return 引用数据类型；则会把默认返回的对象覆盖
+    * 6、普通函数 不写return 默认返回undefined
+    * */
+  //  console.log(per1.constructor);
+    //console.log(per1.__proto__);
+
+
+
+  //  Array.prototype={};// 被禁止不能修改
+    /*
+    * 在JS中 我们可以手动修改自定义类的prototype指向，但是不能修改 内置类的原型指向；
+    * 对于类的某个实例来说，我们可以修改这个实例的__proto__指向；修改某个实例的__proto__不会影响 整个类的原型指向；
+    * */
+//--------------------------------------------------
+
+    function Fn(){
+        var a =1;
+        this.a = a
+    }
+    Fn.prototype.say = function(){
+        this.a = 2
+    };
+   Fn.prototype = new Fn;//这一步很重要
+    var f1 = new Fn;
+
+    f1.__proto__.b = function (){
+        this.a = 3
+    };
+    console.log(f1.a);// 1
+    console.log(f1.prototype);//  undefined  往上找都没有这个prototype的属性
+    console.log(f1.b);// f(){this.a = 3}
+    console.log(f1.hasOwnProperty('b'));// false
+    console.log('b' in f1);//true
+    console.log(f1.constructor == Fn);// true
+    console.log(Fn.prototype);//{a:1,b:f(){}}
+
+//---------------------------------------------------
+ //练习题
+    function Person() {
+        this.name = 'zf';
+        this.age = 9;
+    };
+    Person.prototype.getName = function () {
+
+    };
+    var obj = {
+        name:'zfpx',
+        constructor: Person,
+        getName: function () {
+
+        },
+        getName2:function () {
+
+        }
+    };
+    var per1 = new Person;// 在修改 Person.prototype之前 new 的实例的__proto__ 都是指向 默认的 原型对象的
+    // 咱们把 Person 默认的原型对象 成为 A
+    // per1.__proto__ === A;
+    Person.prototype = obj;
+    var per2 = new Person; // 在修改 prototype指向之后； new 出来的实例的__proto__ 都是指向 新的 原型对象；
+    // per2.__proto__ === obj;
+    console.log(per1.constructor);// f  Person
+    // console.log(per2.constructor);// f  Object
+    console.log(per2.constructor);// f  Person
+
+
+
+
+
+
+
+
+</script>

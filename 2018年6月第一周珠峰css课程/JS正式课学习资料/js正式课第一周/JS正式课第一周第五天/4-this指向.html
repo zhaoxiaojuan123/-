@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    /*
+    * this 指向
+    * 1、直接看点 函数执行 点前边是谁 this就指向谁
+    * 2、自执行函数的this 指向window
+    * 3、DOM事件绑定 this 指向绑定的DOM元素
+    *
+    * */
+    var  dn=function () {
+        console.log(this);
+    }
+    var obj={f:fn}
+    var oDiv=document.getElementById('div')
+    fn();//window
+    obj.f();//obj
+    oDiv.onclick=function () {
+        console.log(this);//oDiv
+    };
+    (function () {
+        console.log(this);//window
+    })()
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

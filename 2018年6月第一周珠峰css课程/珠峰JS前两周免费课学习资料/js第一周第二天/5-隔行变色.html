@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 500px;
+            list-style: none;
+            margin: 0 auto;
+        }
+        li{
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 25px;
+
+        }
+       /*
+        li:nth-child(2n){
+            background-color: #00a77b;
+        }
+        li:nth-child(2n-1){
+            background-color:coral;
+        }*/
+
+    </style>
+
+</head>
+<body>
+<ul>
+    <li>1隔行变色隔行变色隔行变色隔行变色</li>
+    <li>2隔行变色隔行变色隔行变色隔行变色</li>
+    <li>3隔行变色隔行变色隔行变色</li>
+    <li>4隔行变色隔行变色</li>
+    <li>5隔行变色隔行变色隔行变色</li>
+    <li>6隔行变色隔行变色隔行变色</li>
+</ul>
+
+</body>
+</html>
+<script>
+    var  olis = document.getElementsByTagName('li');
+   /* for(var i=0;i<olis.length;i++){
+        //奇数行
+        if(i%2==0){
+            olis[i].style.background='coral';
+        }else{
+            olis[i].style.background='#00a77b';
+        }
+    }*/
+
+    for(var i=1;i<olis.length;i+=2){
+
+            olis[i].style.background='coral';//偶数行
+
+            olis[i-1].style.background='#00a77b';//奇数行
+    }
+
+    /* 判断数据类型
+     typeof
+     constructor  //指向构造函数本身
+     instanceof  // 该实例 在不在某个类的原型上
+     object.prototype.toString.call();  //对象原型上的 toString 方法
+    *
+    * //普通对象
+    *
+    *
+    * */
+</script>

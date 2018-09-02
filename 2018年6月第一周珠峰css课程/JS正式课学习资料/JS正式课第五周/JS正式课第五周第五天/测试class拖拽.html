@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: #7dcfa0;
+            border-radius: 50%;
+           position: absolute;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+  <div id="div1"></div>
+
+</body>
+</html>
+<script>
+  var oDiv1=document.getElementById('div1');
+ // oDiv1.onmousedown=dragStart;
+
+  class Drag{
+      constructor(ele){
+          this.ele=ele;
+          ele.onmousedown= this.dragStart.bind(this);
+      }
+      dragStart(e){
+          e=e||window.event;
+          this.startL=this.ele.offsetLeft;
+          this.startT=this.ele.offsetTop;
+          this.mx=e.pageX;
+          this.my=e.pageY;
+          this.dragMove=this.dragMove.bind(this);
+          this.dragEnd=this.dragEnd.bind(this);
+          document.onmousemove= this.dragMove;
+          document.onmouseup=this.dragEnd;
+//          this.maxL=(document.documentElement.clientWidth||document.body.clientWidth)-this.ele.offsetWidth
+//          this.maxT=(document.documentElement.clientHeight||document.body.clientHeight)-this.ele.offsetHeight
+      }
+       dragMove(e) {
+           e=e||window.event;
+      var x=e.pageX-this.mx,
+          y=e.pageY-this.my;
+//          x=x>this.maxL?this.maxL:(x<0?0:x);
+//           y=y>this.maxT?this.maxT:(y<0?0:y);
+           this.ele.style.left=this.startL+x+'px';
+           this.ele.style.top=this.startT+y+'px';
+  }
+      dragEnd() {
+      document.onmousemove=null;
+      document.onmouseup=null;
+  }
+  }
+  var d=new Drag(oDiv1);
+
+//    function dragStart(e) {
+//        e=e||window.event;
+//        this.startL=this.offsetLeft;
+//        this.startT=this.offsetTop;
+//        this.mx=e.pageX;
+//        this.my=e.offsetY;
+//        this.dragMove=dragMove.bind(this);
+//        this.dragEnd=dragEnd.bind(this);
+//        document.onmousemove= this.dragMove;
+//        document.onmouseup=this.dragEnd;
+//    }
+//    function dragMove(e) {
+//        var x=e.pageX-this.mx,
+//            y=e.pageY-this.my;
+//        this.style.left=this.startL+x+'px';
+//        this.style.top=this.startT+y+'px';
+//    }
+//    function dragEnd() {
+//        document.onmousemove=null;
+//        document.onmouseup=null;
+//
+//    }
+</script>

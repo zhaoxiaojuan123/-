@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+.bohe-live{
+    width: 400px;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.bohe-img{
+    position: relative;
+    width: 184px;
+    height: 184px;
+}
+.pic img{
+    width: 184px;
+    height: 184px;
+    transition: all 1s ease;
+}
+.bohe-img p{
+    position: absolute;
+    left: 10px;
+    bottom: 8px;
+
+}
+
+.bohe-img .bg{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 70px;
+    width: 184px;
+    background-image: linear-gradient(transparent,pink);/*线型渐变*/
+}
+.bohe-img .live{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 28px;
+    height: 11px;
+    background: url("../images/sprite_img1109.png") no-repeat -47px -390px;
+}
+/*鼠标移到整个块上图片放大，给父元素溢出隐藏*/
+.pic{
+    width: 184px;
+    height: 184px;
+    overflow: hidden;
+}
+.bohe-img a:hover img{
+    transform: scale(1.2);
+}
+
+
+

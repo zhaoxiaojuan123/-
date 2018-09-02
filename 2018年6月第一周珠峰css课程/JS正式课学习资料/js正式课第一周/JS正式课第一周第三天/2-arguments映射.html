@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>arguments映射</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    function f(name,age) {
+        console.log(arguments[0]);//zhufeng
+        arguments[0]='xiaohong';
+        age=age&&100;
+        console.log(name,age);//xiaohong  100
+
+    }
+    f('zhufeng',9);
+
+     // arguments映射 ： arguments 会跟形参建立起一个一一映射的关系，形参改变，那么arguments对应的值也会跟着改变，同样的 arguments改变，对应的形参也会跟着改变
+    // && 前边成立给后边；前边不成立给前边
+    // || 前边成立给前边；前边不成立给后边
+
+
+
+
+</script>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+   /* Function.prototype.call=function call(context) {
+        //=>call方法中的this：fn
+        //[native code]
+        //1、把指定函数中的this指向context [把this中的this关键字指向context]
+        //2、把指定函数执行  [把this执行]
+        this();
+    };
+    //=>以下都是让call方法执行
+    //fn.call(opp);
+    //fn.__proto__.call();
+    // Function.prototype.call();*/
+//    function fn1() {
+//        console.log(1);
+//    }
+//    function fn2() {
+//        console.log(2);
+//    }
+//    fn1.call(fn2);//=->1 因为fn1中没有this 不需要this
+    /*
+    * fn1.call :  fn1这个Function 的实例通过__proto__找到Function.prototype上的call方法，然后让call方法执行（传递fn2这个实参）
+    * 执行call的时候，call中this：fn1，所以此处是把fn1执行，让fn1中的this指向fn2（只不过我们的fn1中不需要使用this）=>1
+    * */
+    /*ary.slice
+    Array.prototype.slice=function () {
+
+    }*/
+    //fn1.call.call.call(fn2);//2
+   /*
+   * fn1.call.call.call：依然是找到原型上的call方法并且让call执行
+   * call中的this：fn1.call.call[原型上的call]
+   * call中的context:fn2
+   * 让[原型中的call(fn1.call.call)] 中的this指向 fn2
+   * 让[原型中的call(fn1.call.call)]  执行
+   *   第二次执行原型上的call，只不过此时call中的this是fn2
+   *   让fn2中的this指向undefined
+   *   让fn2执行
+   *   =>2
+   * */
+  //  Function.prototype.call(fn2);
+   /*
+   * 找到原型上的call方法 让call方法执行
+   * call执行：
+   * =》this：Function.prototype
+   * =》context:fn2
+   * 把Function.prototype 中的this关键字变为fn2
+   * 让Function.prototype 执行
+   * =》无输出
+   * */
+   // Function.prototype.call.call.call(fn2);
+    /*
+    * 等价于fn1.call.call.call(fn2);最终的执行就是fn2
+    *
+    * */
+
+  // 1、 小括号中出现多项（每一项之间用逗号分隔），操作只有最后一项
+//(function(){console.log(1)},function(){console.log(1)})();// => 2 只把第二个函数执行了，第一个不操作
+// 2、JS中括号会影响this的指向
+   // 括号中只有一项，this还是按照没加括号的时候处理即可
+   // 括号中有多项，执行最后一项的时候，方法中的this就是window（或者undefined）[浏览器把这种情况理解为自执行函数执行处理的]
+    window.name='win';
+    function  fn() {
+        console.log(this.name);
+    }
+    var obj={name:'OBJ',fn:fn};
+   // obj.fn()// 'OBJ =>this:obj
+    (obj.fn)();//'OBJ  =>this:obj
+   (fn,obj.fn)();// 'win'=>this:window 严格模式下this是undefined
+   //---------------------------------------
+  var str='12,13,14,22' ;
+   console.log(eval('Math.max(' + str + ')'));// 求最大值
+ // 真实项目中尽量较少eval的使用（防止代码压缩成为一行后，eval导致代码结构或者执行混乱）
+  // var ary=[1,5,6,55,22,33];
+//apply的特点：虽然编写的是一个数组，但是相当于在执行函数的时候一项项的传递参数
+   // fn.call(null,100,200);
+   // fn.apply(null,[100,200]);<=>fn(100,200)
+   // var max=Math.max.apply(null,ary);
+   // var min=Math.min.apply(null,ary);
+   // console.log(min, max);
+// 利用es6的展开运算符来实现操作
+    let ary1=[1,5,6,55,22,33];
+    let max=Math.max(...ary1);
+    let min=Math.min(...ary1);
+      console.log(min, max);
+</script>

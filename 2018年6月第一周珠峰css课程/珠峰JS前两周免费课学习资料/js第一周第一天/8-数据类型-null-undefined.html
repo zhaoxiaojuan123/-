@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    var timer=null; //不占内存
+
+    //null  : 现在没有，以后会有的  空指针对象 不占内存
+    //undefined : 压根就没有过，现在没有以后也没有 占内存
+
+   //判断数据类型
+    //typeof a  返回的是a 的数据类型，返回的是个字符串
+    var  a=12;
+    console.log(typeof a);//number
+  var b='qwer';
+    console.log(typeof b);//string
+    var bol='true';
+    console.log(typeof bol);//string
+    var boll=!'true';//false
+    var boll=!'false';//false
+    var boll=!true;//false
+    var boll=!false;//true
+    console.log(typeof boll);
+  typeof  undefined;//结果 undefined
+    typeof  null;//结果 “object”
+
+    typeof  typeof  typeof  12 //结果string
+    typeof  12 ;//返回的是  字符串“number”
+
+</script>

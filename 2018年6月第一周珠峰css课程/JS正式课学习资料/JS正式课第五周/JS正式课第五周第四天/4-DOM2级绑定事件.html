@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<div id="div1"></div>
+
+</body>
+</html>
+<script>
+
+    /*
+     * 标准浏览器下
+     * oDiv.addEventListener('click',fn,false)
+     * 'click' -->事件类型  标准浏览器不加0n
+     * fn-->是指对应的回调函数
+     * false -->是指在冒泡阶段触发对应的回调函数
+     * 当绑定多个函数时，执行顺序 跟绑定顺序一致
+     * DOM2级事件  只有三个参数都相同时 才会处理成重复绑定 ，这时就不再往 事件池 里添加；
+     * DOM0级事件 移除事件 oDiv.onclick=null;
+     * DOM2级事件 移除事件 oDiv.removeEventListener('click',fn,false);默认的是false
+     *
+     * IE低版本
+     * oDiv.attachEvent('onclick',fn)
+     * 'onclick'-->事件 必须加on
+     * fn--> 对应的回调函数
+     * IE低版本移除  oDiv.detachEvent('onclick',fn)
+     * 绑定多个函数，执行顺序时乱序（倒序）
+     */
+    // DOM2级事件绑定  支持一个操作对应多个回调函数
+    // 对应回调函数执行顺序--》跟绑定的先后顺序一样
+    //DOM0级事件绑定 只支持一个回调函数
+      var oDiv=document.getElementById('div1');
+      oDiv.onclick=function () {
+
+      };
+    oDiv.onclick=null;
+
+</script>

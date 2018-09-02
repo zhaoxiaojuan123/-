@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{  text-decoration: none; }
+
+
+
+.first-line, .second-line, .third-line{
+    position: absolute;
+    width: 100%;
+    height: 33.33%;
+}
+.first-line{ top:0; }
+.second-line{  top:33.33%;}
+.third-line{  top:66.66%; }
+.img{
+    position: absolute;
+    width: 33.33%;
+    height: 100%;
+    overflow: hidden;
+}
+.img img{
+    z-index: 99;
+    width: 100%;
+     position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50% 0 0 -50%;
+ }
+.img video{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50% 0 0 -50%;
+}
+.baseline{
+    position: absolute;top: 25%;
+    left: 30px;
+    z-index: 99;
+}
+.baseline span{
+    display: block;
+    color: #00a77b;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.baseline a{
+    font-size: 24px;
+    color: #000000;
+    font-weight: 100;
+    margin-top: 12px;
+}
+/*鼠标移上去视频显示*/
+.img:hover video{  z-index: 100;}
+.img1{left: 0}
+.img2{left: 33.33%}
+.img3{left: 66.66%}
+
+/* 下面是第三行第二列的图片动画代码*/
+.img2 .i1{
+    transition: all .4s ease-in-out;
+    transform-origin: 100% 50%;
+}
+.img2:hover .i1{
+    transform: rotateY(180deg);
+}
+
+.img2 .i2{
+    transform: rotateY(180deg);
+    transition: all .7s ease-in-out;
+}
+
+.img2:hover .i2{  transform: rotateY(360deg); }
+
+.second-line .img5{  background-color: #00a77b;}
+
+/*------*/
+
+.second-line .img2  .logo_container img{
+position: relative;
+    top:30%;
+    width: 40%;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.img5 h2{
+    position: relative;
+    height: 50%;
+    text-align: center;
+}
+.img5 .copyRight{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+    font-size: 10px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    bottom: 15px;
+}
+
+
+.second-line .img2 .icon{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 30%;
+    width: 100%;
+    text-align: center;
+}
+.second-line .img2 .icon   img{
+    position: static;/*覆盖继承过来的定位*/
+    width: 42px;
+    margin: 0;
+}
+
+.second-line .img2  .icon  img:last-child{
+    width: 23px;
+}
+.copyright-link{
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+

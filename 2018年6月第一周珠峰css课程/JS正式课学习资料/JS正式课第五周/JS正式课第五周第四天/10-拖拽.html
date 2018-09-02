@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: #7dcfa0;
+            border-radius: 50%;
+            position: absolute;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+ <div id="div1"></div>
+
+</body>
+</html>
+<script>
+    /*
+     * 拖拽的思路：按住一个元素，滑动鼠标，让着元素跟着 鼠标移动。当鼠标松开，元素停止
+     * 1、给要拖动的元素 绑定一个onmousedown 事件；记录 鼠标的初始位置和元素的初始位置
+     * 2、在鼠标移动的时候，去算 鼠标移动的距离，用这个距离去设置元素当前的位置
+     * 3、当鼠标抬起时，让元素停止移动
+     */
+   var oDiv=document.getElementById('div1');
+    oDiv.onmousedown=function (e) {
+        dragStart.call(this,e);
+        document.onmousemove=dragMove.bind(this);
+        document.onmouseup=dragEnd.bind(this);
+    };
+    function dragStart(e){
+        e=e||window.event;
+        this.startX=this.offsetLeft;
+        this.startY=this.offsetTop;
+        this.mx=e.pageX;
+        this.my=e.pageY;
+    }
+    function dragMove(e) {
+        var x=e.pageX- this.mx,
+             y=e.pageY-this.my;
+        this.style.left=this.startX+x+'px';
+        this.style.top=this.startY+y+'px';
+    }
+    function dragEnd(e) {
+        document.onmousemove=null;
+        document.onmouseup=null;
+
+    }
+
+
+</script>

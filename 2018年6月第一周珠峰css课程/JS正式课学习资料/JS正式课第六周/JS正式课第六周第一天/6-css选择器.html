@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style type="text/less" rel="stylesheet">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+            margin: auto;
+            width: 400px;
+          overflow:hidden;
+
+            li{
+                width: 50px;
+                height: 50px;
+                float: left;
+                background: #007aff;
+                margin-top: 10px;
+                margin-left: 10px;
+                /*&:nth-child(1){  !* & 代表li *!*/
+               /*background: #f54343;*/
+                 /*}*/
+                 /*&:nth-child(even){*/
+            /*background: #7dcfa0;*/
+                  /*}*/
+                  /*&:nth-child(2n){ !* 偶数*!*/
+            /*background: #7a6e6e;*/
+                   /*}*/
+        /*&:nth-child(2n-1){  !*奇数*!*/
+             /*background: #00ae66;*/
+         /*}*/
+
+            }
+
+        /*& :nth-child(1){  !* & 空格 :nth-child(1) 第一个儿子 不管是孙子级还是往下的都是第一个变色*!*/
+             /*background: #f54343;*/
+         /*}*/
+        /*& :nth-of-type(2){ !* & 空格:nth-of-type(2) 第二个p 和第二个 li 起作用 看类型*!*/
+             /*background: #0873c0;*/
+         /*}*/
+          /*& :only-child{  !*只有一个孩子元素才变颜色*!*/
+            /*background: red;*/
+            /*}*/
+            & :empty{
+                height: 20px;
+            background: #7dcfa0;
+              }
+              & :not(li){
+                background: #ee2ad6;
+                }
+                li[class$=px]{
+                    background: green;
+                }
+        }
+        #div1,#div2,#div3{
+            width: 500px;
+            height: 100px;
+            background: #0873c0;
+        }
+      & :target{
+            border: 5px solid #ee2ad6;
+        }
+    </style>
+    <script src="js/less.js"></script>
+</head>
+<body>
+<ul>
+    <div></div>
+    <div>1212
+        <span>2222</span>
+    </div>
+    <div>12333</div>
+    <li class="zf">1</li>
+    <li class="zf zf-px">2</li>
+    <li class="zf-px">3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+    <li>11</li>
+    <li>12</li>
+</ul>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<a href="#div1">qq</a>
+</body>
+</html>
+<script>
+
+
+
+</script>

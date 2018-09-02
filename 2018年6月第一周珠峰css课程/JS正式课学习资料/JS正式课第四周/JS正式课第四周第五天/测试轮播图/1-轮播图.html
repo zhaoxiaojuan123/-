@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+   <style>
+       *{
+           padding: 0;
+           margin: 0;
+           list-style: none;
+       }
+       #box{
+           position: relative;
+           margin: 20px auto;
+           width: 600px;
+           height: 300px;
+           overflow: hidden;
+       }
+       .ul_box{
+           width: 600px;
+           overflow: hidden;
+       }
+       .ul_box li{
+           position: absolute;
+           left: 0;
+           top:0;
+           width: 600px;
+           height: 300px;
+       }
+       .ul_box li img{
+           width: 100%;
+           height: 100%;
+       }
+       .ul_box li p{
+           position: absolute;
+           left: 0;
+           bottom: 0;
+           background: rgba(0,0,0,0.5);
+           color: #fff;
+           width: 100%;
+           font-size: 20px;
+           padding: 10px 20px;
+       }
+       .btn_box{
+           position: absolute;
+           top:50%;
+           width: 100%;
+       }
+       .btn_box .leftBtn,.btn_box .rightBtn{
+           position: absolute;
+           margin-top: -50px;
+           width: 50px;
+           height: 100px;
+           line-height: 100px;
+           text-align: center;
+           background: rgba(0,0,0,0.5);
+           color: #fff;
+           font-size: 30px;
+           float: left;
+           z-index: 30;
+           display: none;
+       }
+       .btn_box .rightBtn{
+           right: 0;
+       }
+       .tip_box{
+           width: 100%;
+           position: absolute;
+           bottom:50px;
+           text-align: center;
+           z-index: 30;
+
+       }
+       .tip_box .tips{
+           display: inline-block;
+           width: 30px;
+           height: 30px;
+           background-color: cornflowerblue;
+           color: #fff;
+           border-radius: 50%;
+           text-align: center;
+           line-height: 30px;
+           margin-left: 10px;
+
+       }
+       .tips.current{
+           background-color: lightcoral;
+           color:#fff;
+           font-size: 25px;
+       }
+   </style>
+</head>
+<body>
+<div id="box">
+    <ul class="ul_box">
+        <li>
+            <img src="https://muse-img.b0.upaiyun.com/599e42022b2fa6d791a23e57a394d2df2417921064e2f-fciimj84zpvi_/sq/600" alt="">
+            <p>这是个解释</p>
+        </li>
+    </ul>
+    <div class="btn_box">
+        <div class="leftBtn"> < </div>
+        <div class="rightBtn"> > </div>
+    </div>
+    <ul class="tip_box">
+        <li class="tips">1</li>
+    </ul>
+</div>
+
+</body>
+</html>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/js-1.js"></script>

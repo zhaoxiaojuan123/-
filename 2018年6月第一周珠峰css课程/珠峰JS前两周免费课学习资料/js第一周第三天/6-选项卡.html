@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .til{
+            margin:auto;
+            width: 400px;
+            height: 50px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .til ul{
+            overflow: hidden;
+        }
+        .til ul li{
+             float: left;
+            line-height: 50px;
+            width: 33%;
+            font-size: 25px;
+            text-align: center;
+        }
+        .til ul li.active{
+            background: chartreuse;
+            color: white;
+        }
+
+        .body{
+            margin: auto;
+            width: 400px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            font-size: 30px;
+        }
+        .body ul{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+        }
+        .body ul li{
+            width: 100%;
+            height: 100%;
+            background: rosybrown;
+            display: none;
+        }
+        .body ul li.active{
+            display: block;
+        }
+
+    </style>
+
+</head>
+<body>
+ <div class="til">
+     <ul>
+         <li class="active">css</li>
+         <li>js</li>
+         <li>html</li>
+     </ul>
+ </div>
+<div class="body">
+    <ul>
+        <li class="active">这是cssbody</li>
+        <li>这是jsbody</li>
+        <li>这是htmlbody</li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+
+    var til=document.getElementsByClassName('til')[0];//索引0是为了找到这个元素
+    var tils=til.getElementsByTagName('li');
+    var bodydiv=document.getElementsByClassName('body')[0];//索引0是为了找到这个元素
+    var bodys=bodydiv.getElementsByTagName('li');
+
+    function clearClass() {
+        //清空所有 tils 里的li 的class名 和 bodys 里的 li 的class名是active
+        for(var i=0;i<tils.length;i++){
+            tils[i].className='';
+            bodys[i].className='';
+        }
+    }
+
+
+    /*tils[0].onclick=function () {
+        clearClass();
+        tils[0].classNames='active';
+        bodys[0].classNames='active';
+
+    }
+    tils[1].onclick=function () {
+        clearClass();
+        tils[1].classNames='active';
+        bodys[1].classNames='active';
+
+    }
+    */
+
+    for(var i=0;i<tils.length;i++){
+        tils[i].myIndex=i;
+        tils[i].onclick=function () {
+            clearClass();
+       tils[this.myIndex].className='active';
+       bodys[this.myIndex].className='active';
+
+      /*  tils[i].classNames='active';
+        bodys[i].classNames='active';*///不可用 i=3 i的数不对
+    }
+    }
+
+
+// 闭包方法 自执行函数  多了一层作用域
+/*    for(var i=0;i<tils.length;i++){
+        (function (n) {
+        tils[i].onclick=function () {
+            clearClass();
+            tils[n].className='active';
+            bodys[n].className='active';
+        } })(i)
+    }*/
+
+
+
+  /*  for(var i=0;i<tils.length;i++){
+        tils[i].onclick=(function (n) {
+            return  function () {
+                clearClass();
+                tils[n].className='active';
+                bodys[n].className='active';
+            } })(i)
+    }*/
+
+     //let : ES6 声明变量的关键字  const
+    // 块级作用域 {} if for switch 这些语句中的{} 都是一个块级作用域
+
+    // i=0 ;这种方法是比上个错误的方法 多了一层作用域
+    // 1、 先执行了一个自执行函数，形成了一个新的作用域，我们把每一个i 当参数传到自执行函数里边，这时每个自执行函数 都有自己的一个变量存储了咱们传进来的i
+    //2、 我们在自执行函数中，给元素绑定了点击事件
+    //3、 当点击事件被触发的时候，它会找到上级的变量 n
+    //4、它的上级作用域就是咱们自执行函数形成的作用域 ，这个作用域里面存着我们每一次的i ，也就是作用域里边的变量n,
+    //5、 这时，onclick 执行时，就能找到对应的索引 n；
+
+</script>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #div1{
+            height: 3000px;
+            width: 600px;
+            background: pink;
+        }
+        .btn{
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            background-color: #00ae66;
+            color: #fff;
+            width: 60px;
+            height: 50px;
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+  <div id="div1"></div>
+
+</body>
+</html>
+<script src="js/utils.js"></script>
+<button class="btn">回到顶部</button>
+<script>
+
+    /*
+    * 固定时间回到顶部
+    * */
+    var btn=document.getElementsByClassName('btn')[0];
+    btn.onclick=function () {
+       // clearInterval(this.timer);
+        if(this.running)return;
+        this.running=true;
+        var duration=1000;//规定时间
+        var changeL=utils.scrollT();//当前页面卷上去的高度
+        var speed=changeL/duration;
+        this.timer=window.setInterval( ()=> {
+            var moveL=speed*30;
+             changeL=utils.scrollT();//当前页面卷上去的高度
+            if(changeL<=0){
+                clearInterval(this.timer);
+                this.running=false
+            }
+            document.documentElement.scrollTop -=moveL;
+            document.body.scrollTop -=moveL;
+        },20)
+    };
+
+     function btnDis() {
+         var scrT=utils.scrollT();
+         if(scrT>400){
+             btn.style.display='block'
+         }else {
+             btn.style.display='none'
+         }
+     }
+     window.onscroll=function () {
+         btnDis();
+     };
+   window.onmousewheel=function () {
+       clearInterval(btn.timer);
+        btn.running=false;// 可以滑轮后就再次点击就可以往上滚动
+   }
+
+
+
+</script>

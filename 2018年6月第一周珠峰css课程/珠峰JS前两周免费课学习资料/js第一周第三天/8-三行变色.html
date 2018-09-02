@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            width: 400px;
+            margin: auto;
+        }
+        li{
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<ul>
+    <li>1三行变色</li>
+    <li>2HTML代码</li>
+    <li>3css代码</li>
+    <li>4js代码</li>
+    <li>5都是代码</li>
+    <li>6就是举个例子</li>
+</ul>
+
+</body>
+</html>
+<script>
+
+
+
+    /*两行行变色
+    * */
+    var oList= document.getElementsByTagName('li');
+    /* for (var i = 0; i < oList.length; i++) {
+      i%2==0?oList[i].style.backgroundColor='red':oList[i].style.backgroundColor='green';
+
+    }*/
+/*三行变色*/
+    for (var i = 0; i < oList.length; i++) {
+        if (i%3==0){
+            oList[i].style.backgroundColor='red'
+        }else if (i%3==1){
+            oList[i].style.backgroundColor='yellow'
+        }else {
+            oList[i].style.backgroundColor='blue'
+        }
+
+    }
+
+
+
+</script>

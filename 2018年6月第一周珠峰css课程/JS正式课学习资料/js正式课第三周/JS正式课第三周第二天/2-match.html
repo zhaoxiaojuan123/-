@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    /*
+    * match  : 字符串中的方法
+    * */
+    var reg=/\d+/;
+    var reg2=/(\d+)/;
+    var str="珠峰2018珠峰2019";
+    console.log(str.match(reg));
+    console.log(reg.exec(str));
+   /*
+   * 当正则上边不加 全局修饰符g时 ，match方法和 exec返回的结果是一样的
+   * */
+
+    var reg1=/\d+/g;
+    var str1="珠峰2018珠峰2019";
+    console.log(str1.match(reg1));
+    //  ["2018", "2019"]
+    console.log(reg1.exec(str1));
+    // ["2018", index: 2, input: "珠峰2018珠峰2019", groups: undefined]
+   /*
+   * 当正则加上 全局修饰符g时，match 方法会把字符串中所有符合大正则的内容捕获到
+   * */
+
+    var reg2=/(\d+)([a-z]+)/g;
+    var str2="abcd2018acsd2019";
+    console.log(str2.match(reg2));// ["2018acsd"]
+    // 有g 这个修饰符时， match 只能捕获到大正则捕获的内容
+    console.log(reg2.exec(str2));
+    //  ["2018acsd", "2018", "acsd", index: 4, input: "abcd2018acsd2019", groups: undefined]
+    // 第一项 是大正则捕获到的内容
+    // 第二项 是第一个小分组捕获到的内容
+    // 第三项 是第二个小分组捕获到的内容
+
+
+
+</script>

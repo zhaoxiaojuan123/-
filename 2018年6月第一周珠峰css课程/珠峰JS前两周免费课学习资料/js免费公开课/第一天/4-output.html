@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<script>
+    //js中提供的浏览器弹窗
+    //1、alert:在浏览器中弹出一个提示框（提供确定按钮，点击确定弹框消失）
+   // alert({name:'zhufeng'});   //"[object,object]"
+    //alert([12,23]);//"12,23"
+    //使用alert弹窗提示的信息，提示的内容最后都会转化成字符串，(调用了tostring这个方法)
+   //alert(1+1);//"2"
+    //2、confirm:在alert基础上增加了用户选择性的操作（提供两个按钮：确定和取消）
+  //var zhufengFlag=confirm('are you sure delete this!');
+    //当用户点击确定按钮的时候，我们接受到的结果是true，点击取消按钮我们接受到的结果是false，此后我们可以根据接受的结果做不同的处理即可。
+    //3、prompt:在confirm 基础上增加让用户输入的效果
+  //var flag=prompt('are you sure delete this!');
+    alert(flag);//用户点击取消按钮，我们获取到的结果null，如果用户点击的确定按钮，我们将会获取到用户输入的内容(如果用户没有输入任何内容，我们获取的结果是空字符串.)
+    //真实项目中，尤其是需要样式精美的网络中，我们的提示框一般都是自己封装插件和组件来实现的，不会用内置的（使用原生的js封装模态框组件）
+
+</script>
+
+</body>
+</html>

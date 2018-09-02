@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<div id="div1"></div>
+
+</body>
+</html>
+<script>
+
+    function getRandom() {
+     var ary=[];
+        for (var i = 0; i < 4; i++) {
+            var n=Math.round(Math.random()*61);
+            if(ary.indexOf(n)==-1){
+                ary.push(n)
+            }else {
+                i--;
+            }
+
+        }
+        return ary;
+    }
+function getStr() {
+    var str="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789";
+    var str2='';
+  var ary=getRandom();
+    for (var i = 0; i < ary.length; i++) {
+         var n=ary[i];
+        str2+= str[n];
+
+    }
+    var oDiv=document.getElementById('div1');
+    oDiv.innerHTML=str2;
+    return str2;
+
+    }
+
+
+    console.log(getStr());
+
+</script>

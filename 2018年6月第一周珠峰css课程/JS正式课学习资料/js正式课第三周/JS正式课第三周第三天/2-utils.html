@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+<div id="div1"></div>
+
+</body>
+</html>
+<script>
+
+    function setCss(ele,attr,value) {
+        //我们需要知道attr这个属性需不需要加单位
+        //width height left top  margin padding  border fontSize
+        //第一种方法 用数组
+        var ary=["width", "height", "left", "top", "", "margin", "padding", "", "border", "fontSize"];
+        if(ary.indexOf(value)==-1){
+            value=parseFloat(value)+'px';
+        }
+
+        //第二种 用正则
+        var reg=/width|height|left|top|margin|padding|fontSize/i;//忽略大小写
+        if(reg.test(attr)){
+            value=parseFloat(value)+'px';
+        }
+        ele.style[attr]=value;
+    }
+    setCss(oDiv,'color','#ccc');
+    setCss(oDiv,'fontSize','25');//在JS中，所有用-分离的属性，都转成驼峰命名法
+    setCss(oDiv,'margin','10');
+
+    //----------------------------------------
+    function setGroup(ele,obj) {
+
+
+    }
+  function css() {
+      var arg=arguments;
+
+  }
+
+
+
+</script>

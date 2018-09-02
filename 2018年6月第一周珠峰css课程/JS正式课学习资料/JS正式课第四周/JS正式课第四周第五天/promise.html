@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    /*
+    * Promise
+    * ES6新增的 类；
+    * 专门处理异步
+    * 回调地狱
+    *
+    * */
+   /* var p=new Promise(function (res,rej) {
+        // res :处理 异步请求成功时 执行的函数
+        //rej ：处理  异步请求失败  执行的函数
+        var data=null;
+        var xhr=new XMLHttpRequest();
+        xhr.open('get','json/data.json');
+        xhr.onreadystatechange=function () {
+            if(xhr.readyState==4&&/^[23]\d{2}$/.test(xhr.status)){
+                data=xhr.responseText;
+                res(data)
+            }
+            if(!/^[23]\d{2}$/.test(xhr.status)){
+                rej();
+            }
+        };
+        xhr.send();
+    }).then(function (data) {
+        console.log('yes');
+    },function (data2) {
+        console.log('no');
+    })
+    */
+
+   var p=new Promise((resolve,reject)=>{
+      if(2>1){
+          reject();
+       }
+
+     /*  reject(); // 只输出no
+       resolve();*/
+
+      /* resolve(); // 只输出 yes
+       reject();*/
+
+   });
+
+    p.then(success,fail);
+
+    function success() {
+        console.log('yes');
+    }
+    function fail() {
+        console.log('no');
+        console.log(p);
+    }
+    /*
+    * then 是Promise 里边执行完成后，相应的要执行的函数；需要传入两个实参，第一个是Promise里边代码执行成功后 执行的函数；第二个参数是promise里边代码执行失败后 执行的函数
+    * */
+
+</script>

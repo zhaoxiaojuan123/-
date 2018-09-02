@@ -1,0 +1,293 @@
+webstorm快捷键汇总
+
+ctrl+a 全选
+ctrl+c 复制
+ctrl+v 粘贴
+双击 选择所要内容
+ctrl +d 复制整行代码
+ctrl+z   撤销到上一步
+shift+enter 光标快速跳到下一行
+ctrl+alt+L 快速对齐，代码格式化
+shift+f6 文件重命名
+ctrl+/  单行注释
+ctrl+shift+/ 多行注释
+tab 快速生成标签名/还有css样式
+
+html的元素：
+1：文字：加粗（strong\b\h1-h6）、斜体（em\i）小点数字（ul ol li ） 下划线（a）
+2：图片: img
+3：音频:audio
+4：视频:video
+5:布局结构: div span
+
+---------------------------------------------------------------
+行内元素(display:inline 自带的)：不独占一行  a 、b、 strong、 img（特殊:行内块可以设置宽高大小）、 span、 em、 i
+( 设置高度和宽度不起作用 需要转换成块级元素
+ display:block;独占一行。
+ display:inline-block;可以设置宽高，并且不独占一行。)
+ 没有转化之前是它的本身内容的宽高。行内元素会受enter和空格影响会有间隙
+
+块级元素(display:block 自带的)：独占一行   div、  h1--h6 、 ul、 ol、 li、 dl、 dt、 dd、 p
+ 左右结构  用div套住可以固定高度和宽度
+ 块级元素可以设置宽高以及盒子模型（width heigth border）的所有属性。
+ 不设置宽高属性，宽度是父元素的宽度，高度是本身内容的高度。
+
+----------------------------------------------------------
+行内式:直接写在开始标签的后面 style="属性名：属性值；"
+弊端：html和css混在一起，没有分离，结构阅读起来不清晰没法重复使用，重复利用率很低。
+
+内嵌式：把HTML和css 分离 一般放在head标签title下面
+<style>
+选择器{ 属性名：属性值；...}
+ </style>
+
+外链式：把HTML和css 完完全全分离，通过link标签引入外部标签，放在head标签title下面
+ <link rel="stylesheet" href="demo.css">让css和html产生关联。
+
+ 导入式：把HTML和css 完完全全分离
+ @import "css文件的路径"   不能单独存在 必须放在style 里面,不常用有兼容性的问题。
+
+ class 类选择器命名：不要以数字为开头，最好是英文，不要用css样式属性去命名
+ 例如：main content/con  Area column/col
+ leftAreaContent驼峰命名法(多个单词组成的class名 第一个单词首字母小写 第二个单词的首字母大写)
+ title/ tit 标题
+ body/bd  身体
+ head/hd  头部
+ nav  导航
+ logo  商标
+ menu  菜单
+ copyright  版权
+ search  搜索
+content/main/column/col 内容 栏
+pic/img/picArea/imgArea  图片
+txt/txtArea  文字
+arrow  箭头
+
+【css选择器】
+1、*    通配符选择器    *{margin:0;padding:0}
+2、标签选择器：通过标签名找到元素
+3、类选择器/class选择器：HTML 结构中（开始标签中）class=“box box1”
+    css中对应的是小黑点 .box{} .box1{}
+4、ID选择器：HTML 结构中（开始标签中）id=“box”
+     css中对应的是#    #box{}
+5、后代选择器：中间是空格隔开， div ul li img{}
+
+单词梳理
+
+margin:0;外边距   上右下左
+margin: 1px 2px 3px   上  左右 下
+padding；内边距    上右下左 padding:10px 20px 0 0
+font-family 字体类型 例如：宋体、黑体
+text-decoration ：none  文本装饰：没有
+text-decoration：underline 文本装饰：加下划线
+                 line-through 中间穿过中划线
+                 overline  上划线
+list-style：none  列表样式:无
+line-height:20px;  控制文字垂直上下间距
+letter-space :10px;  控制文字左右间距
+font-size:12px;字体大小
+font-weight: bold/normal;文字加粗/文字正常
+color：字体颜色
+border-top/left/right/bottom 边框线
+边框宽度 + 边框类型（solid实线） + 边框线颜色  （三者之间用空格隔开）
+
+【省略号四个必备条件】
+1、宽度     width
+2、强制不折行 white-space:nowrap;
+3、溢出隐藏    overflow: hidden;
+4、 隐藏省略号的方式：省略号   text-overflow: ellipsis;
+
+【overflow】（hidden 用浮动一定要清除浮动）
+1、清除浮动
+2、溢出隐藏（超出的部分隐藏）
+【display:block】
+1：清除img默认的小间距（4px）
+【text-align文字的对齐方式】
+1、left   居左边显示
+2、center 居中显示
+3、right  居右显示
+【float  让上下结构 变成 左右结构】
+1、left 靠左边显示
+2、right  靠右边显示
+3、none  默认显示
+
+【项目中的使用技巧】
+文字 -> font-
+文本 -> text-
+列表 -> list-
+
+块级元素居中   水平居中：width + margin：auto；
+
+文字居中： 1、垂直居中 height + line-height  同值
+          2、水平居中：text-align:center;
+
+文字相关样式：
+   大小--粗细--类型--颜色(a)--间距（line-height/margin/padding）
+
+<video width="";height="" controls>
+<source src="..ogg">
+<source src="..mp3">
+</video>
+
+<embed></embed> 嵌入音乐 hidden="false（显示）/true（隐藏）"
+
+锚点：
+
+第四天路径的问题
+绝对路径：指带域名的文件的完整路径和磁盘中指定文件的全部路径。
+网址(网站的尾部)–a标签用的比较多
+例：https://....
+   D:\2018年6月第一周珠峰css课程\赵晓娟珠峰第一周CSS学习资料\4day.html
+
+相对路径：是指在同一个文件夹下，通过一个参考点来找到其他文件
+1.返回上一级 ../
+2.同级之间直接写文件名
+3.下一级用 /
+
+
+【background属性】
+background-color或者background 背景颜色
+background-image:url 或者background：url 背景图片 需要设置宽高
+background-repeat：no-repeat; 不平铺不能缩写
+
+background: 颜色 url no-repeat 背景位置（position）;(合并写法)
+
+background-position:0 0;背景位置默认值 x轴 y轴
+远点在图片的左上角（0,0） 负值是向左移动，正值是向右移动
+
+用background-image 插入背景图片，当网页压缩时，图片不变形！！（要设置：background-position：center;background-repeat：no-repeat;background-size:cover;）
+box-sizing: border-box;/*border和padding值已经算到宽度中了，元素宽度=width 很重要！！！1*/(mobike网页例子中的css上写着例子)
+
+ background-size: cover;可以让图片填满整个盒子div.
+ background-size: contain;可以让大图片不失真的缩放到自己设置的小盒子里；
+
+ display:inline-block;  1.可以让父元素的font-size：0，子元素的行内块就不会有间距，但是没有字显示，可以让子元素的类上设置font-size：字体大小，字体就会显示出来。（ie7以下的都不起作用就是不兼容可以*display：inline，只有在ie浏览器可以识别）。2.可以用浮动属性去解决。3.可以放到一行,不要有空格不要有间距（不推荐使用）
+  设置浮动会导致脱离文档流，导致高度塌陷，高度为0，需要给父元素加高度值。
+
+  浮动：后面的元素排列情况
+  1.文字内容：会围绕着浮动元素排列；例如：ul li会在后面排列
+  2.色块元素：会浮动在元素的下面排列；例如：一个div会在前面的div下面排列。
+
+
+面试题：浮动导致高度塌陷，清楚浮动的几种方法
+1.手动给元素的父元素添加一个高度。（不推荐使用）
+2.给浮动元素的父元素加一个overflow:hidden/auto;
+3.clear:both ;给浮动元素的父元素的结束标签之前添加一个空的具有块级特征的标签，一般用div，而且给div添加一个属性为clear：both；
+  <div style="clear:both;"></div>(不常用)
+4.利用clearfix 去清除浮动(实际项目中最常用的方法)    我是一块砖 哪里需要 就往哪里搬
+.clearfix:after{ content:'';display:block;clear:both}
+用的时候直接在class后面添加 clearfix 就行
+
+最完整clearfix清除浮动的方法：
+.clearfix:after{
+content:'';
+display:block;
+clear:both;
+width:0;
+height:0;
+line-height:0;
+font-size:0;
+visibility: hidden;
+overflow:hidden;
+}
+.clearfix{
+   zoom:1;
+}
+--------------------------------------
+disply:none  元素消失，不占位。
+opacity:0; 透明度为0.元素占位。
+
+
+【css 新增的属性:默认的一套， -webkit- 一套】
+
+分两步：
+1.@keyframes 动画名称{
+
+               0%{} 开始帧  0%= from
+               50%{} 中间帧
+               100%  结束帧  100%=to
+}
+2.通过animation 的八大属性去调用上面规定的动画名称以及其他的属性
+简写：animation：1 2 3 4 5 6 7 8 ；
+1） animation-name  动画名称
+2） animation-duration 动画持续时间-时间越长 运动的越慢 反之越快
+3）animation-timing-function  动画的运动曲线
+   ease 匀速
+   ease-in 由慢到快
+   ease-out 由快到慢的过程
+   ease-in-out 由慢到快再到慢的过程
+   steps（）
+4）animation-delay 动画的延迟时间
+5）animation-interation-count 动画运动的次数 默认1次 infinite无限次(没有单位)
+6）animation-direction 动画的运动方向
+         normal：正常方向
+         reverse：反方向运行
+         alternate：动画先正常运行再反方向运行，并持续交替运行
+         alternate-reverse：动画先反运行再正方向运行，并持续交替运行
+7）animation-play-state 动画的运动状态
+        running：运动
+        paused：暂停
+8）animation-fill-mode 动画运动结束之后保留的
+        none：默认值。不设置对象动画之外的状态
+（结束）forwards：保留在动画结束时的状态
+（开始） backwards：保留在动画开始时的状态
+        both：设置对象状态为动画结束或开始的状态
+
+
+【颜色】
+color：rgba(0,0,0,.2);
+【position固定定位】
+ left和right 同时出现，听left的；
+ top和bottom 同时出现，听top的；
+
+
+
+
+
+
+
+
+行内元素加float可以变成块元素并且标签之间没有缝隙；
+【css实现三栏布局 左右固定，中间自适应】（7种）
+
+1.利用定位position实现
+2.flex
+3.浮动+calc(100% - 两边宽度)(3种)
+4.inline-block +margin+calc（2种）
+  行内块元素会受空格的影响，父元素font-size:0;
+  中间的行内块设置基线对齐 vertical-align:top;
+
+给父元素加 font-size:0；可以清除display:inline-block；行内元素自带的间距。
+
+ 【css重点知识点】
+  定位 +     布局 +   盒子模型 +        背景 +     字体 +        动画
+position   display     width height  背景颜色    font-size     animation
+z-index    float       border                    opacity     transition
+top        clear       margin                                 transform
+left      overflow   padding
+right    visibility
+bottom    overflow-X
+          overflow-Y
+
+
+
+flex 伸缩盒子模型 规定子元素的排列布局方式
+display:flex  默认是横向排列
+flex=1  100%-左边宽度-右边宽度=剩下的值就是中间的  自动分配剩下的大小
+
+边框只有数值，没有线型和颜色  是无效有坑
+
+
+【多行文本出现省略号】
+display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:2;overflow: hidden;/*多行文本出现省略号*/
+
+
+
+雪碧图的background-size:宽 高；不能写cover
+
+
+
+
+
+
+

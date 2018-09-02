@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+<style>
+    /*伪元素选择器：
+    ：before 在什么之前添加元素
+    ：after： 在什么之后添加元素*/
+    /*div:before{*/
+        /*content: "小红";*/
+        /*color: palevioletred;*/
+    /*}*/
+    /*div:after{
+        content: "小兰";
+        color: #007aff;
+    }*/
+
+    .box1{
+        float: left;
+        width: 200px;
+        height: 200px;
+        background-color: #007aff;
+    }
+    .box2{
+        float: left;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+    .main{
+        border: 2px solid green;
+        width: 500px;
+    }
+    .main:after{content: '';display: block;clear: both}
+
+</style>
+</head>
+<body>
+<!--<div>小明</div>-->
+<div class="main">
+<div class="box1">左边</div>
+<div class="box2">右边</div>
+</div>
+</body>
+</html>

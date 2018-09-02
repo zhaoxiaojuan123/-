@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description">
+    <title>Title</title>
+    <link rel="icon" href="">
+  <style>
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      #div1{
+          height: 2000px;
+          background: linear-gradient(#24ccc8,#ee2ad6,#00ae66);
+      }
+      .btn{
+          position: fixed;
+          bottom: 50px;
+          right: 50px;
+          width: 100px;
+          height: 100px;
+          line-height: 100px;
+          text-align: center;
+          border-radius: 50%;
+          background-color: #007aff;
+          display: none;
+      }
+  </style>
+</head>
+<body>
+ <div id="div1"></div>
+<a class="btn">回到顶部</a>
+</body>
+</html>
+<script src="js/utils.js"></script>
+<script>
+    var btn=document.getElementsByClassName('btn')[0];
+    /*
+    * 按照固定时长回到顶部
+    * */
+    var duration=2000; // 总的运动时间
+    var timer=null;
+    function toTop() {
+        //clearInterval(timer);
+        if(timer!=null) return;
+        var interval=20;// 定时器执行的间隔时间
+        var duration=2000; // 总的运动时间
+        var time=0;// 已经运动的时间
+        var changeL=utils.scrollT();// 要运动的总距离 即卷去的高度
+        var step=changeL/duration*interval;// 每20毫秒运动的距离
+         timer=window.setInterval(function () {
+            // 让页面的scrollTop 减少
+            changeL-=step;
+            if(changeL<=0){
+                clearInterval(timer);
+                timer=null;
+                changeL=0
+            }
+            document.documentElement.scrollTop=changeL;
+            document.body.scrollTop=changeL;
+        },interval)
+    }
+    btn.onclick=toTop;
+    // 让按钮显示或隐藏
+   window.onscroll=function () {
+       var scrT=utils.scrollT();
+       var cliH=utils.clientH();
+       if(scrT>cliH){
+           btn.style.display='block'
+       }else {
+           btn.style.display='none'
+       }
+   };
+   // 监听鼠标滚轮事件
+  window.onmousewheel=function () {
+      clearInterval(timer);
+      timer=null;// 当鼠标滑轮滚动时，再点击回到顶部就可以实现点击事件
+  }
+
+
+
+
+</script>
